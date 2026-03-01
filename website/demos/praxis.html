@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praxis für Physiotherapie am Volkspark | Berlin-Friedrichshain</title>
+  <meta name="description" content="Physiotherapie in Berlin-Friedrichshain. Manuelle Therapie, Krankengymnastik, Sportphysiotherapie. Alle Kassen. Online-Terminbuchung.">
+  <style>
+    /* ===== FONT FACES ===== */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+        U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+        U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url('../assets/fonts/inter-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+        U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+        U+A720-A7FF;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0891b2;
+      --primary-dark: #0e7490;
+      --primary-light: #cffafe;
+      --primary-subtle: #ecfeff;
+      --secondary-bg: #f0fdf4;
+      --warm: #f59e0b;
+      --warm-dark: #d97706;
+      --warm-light: #fef3c7;
+      --dark: #1a1a1a;
+      --body: #3d3d3d;
+      --muted: #6b7280;
+      --light-bg: #f0f9ff;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --border-light: #f3f4f6;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--body);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--primary-dark); }
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    button:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--dark);
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== DEMO BANNER ===== */
+    .demo-banner {
+      background: linear-gradient(135deg, var(--dark) 0%, #2d2d2d 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      position: relative;
+      z-index: 1001;
+    }
+    .demo-banner a {
+      color: var(--warm);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .demo-banner a:hover {
+      color: var(--warm-light);
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: box-shadow var(--transition);
+    }
+    .nav.scrolled {
+      box-shadow: var(--shadow);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 16px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .nav-brand-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .nav-brand-sub {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--body);
+      text-decoration: none;
+      transition: color var(--transition);
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-phone svg {
+      width: 16px;
+      height: 16px;
+      color: var(--primary);
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warm);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      background: var(--warm-dark);
+      color: var(--white);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+    .nav-cta svg { width: 16px; height: 16px; }
+
+    /* Mobile menu button */
+    .nav-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--body);
+      transition: all var(--transition);
+    }
+    .nav-menu-btn:hover { background: var(--light-bg); }
+    .nav-menu-btn svg { width: 20px; height: 20px; }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--white);
+      z-index: 2000;
+      padding: 20px;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .mobile-menu-close {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--body);
+    }
+    .mobile-menu-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-menu-links a {
+      display: block;
+      padding: 14px 16px;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--dark);
+      border-radius: 10px;
+      transition: background var(--transition);
+    }
+    .mobile-menu-links a:hover {
+      background: var(--light-bg);
+    }
+    .mobile-menu-contact {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mobile-menu-contact a.nav-cta {
+      text-align: center;
+      justify-content: center;
+      padding: 14px;
+      font-size: 16px;
+    }
+    .mobile-menu-phone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+      padding: 12px;
+    }
+    .mobile-menu-phone svg { width: 18px; height: 18px; color: var(--primary); }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(170deg, var(--white) 0%, var(--light-bg) 40%, var(--primary-subtle) 100%);
+      padding: 60px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(8,145,178,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--dark);
+    }
+    .hero h1 span {
+      color: var(--primary);
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: all var(--transition);
+      text-decoration: none;
+      line-height: 1;
+    }
+    .btn-lg {
+      font-size: 16px;
+      padding: 15px 28px;
+    }
+    .btn-warm {
+      background: var(--warm);
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+    }
+    .btn-warm:hover {
+      background: var(--warm-dark);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+    }
+    .btn-outline {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary-subtle);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 18px; height: 18px; }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--body);
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-trust-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION STYLES ===== */
+    .section {
+      padding: 72px 0;
+    }
+    .section-alt {
+      background: var(--light-bg);
+    }
+    .section-mint {
+      background: var(--secondary-bg);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .section-label svg { width: 16px; height: 16px; }
+    .section-title {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ===== BEHANDLUNGEN (SERVICES) ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: all var(--transition);
+    }
+    .service-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: var(--primary-light);
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--primary-subtle);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--primary);
+    }
+    .service-icon svg { width: 26px; height: 26px; }
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ===== BOOKING SECTION ===== */
+    .booking-section {
+      background: linear-gradient(170deg, var(--primary-subtle) 0%, var(--light-bg) 100%);
+      padding: 72px 0;
+    }
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .booking-text h2 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .booking-text p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    .booking-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .booking-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--body);
+    }
+    .booking-features li svg {
+      width: 20px;
+      height: 20px;
+      color: #22c55e;
+      flex-shrink: 0;
+    }
+    .booking-widget {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+    }
+    .booking-widget-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .booking-widget-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .booking-widget-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #22c55e;
+      background: #f0fdf4;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .booking-widget-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+    .booking-slot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+    .booking-slot:hover {
+      border-color: var(--primary);
+      background: var(--primary-subtle);
+    }
+    .booking-slot:last-of-type {
+      margin-bottom: 16px;
+    }
+    .booking-slot-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .booking-slot-day {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .booking-slot-time {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .booking-slot-btn {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--primary-subtle);
+      padding: 6px 14px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .booking-widget-footer {
+      text-align: center;
+    }
+    .booking-widget-footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .booking-widget-footer a:hover { text-decoration: underline; }
+    .booking-widget-footer a svg { width: 16px; height: 16px; }
+    .booking-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: var(--warm-light);
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--body);
+    }
+    .booking-note svg {
+      width: 18px;
+      height: 18px;
+      color: var(--warm);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    .team-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .team-avatar-ab { background: linear-gradient(135deg, #0891b2, #06b6d4); }
+    .team-avatar-js { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+    .team-avatar-ey { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+    .team-avatar-mh { background: linear-gradient(135deg, #059669, #10b981); }
+    .team-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .team-card .team-role {
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .team-card .team-spec {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .team-book-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .team-book-link:hover { text-decoration: underline; }
+    .team-book-link svg { width: 14px; height: 14px; }
+
+    /* ===== KASSE & PRIVAT ===== */
+    .insurance-section {
+      background: var(--secondary-bg);
+    }
+    .insurance-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .insurance-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .insurance-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--secondary-bg);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #059669;
+    }
+    .insurance-icon svg { width: 22px; height: 22px; }
+    .insurance-card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .insurance-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+      color: var(--warm);
+    }
+    .testimonial-stars svg { width: 18px; height: 18px; }
+    .testimonial-text {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--body);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .testimonial-author {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .testimonial-date {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .google-rating {
+      text-align: center;
+      margin-top: 36px;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .google-rating-stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 8px;
+      color: var(--warm);
+    }
+    .google-rating-stars svg { width: 24px; height: 24px; }
+    .google-rating-score {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .google-rating-text {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .google-rating-src {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* ===== HOURS & DIRECTIONS ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .info-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+    }
+    .info-box h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-box h3 svg {
+      width: 22px;
+      height: 22px;
+      color: var(--primary);
+    }
+    .hours-list {
+      list-style: none;
+    }
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 15px;
+    }
+    .hours-item:last-child { border-bottom: none; }
+    .hours-day { font-weight: 500; color: var(--dark); }
+    .hours-time { color: var(--muted); }
+    .hours-time.highlight {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .directions-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .directions-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--body);
+    }
+    .directions-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--light-bg);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+    .directions-icon svg { width: 18px; height: 18px; }
+    .directions-item strong {
+      display: block;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 14px;
+    }
+    .directions-item span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .map-placeholder {
+      margin-top: 20px;
+      height: 180px;
+      background: var(--light-bg);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .map-placeholder svg {
+      width: 28px;
+      height: 28px;
+      opacity: 0.5;
+    }
+
+    /* ===== CONTACT FORM ===== */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--dark);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 0 1 .708 0L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .dsgvo-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 14px;
+      background: var(--light-bg);
+      border-radius: 8px;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+    .dsgvo-notice svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: var(--primary);
+    }
+    .btn-submit {
+      width: 100%;
+      font-size: 16px;
+      padding: 14px 24px;
+    }
+    .contact-info-side h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .contact-info-items {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .contact-info-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-subtle);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+    .contact-info-icon svg { width: 20px; height: 20px; }
+    .contact-info-item strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+    .contact-info-item span,
+    .contact-info-item a {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 24px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+    .footer-brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-brand-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-links a:hover {
+      color: var(--white);
+    }
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-bottom-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+    .footer-bottom-links a:hover { color: var(--white); }
+
+    /* ===== MOBILE STICKY CTA ===== */
+    .mobile-sticky-cta {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 12px 16px;
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+    }
+    .mobile-sticky-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--warm);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .mobile-sticky-cta a:hover {
+      background: var(--warm-dark);
+      color: var(--white);
+    }
+    .mobile-sticky-cta a svg { width: 20px; height: 20px; }
+
+    /* Add bottom padding on mobile to account for sticky CTA */
+    .footer {
+      padding-bottom: 100px;
+    }
+
+    /* ===== SR-ONLY ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 44px; }
+      .hero-sub { font-size: 19px; }
+      .hero-ctas { flex-direction: row; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid .testimonial-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .insurance-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-title { font-size: 34px; }
+    }
+
+    @media (min-width: 768px) {
+      .hero { padding: 80px 0 60px; }
+      .section { padding: 88px 0; }
+      .hero h1 { font-size: 48px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .booking-layout { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .contact-layout { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .container { padding: 0 32px; }
+    }
+
+    @media (min-width: 1024px) {
+      .nav-links { display: flex; }
+      .nav-menu-btn { display: none; }
+      .nav-phone { display: flex; }
+
+      .hero h1 { font-size: 52px; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .team-grid { grid-template-columns: repeat(4, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+      .testimonials-grid .testimonial-card:last-child {
+        grid-column: auto;
+        max-width: none;
+      }
+      .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; }
+
+      .mobile-sticky-cta { display: none; }
+      .footer { padding-bottom: 24px; }
+
+      .section-title { font-size: 38px; }
+      .booking-text h2 { font-size: 34px; }
+    }
+
+    @media (min-width: 1280px) {
+      .container { padding: 0 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DEMO BANNER -->
+  <div class="demo-banner" role="banner">
+    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &ndash; So könnte Ihre Praxis-Website aussehen!
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="navbar" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="Praxis für Physiotherapie am Volkspark - Startseite">
+        <div class="nav-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 010 8h-1"/>
+            <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/>
+            <line x1="10" y1="1" x2="10" y2="4"/>
+            <line x1="14" y1="1" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Physio am Volkspark</span>
+          <span class="nav-brand-sub">Berlin-Friedrichshain</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#behandlungen">Behandlungen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#termin">Termine</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="tel:03023456789" class="nav-phone" aria-label="Anrufen: 030 234 567 89">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          030 234 567 89
+        </a>
+        <a href="#termin" class="nav-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Online Termin buchen
+        </a>
+        <button class="nav-menu-btn" aria-label="Menü öffnen" onclick="document.getElementById('mobile-menu').classList.add('open')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="mobile-menu-header">
+      <a href="#" class="nav-brand" aria-label="Startseite">
+        <div class="nav-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Physio am Volkspark</span>
+          <span class="nav-brand-sub">Berlin-Friedrichshain</span>
+        </div>
+      </a>
+      <button class="mobile-menu-close" aria-label="Menü schließen" onclick="document.getElementById('mobile-menu').classList.remove('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-menu-links">
+      <li><a href="#behandlungen" onclick="document.getElementById('mobile-menu').classList.remove('open')">Behandlungen</a></li>
+      <li><a href="#team" onclick="document.getElementById('mobile-menu').classList.remove('open')">Unser Team</a></li>
+      <li><a href="#termin" onclick="document.getElementById('mobile-menu').classList.remove('open')">Termine</a></li>
+      <li><a href="#ueber-uns" onclick="document.getElementById('mobile-menu').classList.remove('open')">Über uns</a></li>
+      <li><a href="#kontakt" onclick="document.getElementById('mobile-menu').classList.remove('open')">Kontakt</a></li>
+    </ul>
+    <div class="mobile-menu-contact">
+      <a href="#termin" class="nav-cta" onclick="document.getElementById('mobile-menu').classList.remove('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Online Termin buchen
+      </a>
+      <a href="tel:03023456789" class="mobile-menu-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        030 234 567 89
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="start">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Termine verfügbar &ndash; jetzt online buchen
+        </div>
+        <h1>Ihre Gesundheit in <span>guten Händen.</span></h1>
+        <p class="hero-sub">Physiotherapie in Berlin-Friedrichshain. Individuelle Behandlung mit persönlicher Betreuung. Kasse &amp; Privat.</p>
+        <div class="hero-ctas">
+          <a href="#termin" class="btn btn-lg btn-warm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Online Termin buchen
+          </a>
+          <a href="#behandlungen" class="btn btn-lg btn-outline">
+            Behandlungen ansehen
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            Alle Kassen
+          </div>
+          <div class="hero-trust-item">
+            <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Online buchbar
+          </div>
+          <div class="hero-trust-item">
+            <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+            5 Therapeut:innen
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEHANDLUNGEN / SERVICES -->
+  <section class="section" id="behandlungen">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+          Unsere Leistungen
+        </div>
+        <h2 class="section-title">Behandlungen für Ihre Gesundheit</h2>
+        <p class="section-desc">Individuelle Therapie, abgestimmt auf Ihre Beschwerden und Ziele. Alle Behandlungen auf Rezept oder privat.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Manuelle Therapie -->
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2"/><path d="M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 012 2v7.5a4.5 4.5 0 01-4.5 4.5h-3A4.5 4.5 0 018 17.5 4.5 4.5 0 014 13v-1a2 2 0 011-1.73"/>
+            </svg>
+          </div>
+          <h3>Manuelle Therapie</h3>
+          <p>Gezielte Handgriffe zur Mobilisierung von Gelenken und zur Linderung von Schmerzen. Besonders wirksam bei Rücken-, Nacken- und Gelenkbeschwerden.</p>
+        </div>
+        <!-- Krankengymnastik -->
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="3"/><path d="M12 8v4"/><path d="M8 20l4-8 4 8"/><path d="M6 16l2-4"/><path d="M18 16l-2-4"/>
+            </svg>
+          </div>
+          <h3>Krankengymnastik</h3>
+          <p>Aktive und passive Übungen zum Aufbau von Kraft, Beweglichkeit und Koordination. Die Basis jeder physiotherapeutischen Behandlung, individuell auf Sie abgestimmt.</p>
+        </div>
+        <!-- Lymphdrainage -->
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
+            </svg>
+          </div>
+          <h3>Lymphdrainage</h3>
+          <p>Sanfte, rhythmische Massagetechnik zur Entstauung und Anregung des Lymphsystems. Ideal nach Operationen, bei Schwellungen oder chronischen Lymphödemen.</p>
+        </div>
+        <!-- Sportphysiotherapie -->
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><line x1="2" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <h3>Sportphysiotherapie</h3>
+          <p>Spezialisierte Therapie für Sportler:innen. Von der Verletzungsprävention über die Rehabilitation bis zur Leistungsoptimierung - für alle Sportarten und Niveaus.</p>
+        </div>
+        <!-- Rückenschule -->
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c-4.97 0-9-2.24-9-5v-3.5c0-2.76 4.03-5 9-5s9 2.24 9 5V17c0 2.76-4.03 5-9 5z"/><path d="M12 8.5V2"/><path d="M8 5l4-3 4 3"/>
+            </svg>
+          </div>
+          <h3>Rückenschule &amp; Prävention</h3>
+          <p>Erlernen Sie rückenfreundliche Bewegungsmuster und stärken Sie Ihre Rumpfmuskulatur. Prävention gegen Rückenschmerzen im Alltag und am Arbeitsplatz.</p>
+        </div>
+        <!-- CMD -->
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+          </div>
+          <h3>Kiefergelenk (CMD-Therapie)</h3>
+          <p>Behandlung von Kiefergelenkstörungen und craniomandibulärer Dysfunktion. Hilft bei Kieferschmerzen, Kopfschmerzen, Zähneknirschen und Ohrgeräuschen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONLINE TERMINBUCHUNG -->
+  <section class="booking-section" id="termin">
+    <div class="container">
+      <div class="booking-layout">
+        <div class="booking-text">
+          <div class="section-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Terminbuchung
+          </div>
+          <h2>Buchen Sie Ihren Termin online &ndash; rund um die Uhr</h2>
+          <p>Kein Anrufen, kein Warten. Wählen Sie Ihren Wunschtermin bequem online aus und erhalten Sie sofort eine Bestätigung.</p>
+          <ul class="booking-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              24/7 online buchbar
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Sofortige Terminbestätigung
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Erinnerung per E-Mail &amp; SMS
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Kostenlos stornierbar bis 24h vorher
+            </li>
+          </ul>
+          <div class="booking-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span>Terminbuchung über Doctolib &ndash; auch abends und am Wochenende möglich.</span>
+          </div>
+        </div>
+        <div>
+          <div class="booking-widget">
+            <div class="booking-widget-header">
+              <span class="booking-widget-title">Nächste freie Termine</span>
+              <span class="booking-widget-badge">Verfügbar</span>
+            </div>
+            <div class="booking-slot" role="button" tabindex="0" aria-label="Termin buchen: Dienstag, 4. März um 10 Uhr">
+              <div class="booking-slot-info">
+                <span class="booking-slot-day">Dienstag, 4. März</span>
+                <span class="booking-slot-time">10:00 Uhr &middot; Manuelle Therapie</span>
+              </div>
+              <span class="booking-slot-btn">Buchen</span>
+            </div>
+            <div class="booking-slot" role="button" tabindex="0" aria-label="Termin buchen: Mittwoch, 5. März um 14:30 Uhr">
+              <div class="booking-slot-info">
+                <span class="booking-slot-day">Mittwoch, 5. März</span>
+                <span class="booking-slot-time">14:30 Uhr &middot; Krankengymnastik</span>
+              </div>
+              <span class="booking-slot-btn">Buchen</span>
+            </div>
+            <div class="booking-slot" role="button" tabindex="0" aria-label="Termin buchen: Donnerstag, 6. März um 9 Uhr">
+              <div class="booking-slot-info">
+                <span class="booking-slot-day">Donnerstag, 6. März</span>
+                <span class="booking-slot-time">9:00 Uhr &middot; Sportphysiotherapie</span>
+              </div>
+              <span class="booking-slot-btn">Buchen</span>
+            </div>
+            <div class="booking-widget-footer">
+              <a href="#termin">
+                Alle Termine anzeigen
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          Unser Team
+        </div>
+        <h2 class="section-title">Menschen, die sich um Sie kümmern</h2>
+        <p class="section-desc">Unser erfahrenes Team aus fünf Therapeut:innen freut sich auf Sie. Persönlich, kompetent und immer auf Augenhöhe.</p>
+      </div>
+      <div class="team-grid">
+        <!-- Dr. Anna Bergmann -->
+        <div class="team-card">
+          <div class="team-avatar team-avatar-ab" aria-hidden="true">AB</div>
+          <h3>Dr. med. Anna Bergmann</h3>
+          <p class="team-role">Leitende Therapeutin</p>
+          <p class="team-spec">Manuelle Therapie, Wirbelsäule &amp; Gelenke</p>
+          <a href="#termin" class="team-book-link">
+            Termin buchen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+        <!-- Jonas Schreiber -->
+        <div class="team-card">
+          <div class="team-avatar team-avatar-js" aria-hidden="true">JS</div>
+          <h3>Jonas Schreiber</h3>
+          <p class="team-role">Physiotherapeut</p>
+          <p class="team-spec">Sportphysiotherapie, Rehabilitation</p>
+          <a href="#termin" class="team-book-link">
+            Termin buchen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+        <!-- Elif Yilmaz -->
+        <div class="team-card">
+          <div class="team-avatar team-avatar-ey" aria-hidden="true">EY</div>
+          <h3>Elif Y&#305;lmaz</h3>
+          <p class="team-role">Physiotherapeutin</p>
+          <p class="team-spec">Lymphdrainage, Manuelle Therapie</p>
+          <a href="#termin" class="team-book-link">
+            Termin buchen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+        <!-- Marie Hoffmann -->
+        <div class="team-card">
+          <div class="team-avatar team-avatar-mh" aria-hidden="true">MH</div>
+          <h3>Marie Hoffmann</h3>
+          <p class="team-role">Physiotherapeutin</p>
+          <p class="team-spec">Rückenschule, CMD-Therapie</p>
+          <a href="#termin" class="team-book-link">
+            Termin buchen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KASSE & PRIVAT -->
+  <section class="section insurance-section" id="ueber-uns">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Versicherung &amp; Abrechnung
+        </div>
+        <h2 class="section-title">Kasse &amp; Privat &ndash; wir behandeln alle</h2>
+        <p class="section-desc">Egal wie Sie versichert sind: Bei uns sind Sie richtig. Hier erfahren Sie alles Wichtige zur Abrechnung.</p>
+      </div>
+      <div class="insurance-grid">
+        <div class="insurance-card">
+          <div class="insurance-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Gesetzlich Versicherte</h4>
+            <p>Wir behandeln alle gesetzlichen Krankenkassen. Bringen Sie einfach Ihr Rezept vom Arzt mit &ndash; den Rest regeln wir.</p>
+          </div>
+        </div>
+        <div class="insurance-card">
+          <div class="insurance-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Privatversicherte</h4>
+            <p>Privatpatient:innen können auch ohne Rezept direkt einen Termin bei uns vereinbaren. Wir rechnen direkt mit Ihrer Versicherung ab.</p>
+          </div>
+        </div>
+        <div class="insurance-card">
+          <div class="insurance-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Beihilfe &amp; Zusatzversicherung</h4>
+            <p>Wir akzeptieren Beihilfe und arbeiten mit allen gängigen Zusatzversicherungen zusammen.</p>
+          </div>
+        </div>
+        <div class="insurance-card">
+          <div class="insurance-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Rezept mitbringen</h4>
+            <p>Für gesetzlich Versicherte: Bitte bringen Sie Ihr Rezept zum ersten Termin mit. Es ist ab Ausstellungsdatum 28 Tage gültig.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEWERTUNGEN / TESTIMONIALS -->
+  <section class="section" id="bewertungen">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Bewertungen
+        </div>
+        <h2 class="section-title">Das sagen unsere Patient:innen</h2>
+        <p class="section-desc">Vertrauen entsteht durch Erfahrung. Lesen Sie, was andere über uns berichten.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">&bdquo;Endlich schmerzfrei nach nur drei Wochen Behandlung bei Frau Dr. Bergmann. Die manuelle Therapie hat mir enorm geholfen. Ich kann die Praxis nur weiterempfehlen!&ldquo;</p>
+          <p class="testimonial-author">Michael K.</p>
+          <p class="testimonial-date">vor 2 Wochen</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">&bdquo;Das ganze Team ist unglaublich freundlich und kompetent. Man fühlt sich sofort wohl und gut aufgehoben. Die Praxis ist modern und einladend &ndash; genau so, wie es sein soll.&ldquo;</p>
+          <p class="testimonial-author">Sandra L.</p>
+          <p class="testimonial-date">vor 1 Monat</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">&bdquo;Die Online-Buchung ist super praktisch &ndash; ich konnte abends um 22 Uhr noch einen Termin für den nächsten Tag buchen. So muss es heute laufen! Vielen Dank.&ldquo;</p>
+          <p class="testimonial-author">Thomas R.</p>
+          <p class="testimonial-date">vor 3 Wochen</p>
+        </div>
+      </div>
+      <div class="google-rating">
+        <div class="google-rating-stars" aria-label="4.8 von 5 Sternen">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="google-rating-score">4.8</div>
+        <div class="google-rating-text">von 5 Sternen &middot; 94 Bewertungen</div>
+        <div class="google-rating-src">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Google Bewertungen
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖFFNUNGSZEITEN & ANFAHRT -->
+  <section class="section section-alt" id="anfahrt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Praxis-Informationen
+        </div>
+        <h2 class="section-title">Öffnungszeiten &amp; Anfahrt</h2>
+        <p class="section-desc">Wir freuen uns auf Ihren Besuch. Hier finden Sie alle wichtigen Informationen zu unserer Praxis.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-box">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Öffnungszeiten
+          </h3>
+          <ul class="hours-list">
+            <li class="hours-item">
+              <span class="hours-day">Montag</span>
+              <span class="hours-time">8:00 &ndash; 19:00 Uhr</span>
+            </li>
+            <li class="hours-item">
+              <span class="hours-day">Dienstag</span>
+              <span class="hours-time">8:00 &ndash; 19:00 Uhr</span>
+            </li>
+            <li class="hours-item">
+              <span class="hours-day">Mittwoch</span>
+              <span class="hours-time">8:00 &ndash; 19:00 Uhr</span>
+            </li>
+            <li class="hours-item">
+              <span class="hours-day">Donnerstag</span>
+              <span class="hours-time">8:00 &ndash; 19:00 Uhr</span>
+            </li>
+            <li class="hours-item">
+              <span class="hours-day">Freitag</span>
+              <span class="hours-time">8:00 &ndash; 15:00 Uhr</span>
+            </li>
+            <li class="hours-item">
+              <span class="hours-day">Samstag</span>
+              <span class="hours-time highlight">nach Vereinbarung</span>
+            </li>
+            <li class="hours-item">
+              <span class="hours-day">Sonntag</span>
+              <span class="hours-time">geschlossen</span>
+            </li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Anfahrt
+          </h3>
+          <ul class="directions-list">
+            <li class="directions-item">
+              <div class="directions-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Adresse</strong>
+                <span>Boxhagener Str. 76, 10245 Berlin</span>
+              </div>
+            </li>
+            <li class="directions-item">
+              <div class="directions-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6v12"/><path d="M2 12h20"/>
+                </svg>
+              </div>
+              <div>
+                <strong>U-Bahn</strong>
+                <span>Samariterstraße (U5) &ndash; 3 Min. zu Fuß</span>
+              </div>
+            </li>
+            <li class="directions-item">
+              <div class="directions-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 18H3a2 2 0 01-2-2V8a2 2 0 012-2h3.19M15 6h2.81A2 2 0 0120 8v8a2 2 0 01-2 2h-2"/><polyline points="14 2 12 6 10 2"/><line x1="1" y1="14" x2="23" y2="14"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Tram</strong>
+                <span>M13, Haltestelle Boxhagener Str.</span>
+              </div>
+            </li>
+            <li class="directions-item">
+              <div class="directions-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 3 20 16 16 16"/><line x1="6" y1="19" x2="6" y2="16"/>
+                  <circle cx="6" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><line x1="17" y1="19" x2="17" y2="16"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Parkplätze</strong>
+                <span>Parkplätze in der Umgebung vorhanden</span>
+              </div>
+            </li>
+          </ul>
+          <div class="map-placeholder" aria-label="Kartenplatzhalter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+            </svg>
+            Google Maps Kartenansicht
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="section" id="kontakt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Kontakt
+        </div>
+        <h2 class="section-title">Wir sind für Sie da</h2>
+        <p class="section-desc">Sie haben Fragen oder möchten einen Termin vereinbaren? Schreiben Sie uns &ndash; wir melden uns schnellstmöglich zurück.</p>
+      </div>
+      <div class="contact-layout">
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Dies ist eine Demo-Website. Das Formular sendet keine Daten.');" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Name *</label>
+            <input type="text" id="contact-name" name="name" placeholder="Ihr vollständiger Name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="contact-phone">Telefon</label>
+            <input type="tel" id="contact-phone" name="phone" placeholder="Ihre Telefonnummer" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Anliegen</label>
+            <select id="contact-subject" name="subject">
+              <option value="" disabled selected>Bitte wählen Sie...</option>
+              <option value="termin">Terminanfrage</option>
+              <option value="rezept">Rezept-Frage</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Nachricht *</label>
+            <textarea id="contact-message" name="message" placeholder="Ihre Nachricht an uns..." required></textarea>
+          </div>
+          <div class="dsgvo-notice">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. Weitere Informationen finden Sie in unserer <a href="#datenschutz">Datenschutzerklärung</a>.</span>
+          </div>
+          <button type="submit" class="btn btn-lg btn-warm btn-submit">
+            Nachricht senden
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </form>
+        <div class="contact-info-side">
+          <h3>Kontaktinformationen</h3>
+          <div class="contact-info-items">
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Telefon</strong>
+                <a href="tel:03023456789">030 234 567 89</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <strong>E-Mail</strong>
+                <a href="mailto:praxis@physio-volkspark.de">praxis@physio-volkspark.de</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Adresse</strong>
+                <span>Boxhagener Str. 76<br>10245 Berlin-Friedrichshain</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Sprechzeiten</strong>
+                <span>Mo&ndash;Do: 8:00&ndash;19:00<br>Fr: 8:00&ndash;15:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="footer-brand-name">Physio am Volkspark</div>
+          <p class="footer-brand-desc">Praxis für Physiotherapie in Berlin-Friedrichshain. Individuelle Behandlung, persönliche Betreuung. Alle Kassen.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Behandlungen</h4>
+          <ul class="footer-links">
+            <li><a href="#behandlungen">Manuelle Therapie</a></li>
+            <li><a href="#behandlungen">Krankengymnastik</a></li>
+            <li><a href="#behandlungen">Lymphdrainage</a></li>
+            <li><a href="#behandlungen">Sportphysiotherapie</a></li>
+            <li><a href="#behandlungen">CMD-Therapie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Praxis</h4>
+          <ul class="footer-links">
+            <li><a href="#team">Unser Team</a></li>
+            <li><a href="#termin">Online-Termine</a></li>
+            <li><a href="#ueber-uns">Kasse &amp; Privat</a></li>
+            <li><a href="#anfahrt">Anfahrt</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="tel:03023456789">030 234 567 89</a></li>
+            <li><a href="mailto:praxis@physio-volkspark.de">praxis@physio-volkspark.de</a></li>
+            <li>Boxhagener Str. 76</li>
+            <li>10245 Berlin</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Praxis für Physiotherapie am Volkspark &middot; Alle Kassen &middot; Berlin-Friedrichshain</span>
+        <div class="footer-bottom-links">
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
+          <a href="#barrierefreiheit">Barrierefreiheit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky-cta" aria-label="Termin buchen">
+    <a href="#termin">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      Online Termin buchen
+    </a>
+  </div>
+
+  <!-- MINIMAL JAVASCRIPT -->
+  <script>
+    // Sticky nav shadow on scroll
+    (function() {
+      var nav = document.getElementById('navbar');
+      var lastScroll = 0;
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 10) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+        lastScroll = scrollTop;
+      }, { passive: true });
+    })();
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-menu-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.remove('open');
+      });
+    });
+
+    // Close mobile menu with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('mobile-menu').classList.remove('open');
+      }
+    });
+
+    // Smooth scroll for anchor links (fallback for browsers without CSS scroll-behavior)
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          var offset = 80; // nav height
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

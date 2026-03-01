@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grünwerk Berlin | Garten- und Landschaftsbau in Berlin-Steglitz</title>
+  <meta name="description" content="Grünwerk Berlin – Ihr Meisterbetrieb für Garten- und Landschaftsbau in Berlin. Gartenplanung, Pflege, Baumfällung, Terrassen und Winterdienst. Seit 2012.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🌿</text></svg>">
+  <style>
+/* ========================================
+   GRÜNWERK BERLIN — GaLaBau Demo
+   Self-contained, no external dependencies
+   ======================================== */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --primary: #16a34a;
+  --primary-dark: #15803d;
+  --primary-light: #bbf7d0;
+  --primary-bg: #f0fdf4;
+  --secondary: #854d0e;
+  --secondary-light: #fef3c7;
+  --text-dark: #1a1a1a;
+  --text-body: #3d3d3d;
+  --text-muted: #6b6b6b;
+  --bg-white: #ffffff;
+  --bg-light: #f7faf7;
+  --bg-dark: #1a2e1a;
+  --border: #d4e8d4;
+  --border-light: #e8f0e8;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 3px rgba(22,163,74,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(22,163,74,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 8px 24px rgba(22,163,74,0.1), 0 4px 8px rgba(0,0,0,0.04);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --transition: 0.2s ease;
+  --spring: #16a34a;
+  --summer: #ca8a04;
+  --autumn: #ea580c;
+  --winter: #2563eb;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text-body);
+  line-height: 1.6;
+  background: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { border: none; cursor: pointer; font-family: inherit; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- DEMO BANNER ---- */
+.demo-banner {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1001;
+}
+
+.demo-banner a {
+  color: var(--primary-light);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.demo-banner a:hover {
+  color: #ffffff;
+}
+
+/* ---- NAVIGATION ---- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  transition: box-shadow var(--transition);
+}
+
+.nav--scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+}
+
+.nav__logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav__logo-icon svg {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav__link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-body);
+  transition: color var(--transition);
+  position: relative;
+}
+
+.nav__link:hover {
+  color: var(--primary);
+}
+
+.nav__phone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.nav__phone svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.nav__cta:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: none;
+}
+
+.nav__burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav__burger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__burger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__burger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---- HERO ---- */
+.hero {
+  background: linear-gradient(170deg, var(--bg-light) 0%, #e8f5e8 50%, var(--bg-white) 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(22,163,74,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+  margin-bottom: 24px;
+}
+
+.hero__badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.hero__title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.hero__title-accent {
+  color: var(--primary);
+}
+
+.hero__subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: #ffffff;
+  border: 2px solid var(--primary);
+}
+
+.btn--primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(22,163,74,0.3);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--text-dark);
+  border: 2px solid var(--border);
+}
+
+.btn--outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.hero__trust {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero__trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero__trust-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.hero__trust-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ---- SECTION COMMON ---- */
+.section {
+  padding: 80px 0;
+}
+
+.section--alt {
+  background: var(--bg-light);
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.section__label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.section__title {
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.section__desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ---- LEISTUNGEN ---- */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--primary-bg);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: background 0.3s;
+}
+
+.service-card:hover .service-card__icon {
+  background: var(--primary);
+}
+
+.service-card__icon svg {
+  width: 26px;
+  height: 26px;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+.service-card:hover .service-card__icon svg {
+  color: #ffffff;
+}
+
+.service-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.service-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- PROJEKTE / VORHER-NACHHER ---- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.project-card__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  position: relative;
+}
+
+.project-card__img {
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card__img--before {
+  background: linear-gradient(135deg, #c4b5a0 0%, #a89580 100%);
+  color: rgba(255,255,255,0.8);
+}
+
+.project-card__img--after {
+  background: linear-gradient(135deg, #6dbe6d 0%, #3d8b3d 100%);
+  color: rgba(255,255,255,0.8);
+}
+
+.project-card__img-label {
+  position: absolute;
+  top: 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(0,0,0,0.35);
+  color: #ffffff;
+}
+
+.project-card__img-label--before {
+  left: 8px;
+}
+
+.project-card__img-label--after {
+  right: 8px;
+}
+
+.project-card__img-icon {
+  opacity: 0.4;
+  margin-bottom: 4px;
+}
+
+.project-card__img-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.project-card__divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: #ffffff;
+  z-index: 2;
+}
+
+.project-card__divider-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.project-card__divider-circle svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-body);
+}
+
+.project-card__body {
+  padding: 20px 24px 24px;
+}
+
+.project-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.project-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-card__tag {
+  padding: 4px 12px;
+  background: var(--primary-bg);
+  color: var(--primary-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 100px;
+}
+
+/* ---- SAISONALE LEISTUNGEN ---- */
+.seasons__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.season-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.season-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.season-card--spring::before { background: var(--spring); }
+.season-card--summer::before { background: var(--summer); }
+.season-card--autumn::before { background: var(--autumn); }
+.season-card--winter::before { background: var(--winter); }
+
+.season-card--active {
+  border-color: var(--spring);
+  box-shadow: 0 4px 20px rgba(22,163,74,0.12);
+}
+
+.season-card--active::after {
+  content: 'Aktuelle Saison';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background: var(--primary-bg);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.season-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.season-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.season-card--spring .season-card__icon { background: #f0fdf4; }
+.season-card--summer .season-card__icon { background: #fefce8; }
+.season-card--autumn .season-card__icon { background: #fff7ed; }
+.season-card--winter .season-card__icon { background: #eff6ff; }
+
+.season-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.season-card--spring .season-card__icon svg { color: var(--spring); }
+.season-card--summer .season-card__icon svg { color: var(--summer); }
+.season-card--autumn .season-card__icon svg { color: var(--autumn); }
+.season-card--winter .season-card__icon svg { color: var(--winter); }
+
+.season-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.season-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.season-card__list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding-left: 16px;
+  position: relative;
+}
+
+.season-card__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.season-card--spring .season-card__list li::before { background: var(--spring); }
+.season-card--summer .season-card__list li::before { background: var(--summer); }
+.season-card--autumn .season-card__list li::before { background: var(--autumn); }
+.season-card--winter .season-card__list li::before { background: var(--winter); }
+
+/* ---- UEBER UNS ---- */
+.about__grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about__photo {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #d1e8d1 0%, #a3c9a3 100%);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-dark);
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about__photo-icon {
+  opacity: 0.3;
+}
+
+.about__photo-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.about__name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.about__role {
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about__text {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.about__stat {
+  text-align: center;
+  padding: 16px;
+  background: var(--primary-bg);
+  border-radius: var(--radius);
+}
+
+.about__stat-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.about__stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.about__certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about__cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.about__cert svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ---- BEWERTUNGEN ---- */
+.reviews__header-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.reviews__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviews__stars svg {
+  width: 20px;
+  height: 20px;
+  color: #f59e0b;
+  fill: #f59e0b;
+}
+
+.reviews__score {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.reviews__count {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+
+.review-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.review-card__stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.review-card__stars svg {
+  width: 16px;
+  height: 16px;
+  color: #f59e0b;
+  fill: #f59e0b;
+}
+
+.review-card__text {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.review-card__author {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.review-card__location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---- EINZUGSGEBIET ---- */
+.area__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.area__map {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #e8f0e8 0%, #d4e8d4 100%);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-dark);
+  gap: 8px;
+  position: relative;
+}
+
+.area__map-icon {
+  opacity: 0.3;
+}
+
+.area__map-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.area__title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.area__text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.area__districts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.area__district {
+  padding: 6px 16px;
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-light);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+.area__note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ---- KONTAKT ---- */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-form {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+}
+
+.contact-form__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-group label .optional {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: var(--font);
+  color: var(--text-dark);
+  background: var(--bg-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.12);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-form__submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 8px;
+}
+
+.contact-form__submit:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+}
+
+.contact-info__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.contact-info__item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.contact-info__item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info__icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-bg);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info__icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--primary);
+}
+
+.contact-info__label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1px;
+}
+
+.contact-info__value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.contact-info__value a {
+  color: var(--primary-dark);
+}
+
+.contact-hours {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+}
+
+.contact-hours__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.contact-hours__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.contact-hours__row:last-child {
+  border-bottom: none;
+}
+
+.contact-hours__day {
+  color: var(--text-body);
+}
+
+.contact-hours__time {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  background: var(--bg-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 60px 0 0;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.footer__brand-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__brand-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
+
+.footer__brand-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer__desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.footer__tagline {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+}
+
+.footer__heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__links a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--primary-light);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer__bottom a {
+  color: rgba(255,255,255,0.5);
+  transition: color var(--transition);
+}
+
+.footer__bottom a:hover {
+  color: var(--primary-light);
+}
+
+/* ---- MOBILE STICKY CTA ---- */
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border);
+  padding: 12px 16px;
+  gap: 10px;
+}
+
+.mobile-cta__call {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  background: var(--bg-light);
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+
+.mobile-cta__call svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mobile-cta__quote {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .projects__grid { grid-template-columns: repeat(2, 1fr); }
+  .seasons__grid { grid-template-columns: repeat(2, 1fr); }
+  .about__grid { grid-template-columns: 240px 1fr; gap: 32px; }
+  .contact__grid { grid-template-columns: 1fr 320px; gap: 24px; }
+  .footer__grid { grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .nav__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 998;
+  }
+
+  .nav__links--open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__links .nav__link {
+    font-size: 1.2rem;
+  }
+
+  .nav__links .nav__cta {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+
+  .nav__burger {
+    display: flex;
+    z-index: 999;
+  }
+
+  .hero { padding: 70px 0 60px; }
+
+  .hero__trust { gap: 24px; }
+
+  .section { padding: 60px 0; }
+
+  .services__grid { grid-template-columns: 1fr; }
+  .projects__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .seasons__grid { grid-template-columns: 1fr 1fr; }
+  .reviews__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .about__photo {
+    max-width: 260px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .about__certs { justify-content: center; }
+
+  .area__content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .area__map { max-height: 240px; }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mobile-cta { display: flex; }
+
+  body { padding-bottom: 68px; }
+}
+
+@media (max-width: 480px) {
+  .hero__trust { flex-direction: column; gap: 16px; }
+  .seasons__grid { grid-template-columns: 1fr; }
+  .about__stats { grid-template-columns: 1fr; }
+  .contact-form { padding: 24px 20px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Demo Banner -->
+  <div class="demo-banner">
+    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &ndash; So k&ouml;nnte Ihre Website aussehen!
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c.7-1 1-2.2 1-3.5C18 2.5 16.6 1 15 1c-1.3 0-2.4.8-2.8 2C11.8 1.5 10.4.5 9 .5 7 .5 5.5 2.3 5.5 4.5c0 1.3.4 2.5 1 3.5"/><path d="M12 22V8"/><path d="M5.5 4.5C3 6 2 9 2 12c0 5.5 4.5 10 10 10s10-4.5 10-10c0-3-1-6-3.5-7.5"/><path d="M8 14c2-2 6-2 8 0"/><path d="M6 18c3-3 9-3 12 0"/></svg>
+        </span>
+        Gr&uuml;nwerk Berlin
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="#leistungen" class="nav__link">Leistungen</a>
+        <a href="#projekte" class="nav__link">Projekte</a>
+        <a href="#ueber" class="nav__link">&Uuml;ber uns</a>
+        <a href="#kontakt" class="nav__link">Kontakt</a>
+        <a href="tel:+493098765432" class="nav__phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
+          030 987 654 32
+        </a>
+        <a href="#kontakt" class="nav__cta">Angebot anfordern</a>
+      </div>
+      <button class="nav__burger" id="navBurger" aria-label="Men&uuml; &ouml;ffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero__container">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Jetzt Termin f&uuml;r Fr&uuml;hjahr sichern
+      </div>
+      <h1 class="hero__title">
+        Ihr Garten in<br><span class="hero__title-accent">besten H&auml;nden.</span>
+      </h1>
+      <p class="hero__subtitle">
+        Professioneller Garten- und Landschaftsbau in Berlin und Umgebung. Von der Planung bis zur Pflege &ndash; alles aus einer Hand.
+      </p>
+      <div class="hero__ctas">
+        <a href="#kontakt" class="btn btn--primary">Kostenloses Angebot</a>
+        <a href="#projekte" class="btn btn--outline">Projekte ansehen</a>
+      </div>
+      <div class="hero__trust">
+        <div class="hero__trust-item">
+          <span class="hero__trust-value">Seit 2012</span>
+          <span class="hero__trust-label">in Berlin t&auml;tig</span>
+        </div>
+        <div class="hero__trust-item">
+          <span class="hero__trust-value">&Uuml;ber 200</span>
+          <span class="hero__trust-label">Projekte realisiert</span>
+        </div>
+        <div class="hero__trust-item">
+          <span class="hero__trust-value">Meisterbetrieb</span>
+          <span class="hero__trust-label">zertifizierte Qualit&auml;t</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section class="section" id="leistungen">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Leistungen</span>
+        <h2 class="section__title">Was wir f&uuml;r Sie tun</h2>
+        <p class="section__desc">Vom ersten Entwurf bis zur langfristigen Pflege &ndash; wir bieten das komplette Spektrum im Garten- und Landschaftsbau.</p>
+      </div>
+      <div class="services__grid">
+
+        <!-- Gartenplanung -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </div>
+          <h3 class="service-card__title">Gartenplanung &amp; Neuanlage</h3>
+          <p class="service-card__desc">Wir entwerfen Ihren Traumgarten und setzen ihn fachgerecht um. Von der Beratung &uuml;ber die 3D-Planung bis zur fertigen Anlage.</p>
+        </div>
+
+        <!-- Gartenpflege -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-4.97 0-9-2.69-9-6v-2c0-3.31 4.03-6 9-6s9 2.69 9 6v2c0 3.31-4.03 6-9 6z"/><path d="M12 8V2"/><path d="M8 4l4-2 4 2"/></svg>
+          </div>
+          <h3 class="service-card__title">Gartenpflege &amp; Wartung</h3>
+          <p class="service-card__desc">Regelm&auml;&szlig;ige Pflege h&auml;lt Ihren Garten in Bestform. Rasenm&auml;hen, Heckenschnitt, Unkrautbek&auml;mpfung und D&uuml;ngung.</p>
+        </div>
+
+        <!-- Baumfällung -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c.7-1 1-2.2 1-3.5C18 2.5 16.6 1 15 1c-1.3 0-2.4.8-2.8 2C11.8 1.5 10.4.5 9 .5 7 .5 5.5 2.3 5.5 4.5c0 1.3.4 2.5 1 3.5"/><path d="M12 22V8"/><path d="M5.5 4.5C3 6 2 9 2 12c0 5.5 4.5 10 10 10s10-4.5 10-10c0-3-1-6-3.5-7.5"/></svg>
+          </div>
+          <h3 class="service-card__title">Baumf&auml;llung &amp; R&uuml;ckschnitt</h3>
+          <p class="service-card__desc">Fachgerechte Baumpflege, Kronenschnitt und sichere F&auml;llungen. Auch schwierige Situationen l&ouml;sen wir mit Seilklettertechnik.</p>
+        </div>
+
+        <!-- Terrassen -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M1 10h22"/><path d="M6 6v12"/><path d="M12 6v12"/><path d="M18 6v12"/></svg>
+          </div>
+          <h3 class="service-card__title">Terrassen, Wege &amp; Mauern</h3>
+          <p class="service-card__desc">Naturstein, Pflaster oder Holz &ndash; wir gestalten langlebige Terrassen, Gartenwege und St&uuml;tzmauern nach Ihren W&uuml;nschen.</p>
+        </div>
+
+        <!-- Winterdienst -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/><path d="m9 2 3 3 3-3"/><path d="m9 22 3-3 3 3"/><path d="m2 9 3 3-3 3"/><path d="m22 9-3 3 3 3"/></svg>
+          </div>
+          <h3 class="service-card__title">Winterdienst</h3>
+          <p class="service-card__desc">Zuverl&auml;ssiger Winterdienst f&uuml;r Ihre Liegenschaft. R&auml;umen, Streuen und Dokumentation &ndash; damit Sie sicher durch den Winter kommen.</p>
+        </div>
+
+        <!-- Bewässerung -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <h3 class="service-card__title">Bew&auml;sserungssysteme</h3>
+          <p class="service-card__desc">Automatische Bew&auml;sserung spart Zeit und Wasser. Wir planen und installieren smarte Systeme f&uuml;r Rasen, Beete und Hochbeete.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projekte / Vorher-Nachher -->
+  <section class="section section--alt" id="projekte">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Unsere Projekte</span>
+        <h2 class="section__title">Vorher &amp; Nachher</h2>
+        <p class="section__desc">Sehen Sie selbst, was wir aus Ihrem Garten machen k&ouml;nnen. Echte Projekte unserer Kunden in Berlin.</p>
+      </div>
+      <div class="projects__grid">
+
+        <!-- Projekt 1 -->
+        <div class="project-card">
+          <div class="project-card__images">
+            <div class="project-card__img project-card__img--before">
+              <span class="project-card__img-label project-card__img-label--before">Vorher</span>
+              <span class="project-card__img-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-6 6 7"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              </span>
+              <span style="font-size:0.7rem;opacity:0.6;">Verwilderter Garten</span>
+            </div>
+            <div class="project-card__img project-card__img--after">
+              <span class="project-card__img-label project-card__img-label--after">Nachher</span>
+              <span class="project-card__img-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-6 6 7"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              </span>
+              <span style="font-size:0.7rem;opacity:0.6;">Moderner Garten</span>
+            </div>
+            <div class="project-card__divider">
+              <div class="project-card__divider-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 12h8"/><path d="M5 12H3"/><path d="M21 12h-2"/><path d="m15 5 5 7-5 7"/><path d="m9 5-5 7 5 7"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Komplette Gartenumgestaltung</h3>
+            <p class="project-card__desc">Ein verwilderter Garten in Zehlendorf wurde in eine moderne Wohlfühloase mit Terrasse, Staudenbeeten und automatischer Bew&auml;sserung verwandelt.</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">Neuanlage</span>
+              <span class="project-card__tag">Terrasse</span>
+              <span class="project-card__tag">Bepflanzung</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projekt 2 -->
+        <div class="project-card">
+          <div class="project-card__images">
+            <div class="project-card__img project-card__img--before">
+              <span class="project-card__img-label project-card__img-label--before">Vorher</span>
+              <span class="project-card__img-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-6 6 7"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              </span>
+              <span style="font-size:0.7rem;opacity:0.6;">Alter Rasen</span>
+            </div>
+            <div class="project-card__img project-card__img--after">
+              <span class="project-card__img-label project-card__img-label--after">Nachher</span>
+              <span class="project-card__img-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-6 6 7"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              </span>
+              <span style="font-size:0.7rem;opacity:0.6;">Natursteinweg</span>
+            </div>
+            <div class="project-card__divider">
+              <div class="project-card__divider-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 12h8"/><path d="M5 12H3"/><path d="M21 12h-2"/><path d="m15 5 5 7-5 7"/><path d="m9 5-5 7 5 7"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Wegebau &amp; Eingangsbereich</h3>
+            <p class="project-card__desc">Natursteinpflaster und eine neue Bepflanzung verwandeln den Eingangsbereich in Dahlem in eine repr&auml;sentative Visitenkarte.</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">Naturstein</span>
+              <span class="project-card__tag">Wegebau</span>
+              <span class="project-card__tag">Eingang</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projekt 3 -->
+        <div class="project-card">
+          <div class="project-card__images">
+            <div class="project-card__img project-card__img--before">
+              <span class="project-card__img-label project-card__img-label--before">Vorher</span>
+              <span class="project-card__img-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-6 6 7"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              </span>
+              <span style="font-size:0.7rem;opacity:0.6;">Leere Fl&auml;che</span>
+            </div>
+            <div class="project-card__img project-card__img--after">
+              <span class="project-card__img-label project-card__img-label--after">Nachher</span>
+              <span class="project-card__img-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-6 6 7"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              </span>
+              <span style="font-size:0.7rem;opacity:0.6;">Dachterrasse</span>
+            </div>
+            <div class="project-card__divider">
+              <div class="project-card__divider-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 12h8"/><path d="M5 12H3"/><path d="M21 12h-2"/><path d="m15 5 5 7-5 7"/><path d="m9 5-5 7 5 7"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Dachterrasse Steglitz</h3>
+            <p class="project-card__desc">Aus einer kahlen Betondachfl&auml;che wurde eine gr&uuml;ne Ruheoase mit Hochbeeten, Gr&auml;sern und integrierter Beleuchtung.</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag">Dachterrasse</span>
+              <span class="project-card__tag">Hochbeete</span>
+              <span class="project-card__tag">Beleuchtung</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Saisonale Leistungen -->
+  <section class="section" id="saison">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Das ganze Jahr f&uuml;r Sie da</span>
+        <h2 class="section__title">Saisonale Leistungen</h2>
+        <p class="section__desc">Jede Jahreszeit bringt eigene Aufgaben im Garten. Wir wissen, was wann zu tun ist.</p>
+      </div>
+      <div class="seasons__grid">
+
+        <!-- Frühling -->
+        <div class="season-card season-card--spring season-card--active">
+          <div class="season-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-4.97 0-9-2.69-9-6v-2c0-3.31 4.03-6 9-6s9 2.69 9 6v2c0 3.31-4.03 6-9 6z"/><path d="M12 8V2"/><path d="M8 4l4-2 4 2"/></svg>
+          </div>
+          <h3 class="season-card__title">Fr&uuml;hling</h3>
+          <ul class="season-card__list">
+            <li>Fr&uuml;hjahrsschnitt &amp; Formschnitt</li>
+            <li>Rasenreparatur &amp; Nachsaat</li>
+            <li>Beetvorbereitung &amp; Pflanzung</li>
+            <li>D&uuml;ngung &amp; Bodenanalyse</li>
+          </ul>
+        </div>
+
+        <!-- Sommer -->
+        <div class="season-card season-card--summer">
+          <div class="season-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+          </div>
+          <h3 class="season-card__title">Sommer</h3>
+          <ul class="season-card__list">
+            <li>Rasenm&auml;hen &amp; Bew&auml;sserung</li>
+            <li>Heckenschnitt</li>
+            <li>Sch&auml;dlingsbek&auml;mpfung</li>
+            <li>Terrassenpflege</li>
+          </ul>
+        </div>
+
+        <!-- Herbst -->
+        <div class="season-card season-card--autumn">
+          <div class="season-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 019.8 6.9C15.5 4.9 20 .4 20 .4s1.1 5.4-1.8 11.2A7 7 0 0111 20z"/><path d="M11 20v2"/><path d="M7 13.5L11 20l4-6.5"/></svg>
+          </div>
+          <h3 class="season-card__title">Herbst</h3>
+          <ul class="season-card__list">
+            <li>Laubbeseitigung</li>
+            <li>Geh&ouml;lzschnitt &amp; R&uuml;ckschnitt</li>
+            <li>Zwiebelpflanzung</li>
+            <li>Winterschutz f&uuml;r Pflanzen</li>
+          </ul>
+        </div>
+
+        <!-- Winter -->
+        <div class="season-card season-card--winter">
+          <div class="season-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/><path d="m9 2 3 3 3-3"/><path d="m9 22 3-3 3 3"/><path d="m2 9 3 3-3 3"/><path d="m22 9-3 3 3 3"/></svg>
+          </div>
+          <h3 class="season-card__title">Winter</h3>
+          <ul class="season-card__list">
+            <li>Winterdienst &amp; R&auml;umen</li>
+            <li>Streudienst</li>
+            <li>Baumkontrolle</li>
+            <li>Planung f&uuml;r das Fr&uuml;hjahr</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Über uns -->
+  <section class="section section--alt" id="ueber">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">&Uuml;ber uns</span>
+        <h2 class="section__title">Wer steckt hinter Gr&uuml;nwerk?</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__photo">
+          <span class="about__photo-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg>
+          </span>
+          <span class="about__photo-label">Foto: Marco Petersen</span>
+        </div>
+        <div>
+          <h3 class="about__name">Marco Petersen</h3>
+          <p class="about__role">Gesch&auml;ftsf&uuml;hrer &amp; Landschaftsg&auml;rtner-Meister</p>
+          <p class="about__text">
+            Seit &uuml;ber 10 Jahren gestalte ich G&auml;rten in Berlin und Umgebung. Was als Ein-Mann-Betrieb begann, ist heute ein eingespieltes Team aus f&uuml;nf erfahrenen G&auml;rtnern. Unser Anspruch: Jeder Garten verdient individuelle Aufmerksamkeit und fachgerechte Pflege &ndash; vom kleinen Vorgarten bis zur gro&szlig;en Parkanlage.
+          </p>
+          <div class="about__stats">
+            <div class="about__stat">
+              <div class="about__stat-value">10+</div>
+              <div class="about__stat-label">Jahre Erfahrung</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-value">5</div>
+              <div class="about__stat-label">Erfahrene G&auml;rtner</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-value">200+</div>
+              <div class="about__stat-label">Projekte</div>
+            </div>
+          </div>
+          <div class="about__certs">
+            <span class="about__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 15l-2 5 2-1.5L14 20l-2-5z"/><circle cx="12" cy="9" r="6"/><path d="m9 9 2 2 4-4"/></svg>
+              Landschaftsg&auml;rtner-Meister
+            </span>
+            <span class="about__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              Mitglied im Fachverband GaLaBau
+            </span>
+            <span class="about__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M16 2v4"/><path d="M8 2v4"/></svg>
+              Zuverl&auml;ssig seit 2012
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bewertungen -->
+  <section class="section" id="bewertungen">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Kundenstimmen</span>
+        <h2 class="section__title">Was unsere Kunden sagen</h2>
+        <div class="reviews__header-rating">
+          <div class="reviews__stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f59e0b" stroke="none"/><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#f59e0b" stroke-width="1"/></svg>
+          </div>
+          <span class="reviews__score">4.8</span>
+          <span class="reviews__count">(62 Bewertungen auf Google)</span>
+        </div>
+      </div>
+      <div class="reviews__grid">
+
+        <div class="review-card">
+          <div class="review-card__stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-card__text">&bdquo;Unser Garten sieht endlich so aus, wie wir ihn uns immer vorgestellt haben. Herr Petersen und sein Team haben unsere Ideen perfekt umgesetzt. Besonders die Natursteinterrasse ist ein Traum!&ldquo;</p>
+          <p class="review-card__author">Sabine &amp; Thomas K.</p>
+          <p class="review-card__location">Zehlendorf &ndash; Gartenumgestaltung</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-card__text">&bdquo;Zuverl&auml;ssig, sauber und fair im Preis. Gr&uuml;nwerk pflegt unsere Firmengr&uuml;nanlage seit drei Jahren und wir sind rundum zufrieden. Die Kommunikation ist vorbildlich.&ldquo;</p>
+          <p class="review-card__author">Andreas M.</p>
+          <p class="review-card__location">Lichterfelde &ndash; Gewerbliche Pflege</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-card__text">&bdquo;Die alte Eiche musste leider weg. Herr Petersen hat die F&auml;llung professionell und sicher durchgef&uuml;hrt. Danach sah es aus, als w&auml;re nie ein Baum dagestanden. Sehr beeindruckend!&ldquo;</p>
+          <p class="review-card__author">Elke R.</p>
+          <p class="review-card__location">Dahlem &ndash; Baumf&auml;llung</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Einzugsgebiet -->
+  <section class="section section--alt" id="gebiet">
+    <div class="container">
+      <div class="area__content">
+        <div class="area__map">
+          <span class="area__map-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 00-16 0c0 3 2.7 7 8 11.7z"/></svg>
+          </span>
+          <span class="area__map-label">Karte: Einzugsgebiet Berlin &amp; Umgebung</span>
+        </div>
+        <div>
+          <span class="section__label">Einzugsgebiet</span>
+          <h2 class="area__title">Berlin &amp; Umgebung</h2>
+          <p class="area__text">Unser Hauptstandort ist Berlin-Steglitz. Von hier aus sind wir im gesamten S&uuml;dwesten Berlins und im angrenzenden Brandenburg f&uuml;r Sie im Einsatz.</p>
+          <div class="area__districts">
+            <span class="area__district">Steglitz</span>
+            <span class="area__district">Zehlendorf</span>
+            <span class="area__district">Dahlem</span>
+            <span class="area__district">Lichterfelde</span>
+            <span class="area__district">Wannsee</span>
+            <span class="area__district">Potsdam</span>
+          </div>
+          <p class="area__note">Auch in anderen Bezirken &ndash; sprechen Sie uns einfach an.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section class="section" id="kontakt">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Kontakt</span>
+        <h2 class="section__title">Jetzt unverbindlich anfragen</h2>
+        <p class="section__desc">Beschreiben Sie uns Ihr Projekt und wir melden uns innerhalb von 24 Stunden mit einem kostenlosen Angebot.</p>
+      </div>
+      <div class="contact__grid">
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Dies ist eine Demo-Website. In der echten Version w&uuml;rde Ihre Anfrage jetzt gesendet werden.');">
+          <h3 class="contact-form__title">Ihr Projekt beschreiben</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+            </div>
+            <div class="form-group">
+              <label for="telefon">Telefon</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="Ihre Telefonnummer" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="anfrage">Art der Anfrage</label>
+              <select id="anfrage" name="anfrage" required>
+                <option value="" disabled selected>Bitte w&auml;hlen</option>
+                <option value="neuanlage">Neuanlage / Umgestaltung</option>
+                <option value="pflege">Gartenpflege</option>
+                <option value="baumarbeiten">Baumarbeiten</option>
+                <option value="terrasse">Terrasse / Wegebau</option>
+                <option value="winterdienst">Winterdienst</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="flaeche">Grundst&uuml;cksgr&ouml;&szlig;e <span class="optional">(optional)</span></label>
+              <input type="text" id="flaeche" name="flaeche" placeholder="z.B. ca. 200 m&sup2;">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihr Vorhaben..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="contact-form__submit">Kostenlos Angebot anfordern</button>
+        </form>
+        <div class="contact-sidebar">
+          <div class="contact-info">
+            <h3 class="contact-info__title">Kontaktdaten</h3>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 00-16 0c0 3 2.7 7 8 11.7z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Adresse</div>
+                <div class="contact-info__value">Schlo&szlig;str. 42, 12165 Berlin-Steglitz</div>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Telefon</div>
+                <div class="contact-info__value"><a href="tel:+493098765432">030 987 654 32</a></div>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">E-Mail</div>
+                <div class="contact-info__value"><a href="mailto:info@gruenwerk-berlin.de">info@gruenwerk-berlin.de</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-hours">
+            <h3 class="contact-hours__title">&Ouml;ffnungszeiten</h3>
+            <div class="contact-hours__row">
+              <span class="contact-hours__day">Montag &ndash; Freitag</span>
+              <span class="contact-hours__time">7:00 &ndash; 17:00</span>
+            </div>
+            <div class="contact-hours__row">
+              <span class="contact-hours__day">Samstag</span>
+              <span class="contact-hours__time">nach Vereinbarung</span>
+            </div>
+            <div class="contact-hours__row">
+              <span class="contact-hours__day">Sonntag</span>
+              <span class="contact-hours__time">geschlossen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <span class="footer__brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c.7-1 1-2.2 1-3.5C18 2.5 16.6 1 15 1c-1.3 0-2.4.8-2.8 2C11.8 1.5 10.4.5 9 .5 7 .5 5.5 2.3 5.5 4.5c0 1.3.4 2.5 1 3.5"/><path d="M12 22V8"/><path d="M5.5 4.5C3 6 2 9 2 12c0 5.5 4.5 10 10 10s10-4.5 10-10c0-3-1-6-3.5-7.5"/></svg>
+            </span>
+            <span class="footer__brand-name">Gr&uuml;nwerk Berlin</span>
+          </div>
+          <p class="footer__desc">Ihr Partner f&uuml;r Garten- und Landschaftsbau in Berlin. Fachgerechte Planung, Neuanlage und Pflege &ndash; alles aus einer Hand.</p>
+          <p class="footer__tagline">Garten- und Landschaftsbau &middot; Meisterbetrieb &middot; Berlin</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Leistungen</h4>
+          <div class="footer__links">
+            <a href="#leistungen">Gartenplanung &amp; Neuanlage</a>
+            <a href="#leistungen">Gartenpflege &amp; Wartung</a>
+            <a href="#leistungen">Baumf&auml;llung &amp; R&uuml;ckschnitt</a>
+            <a href="#leistungen">Terrassen &amp; Wege</a>
+            <a href="#leistungen">Winterdienst</a>
+            <a href="#leistungen">Bew&auml;sserungssysteme</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Kontakt</h4>
+          <div class="footer__links">
+            <a href="tel:+493098765432">030 987 654 32</a>
+            <a href="mailto:info@gruenwerk-berlin.de">info@gruenwerk-berlin.de</a>
+            <a href="#kontakt">Angebot anfordern</a>
+            <a href="#gebiet">Einzugsgebiet</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2025 Gr&uuml;nwerk Berlin &ndash; Marco Petersen</span>
+        <span>
+          <a href="#">Impressum</a> &middot; <a href="#">Datenschutz</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="mobile-cta">
+    <a href="tel:+493098765432" class="mobile-cta__call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Anrufen
+    </a>
+    <a href="#kontakt" class="mobile-cta__quote">Angebot anfordern</a>
+  </div>
+
+  <script>
+  // Navigation scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu toggle
+  const burger = document.getElementById('navBurger');
+  const navLinks = document.getElementById('navLinks');
+
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('nav__links--open');
+    burger.classList.toggle('nav__burger--open');
+    burger.setAttribute('aria-expanded', isOpen);
+    burger.setAttribute('aria-label', isOpen ? 'Menue schliessen' : 'Menue oeffnen');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close mobile menu when clicking a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav__links--open');
+      burger.classList.remove('nav__burger--open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>
