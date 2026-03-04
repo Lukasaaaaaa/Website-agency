@@ -3,30 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schlüsseldienst Blitz Berlin | 24h Notdienst | 030 555 0 112</title>
-  <meta name="description" content="Schlüsseldienst Berlin - Türöffnung ab 59€ Festpreis. In 15-30 Minuten vor Ort. 24/7 Notdienst. Keine Anfahrtskosten. Jetzt anrufen: 030 555 0 112">
+  <title>Schl&uuml;sseldienst Blitz Berlin | 24h Notdienst | 030 555 0 112</title>
+  <meta name="description" content="Schl&uuml;sseldienst Berlin - T&uuml;r&ouml;ffnung ab 59&euro; Festpreis. In 15-30 Minuten vor Ort. 24/7 Notdienst. Keine Anfahrtskosten. Jetzt anrufen: 030 555 0 112">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F511;</text></svg>">
 
   <style>
-    /* Self-hosted Inter (DSGVO-konform) */
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      src: url('../assets/fonts/inter-latin-ext.woff2') format('woff2');
-      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      src: url('../assets/fonts/inter-latin.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
     /* === RESET === */
     *, *::before, *::after {
       margin: 0;
@@ -34,23 +16,21 @@
       box-sizing: border-box;
     }
 
-    /* === BASE === */
+    /* === DESIGN TOKENS === */
     :root {
-      --red: #dc2626;
-      --red-dark: #b91c1c;
-      --red-light: #fef2f2;
-      --blue: #1e40af;
-      --blue-dark: #1e3a8a;
-      --blue-light: #eff6ff;
-      --text: #1a1a1a;
-      --text-body: #374151;
-      --text-muted: #6b7280;
-      --bg: #ffffff;
-      --bg-light: #f9fafb;
-      --border: #e5e7eb;
-      --green: #16a34a;
-      --green-light: #f0fdf4;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --dark: #0a0a0a;
+      --dark-alt: #111111;
+      --dark-surface: #1a1a1a;
+      --red: #ef4444;
+      --red-dark: #dc2626;
+      --yellow: #facc15;
+      --yellow-dark: #eab308;
+      --white: #ffffff;
+      --text-on-dark: #f5f5f5;
+      --green: #22c55e;
+      --border: #333333;
+      --heading-font: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+      --body-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     html {
@@ -59,9 +39,9 @@
     }
 
     body {
-      font-family: var(--font);
-      color: var(--text);
-      background: var(--bg);
+      font-family: var(--body-font);
+      color: var(--text-on-dark);
+      background: var(--dark);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -70,46 +50,90 @@
     a { color: inherit; text-decoration: none; }
 
     .container {
-      max-width: 1120px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
     /* === DEMO BANNER === */
     .demo-banner {
-      background: var(--blue);
-      color: #fff;
+      background: var(--dark-surface);
+      color: #9ca3af;
       text-align: center;
       padding: 10px 20px;
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.01em;
       line-height: 1.5;
+      border-bottom: 1px solid var(--border);
     }
     .demo-banner a {
-      color: #93c5fd;
+      color: var(--yellow);
       text-decoration: underline;
       font-weight: 600;
     }
     .demo-banner a:hover {
-      color: #fff;
+      color: var(--white);
+    }
+
+    /* === PULSING NOTDIENST BAR === */
+    .notdienst-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 8px 20px;
+      font-family: var(--heading-font);
+      font-size: 0.85rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      animation: barGlow 2s ease-in-out infinite;
+    }
+    .notdienst-bar__dot {
+      width: 10px;
+      height: 10px;
+      background: var(--white);
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes barGlow {
+      0%, 100% { box-shadow: 0 0 10px rgba(239, 68, 68, 0.3); }
+      50% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.7); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
     }
 
     /* === TOP BAR / NAV === */
     .topbar {
-      background: var(--text);
-      color: #fff;
-      padding: 0;
+      background: var(--dark);
+      color: var(--white);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-bottom: 1px solid var(--border);
     }
     .topbar__inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1120px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 12px 20px;
       gap: 12px;
@@ -117,443 +141,496 @@
     .topbar__brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-shrink: 0;
     }
-    .topbar__icon {
-      width: 36px;
-      height: 36px;
-      background: var(--red);
-      border-radius: 8px;
+    .topbar__logo {
+      font-family: var(--heading-font);
+      font-size: 1.4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .topbar__logo svg {
+      flex-shrink: 0;
+    }
+    .topbar__phone {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--yellow);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .topbar__phone:hover {
+      color: var(--white);
+    }
+
+    @media (max-width: 480px) {
+      .topbar__phone { font-size: 0.9rem; }
+      .topbar__logo { font-size: 1.1rem; }
+    }
+
+    /* === AVAILABILITY INDICATOR === */
+    .availability {
+      background: var(--dark-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
-    }
-    .topbar__name {
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-    }
-    .topbar__name small {
-      display: block;
-      font-weight: 400;
-      font-size: 0.7rem;
-      color: #9ca3af;
-      letter-spacing: 0.02em;
-    }
-    .topbar__right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .topbar__phone-text {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-    .topbar__cta {
-      display: inline-flex;
-      align-items: center;
       gap: 8px;
-      background: var(--red);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      white-space: nowrap;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      font-size: 0.8rem;
+      color: #9ca3af;
     }
-    .topbar__cta:hover {
-      background: var(--red-dark);
+    .availability__dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
     }
-    .topbar__cta svg {
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 700px) {
-      .topbar__phone-text { display: none; }
-      .topbar__name small { display: none; }
-      .topbar__cta {
-        font-size: 0.8rem;
-        padding: 10px 14px;
-      }
+    .availability__text {
+      color: var(--green);
+      font-weight: 600;
     }
 
     /* === HERO === */
     .hero {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-      color: #fff;
-      padding: 56px 0 64px;
-      text-align: center;
-    }
-    .hero__badge {
-      display: inline-flex;
+      background: var(--dark);
+      min-height: 100vh;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(22, 163, 74, 0.15);
-      border: 1px solid rgba(22, 163, 74, 0.3);
-      color: #4ade80;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 50px;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 80px;
+      position: relative;
+    }
+    .hero__content {
+      max-width: 800px;
+      width: 100%;
+    }
+    .hero__label {
+      font-family: var(--heading-font);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #9ca3af;
       margin-bottom: 24px;
     }
-    .hero__badge-dot {
-      width: 8px;
-      height: 8px;
-      background: #4ade80;
-      border-radius: 50%;
-      display: inline-block;
+    .hero__phone {
+      font-family: var(--heading-font);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--yellow);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      text-shadow: 0 0 40px rgba(250, 204, 21, 0.2);
     }
-    .hero__title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
+    .hero__price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 40px;
     }
-    .hero__title span {
-      color: var(--red);
+    .hero__price span {
+      color: var(--yellow);
     }
-    .hero__phone-btn {
-      display: inline-flex;
+    .hero__cta {
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       background: var(--red);
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 800;
-      padding: 18px 40px;
-      border-radius: 12px;
+      color: var(--white);
+      font-family: var(--heading-font);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 22px 48px;
       border: none;
+      border-radius: 0;
       cursor: pointer;
-      margin-bottom: 32px;
-      letter-spacing: 0.02em;
-      box-shadow: 0 4px 24px rgba(220, 38, 38, 0.4);
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      transition: background 0.2s;
     }
-    .hero__phone-btn:hover {
+    .hero__cta:hover {
       background: var(--red-dark);
-      transform: scale(1.02);
     }
-    .hero__phone-btn svg {
+    .hero__cta svg {
       flex-shrink: 0;
     }
-    .hero__promises {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 32px;
-      align-items: center;
-    }
-    .hero__promise {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-    .hero__promise svg {
-      color: #4ade80;
-      flex-shrink: 0;
-    }
-    .hero__badges {
+    .hero__trust {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 24px;
     }
-    .hero__trust-badge {
-      display: inline-flex;
+    .hero__trust-item {
+      display: flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.85rem;
+      gap: 8px;
+      font-size: 0.95rem;
       font-weight: 600;
-      color: #e5e7eb;
+      color: var(--text-on-dark);
     }
-    .hero__trust-badge svg {
-      color: #fbbf24;
+    .hero__trust-item svg {
+      color: var(--green);
       flex-shrink: 0;
     }
 
-    @media (min-width: 700px) {
-      .hero { padding: 72px 0 80px; }
-      .hero__title { font-size: 3rem; }
-      .hero__phone-btn {
-        font-size: 1.8rem;
-        padding: 20px 48px;
-        width: auto;
-      }
-      .hero__promises { flex-direction: row; gap: 24px; }
+    @media (min-width: 768px) {
+      .hero__phone { font-size: 5rem; }
+      .hero__price { font-size: 1.8rem; }
+      .hero__cta { font-size: 1.5rem; width: auto; }
     }
-    @media (min-width: 1000px) {
-      .hero__title { font-size: 3.5rem; }
+    @media (min-width: 1024px) {
+      .hero__phone { font-size: 6rem; }
+    }
+    @media (max-width: 480px) {
+      .hero { min-height: calc(100vh - 120px); padding: 40px 16px 100px; }
+      .hero__phone { font-size: 2.5rem; }
+      .hero__price { font-size: 1.2rem; }
+      .hero__cta { font-size: 1.1rem; padding: 18px 24px; }
+      .hero__trust { flex-direction: column; align-items: center; gap: 12px; }
     }
 
     /* === SECTION STYLES === */
     .section {
-      padding: 56px 0;
+      padding: 64px 0;
     }
-    .section--alt {
-      background: var(--bg-light);
+    .section--dark {
+      background: var(--dark);
     }
-    .section--blue {
-      background: var(--blue-light);
+    .section--dark-alt {
+      background: var(--dark-alt);
+    }
+    .section--surface {
+      background: var(--dark-surface);
     }
     .section__title {
+      font-family: var(--heading-font);
       font-size: 1.6rem;
-      font-weight: 800;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
       text-align: center;
       margin-bottom: 8px;
-      letter-spacing: -0.02em;
-      color: var(--text);
+      color: var(--white);
     }
     .section__subtitle {
       text-align: center;
-      color: var(--text-muted);
+      color: #9ca3af;
       font-size: 1rem;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    @media (min-width: 700px) {
-      .section { padding: 72px 0; }
+    @media (min-width: 768px) {
+      .section { padding: 80px 0; }
       .section__title { font-size: 2rem; }
     }
 
-    /* === PRICING TABLE === */
-    .pricing {
-      background: var(--bg);
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      max-width: 700px;
-      margin: 0 auto 24px;
+    /* === PRICING BARS === */
+    .pricing-list {
+      max-width: 800px;
+      margin: 0 auto 32px;
     }
-    .pricing__header {
-      background: var(--text);
-      color: #fff;
-      padding: 16px 24px;
+    .pricing-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-weight: 700;
-      font-size: 1rem;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
     }
-    .pricing__header span:last-child {
-      font-size: 0.85rem;
-      font-weight: 500;
+    .pricing-bar:first-child {
+      border-top: 1px solid var(--border);
+    }
+    .pricing-bar--header {
+      background: var(--dark-surface);
+      border-bottom: 2px solid var(--border);
+      padding: 14px 24px;
+    }
+    .pricing-bar--header span {
+      font-family: var(--heading-font);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       color: #9ca3af;
     }
-    .pricing__row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--border);
-      gap: 12px;
+    .pricing-bar--surcharge {
+      background: rgba(239, 68, 68, 0.08);
     }
-    .pricing__row:last-child {
-      border-bottom: none;
+    .pricing-bar__service {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-on-dark);
     }
-    .pricing__row--highlight {
-      background: var(--red-light);
-    }
-    .pricing__service {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-    .pricing__service small {
+    .pricing-bar__service small {
       display: block;
       font-weight: 400;
-      color: var(--text-muted);
+      color: #6b7280;
       font-size: 0.8rem;
       margin-top: 2px;
     }
-    .pricing__price {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text);
+    .pricing-bar__price {
+      font-family: var(--heading-font);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--yellow);
       white-space: nowrap;
     }
-    .pricing__notice {
-      background: var(--green-light);
-      border: 2px solid var(--green);
-      border-radius: 12px;
-      padding: 20px 24px;
-      max-width: 700px;
-      margin: 0 auto;
+
+    .pricing-notice {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 14px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      border: 2px solid var(--green);
+      background: rgba(34, 197, 94, 0.05);
     }
-    .pricing__notice svg {
+    .pricing-notice svg {
       color: var(--green);
       flex-shrink: 0;
       margin-top: 2px;
     }
-    .pricing__notice p {
+    .pricing-notice p {
       font-size: 0.9rem;
-      color: var(--text-body);
-      line-height: 1.6;
+      color: #9ca3af;
+      line-height: 1.7;
     }
-    .pricing__notice strong {
-      color: var(--text);
+    .pricing-notice strong {
+      color: var(--white);
     }
 
-    /* === DISTRICT GRID === */
+    /* === DISTRICTS === */
     .districts {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      max-width: 700px;
-      margin: 0 auto 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 800px;
+      margin: 0 auto 32px;
     }
     .district {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
       gap: 8px;
+    }
+    .district:nth-child(odd) {
+      border-right: 1px solid var(--border);
     }
     .district__name {
       font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
+      font-size: 0.95rem;
+      color: var(--text-on-dark);
     }
     .district__time {
-      font-weight: 700;
+      font-family: var(--heading-font);
+      font-weight: 900;
       font-size: 0.85rem;
-      color: var(--blue);
+      color: var(--yellow);
       white-space: nowrap;
     }
     .districts__cta {
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .districts__cta p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-    }
-
-    @media (min-width: 700px) {
-      .districts { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    /* === TRUST CARDS === */
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    .trust-card {
-      background: var(--bg);
-      border: 2px solid var(--blue);
-      border-radius: 12px;
-      padding: 24px;
-      text-align: center;
-    }
-    .trust-card__icon {
-      width: 48px;
-      height: 48px;
-      background: var(--blue-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 12px;
-      color: var(--blue);
-    }
-    .trust-card__title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-    .trust-card__text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    @media (min-width: 700px) {
-      .trust-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 900px) {
-      .trust-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    /* === SERVICES === */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
       max-width: 800px;
       margin: 0 auto;
     }
-    .service-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
+    .districts__cta p {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
     }
-    .service-item__icon {
-      width: 44px;
-      height: 44px;
-      background: var(--blue-light);
-      border-radius: 10px;
+
+    @media (max-width: 480px) {
+      .districts { grid-template-columns: 1fr; }
+      .district:nth-child(odd) { border-right: none; }
+    }
+
+    /* === TRUST / WHY US === */
+    .trust-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .trust-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+    .trust-item__icon {
+      width: 48px;
+      height: 48px;
+      background: var(--dark-surface);
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--blue);
+      color: var(--yellow);
     }
-    .service-item__content h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 2px;
+    .trust-item__content h3 {
+      font-family: var(--heading-font);
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 4px;
     }
-    .service-item__content p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+    .trust-item__content p {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.5;
     }
 
-    @media (min-width: 700px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    /* === SCAM WARNING WITH DIAGONAL STRIPES === */
+    .scam-section {
+      position: relative;
+      overflow: hidden;
     }
-    @media (min-width: 900px) {
-      .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .scam-stripe {
+      height: 12px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--yellow),
+        var(--yellow) 12px,
+        var(--dark) 12px,
+        var(--dark) 24px
+      );
+    }
+    .scam-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .scam-content__title {
+      font-family: var(--heading-font);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--yellow);
+      text-align: center;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .scam-content__text {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .scam-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .scam-list li {
+      font-size: 0.9rem;
+      color: var(--text-on-dark);
+      padding: 10px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .scam-list li:last-child {
+      border-bottom: none;
+    }
+    .scam-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--green);
+    }
+    .scam-seal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      font-family: var(--heading-font);
+      font-size: 0.85rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--yellow);
+      padding: 14px 24px;
+      border: 2px solid var(--yellow);
+    }
+    .scam-seal svg {
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    /* === SERVICES === */
+    .services-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .service-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-row:first-child {
+      border-top: 1px solid var(--border);
+    }
+    .service-row__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--dark-surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--red);
+    }
+    .service-row__content h3 {
+      font-family: var(--heading-font);
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+    .service-row__content p {
+      font-size: 0.85rem;
+      color: #6b7280;
     }
 
     /* === REVIEWS === */
     .reviews-header {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
     .reviews-header__stars {
       display: flex;
@@ -563,117 +640,126 @@
       margin-bottom: 8px;
     }
     .reviews-header__stars svg {
-      color: #fbbf24;
+      color: var(--yellow);
     }
     .reviews-header__rating {
+      font-family: var(--heading-font);
       font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--text);
+      font-weight: 900;
+      color: var(--white);
     }
     .reviews-header__count {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #6b7280;
       margin-top: 4px;
     }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      max-width: 900px;
-      margin: 0 auto 24px;
+    .reviews-stack {
+      max-width: 800px;
+      margin: 0 auto 32px;
     }
-    .review-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
+    .review-quote {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
     }
-    .review-card__stars {
+    .review-quote:first-child {
+      border-top: 1px solid var(--border);
+    }
+    .review-quote__stars {
       display: flex;
       gap: 2px;
       margin-bottom: 12px;
     }
-    .review-card__stars svg {
-      color: #fbbf24;
+    .review-quote__stars svg {
+      color: var(--yellow);
     }
-    .review-card__text {
-      font-size: 0.9rem;
-      color: var(--text-body);
-      line-height: 1.6;
+    .review-quote__text {
+      font-size: 1rem;
+      color: var(--text-on-dark);
+      line-height: 1.7;
       margin-bottom: 12px;
       font-style: italic;
     }
-    .review-card__author {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text);
+    .review-quote__author {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
     }
-    .review-card__meta {
+    .review-quote__meta {
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: #6b7280;
       margin-top: 2px;
     }
     .reviews-link {
       text-align: center;
     }
     .reviews-link a {
-      color: var(--blue);
-      font-weight: 600;
+      color: var(--yellow);
+      font-weight: 700;
       font-size: 0.9rem;
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
     .reviews-link a:hover {
-      color: var(--blue-dark);
-    }
-
-    @media (min-width: 700px) {
-      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      color: var(--white);
     }
 
     /* === CTA SECTION === */
     .cta-section {
-      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
-      color: #fff;
+      background: var(--red);
       text-align: center;
-      padding: 56px 0;
+      padding: 64px 0;
     }
     .cta-section__title {
-      font-size: 1.6rem;
-      font-weight: 800;
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--white);
       margin-bottom: 8px;
     }
     .cta-section__subtitle {
       font-size: 1rem;
-      opacity: 0.9;
-      margin-bottom: 24px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
     }
     .cta-section__phone {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: #fff;
-      color: var(--red);
-      font-size: 1.5rem;
-      font-weight: 800;
-      padding: 16px 40px;
-      border-radius: 12px;
+      background: var(--dark);
+      color: var(--yellow);
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      font-weight: 900;
+      padding: 20px 48px;
       letter-spacing: 0.02em;
+      border-radius: 0;
+      transition: background 0.2s;
     }
     .cta-section__phone:hover {
-      background: #f9fafb;
-      transform: scale(1.02);
+      background: var(--dark-alt);
     }
 
-    @media (min-width: 700px) {
-      .cta-section__title { font-size: 2rem; }
-      .cta-section__phone { font-size: 1.8rem; }
+    @media (min-width: 768px) {
+      .cta-section__title { font-size: 2.2rem; }
+      .cta-section__phone { font-size: 2.2rem; }
+    }
+    @media (max-width: 480px) {
+      .cta-section__phone {
+        font-size: 1.3rem;
+        padding: 16px 28px;
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     /* === FOOTER === */
     .footer {
-      background: var(--text);
-      color: #9ca3af;
+      background: var(--dark);
+      color: #6b7280;
       padding: 48px 0 24px;
+      border-top: 1px solid var(--border);
     }
     .footer__top {
       display: flex;
@@ -682,9 +768,12 @@
       margin-bottom: 32px;
     }
     .footer__brand h3 {
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-family: var(--heading-font);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
       margin-bottom: 4px;
     }
     .footer__brand p {
@@ -695,26 +784,33 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: #fff;
-      font-size: 1.4rem;
-      font-weight: 800;
+      color: var(--yellow);
+      font-family: var(--heading-font);
+      font-size: 1.3rem;
+      font-weight: 900;
       margin-top: 12px;
       letter-spacing: 0.02em;
+    }
+    .footer__phone:hover {
+      color: var(--white);
     }
     .footer__contact p {
       font-size: 0.85rem;
       line-height: 1.8;
     }
     .footer__contact a {
-      color: #93c5fd;
+      color: var(--yellow);
     }
     .footer__contact a:hover {
-      color: #fff;
+      color: var(--white);
     }
     .footer__hours h4 {
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 700;
+      color: var(--white);
+      font-family: var(--heading-font);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       margin-bottom: 8px;
     }
     .footer__hours p {
@@ -722,7 +818,7 @@
       line-height: 1.8;
     }
     .footer__bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid var(--border);
       padding-top: 20px;
       display: flex;
       flex-direction: column;
@@ -736,14 +832,14 @@
       gap: 16px;
     }
     .footer__links a {
-      color: #9ca3af;
+      color: #6b7280;
       font-size: 0.8rem;
     }
     .footer__links a:hover {
-      color: #fff;
+      color: var(--white);
     }
 
-    @media (min-width: 700px) {
+    @media (min-width: 768px) {
       .footer__top {
         flex-direction: row;
         justify-content: space-between;
@@ -754,7 +850,7 @@
       }
     }
 
-    /* === MOBILE STICKY CTA === */
+    /* === MOBILE FIXED BOTTOM CTA === */
     .mobile-cta {
       display: none;
       position: fixed;
@@ -762,9 +858,8 @@
       left: 0;
       right: 0;
       z-index: 200;
-      padding: 10px 12px;
-      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-      background: linear-gradient(to top, rgba(0,0,0,0.95) 60%, rgba(0,0,0,0.0));
+      background: var(--red);
+      padding: 0;
     }
     .mobile-cta__btn {
       display: flex;
@@ -773,25 +868,26 @@
       gap: 10px;
       width: 100%;
       background: var(--red);
-      color: #fff;
-      font-size: 1.15rem;
-      font-weight: 800;
+      color: var(--white);
+      font-family: var(--heading-font);
+      font-size: 1rem;
+      font-weight: 900;
       padding: 16px;
-      border-radius: 12px;
+      padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
       border: none;
+      border-radius: 0;
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
     }
     .mobile-cta__btn:hover,
     .mobile-cta__btn:active {
       background: var(--red-dark);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .mobile-cta { display: block; }
-      body { padding-bottom: 80px; }
+      body { padding-bottom: 60px; }
     }
 
     /* === UTILITY === */
@@ -800,86 +896,20 @@
       align-items: center;
       gap: 8px;
       background: var(--red);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
+      color: var(--white);
+      font-family: var(--heading-font);
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
       padding: 14px 28px;
-      border-radius: 10px;
+      border-radius: 0;
       border: none;
       cursor: pointer;
-      letter-spacing: 0.02em;
+      transition: background 0.2s;
     }
     .btn-red:hover {
       background: var(--red-dark);
-    }
-    .text-center { text-align: center; }
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
-
-    /* Scam warning section */
-    .scam-section {
-      background: #fffbeb;
-      border-top: 3px solid #f59e0b;
-      border-bottom: 3px solid #f59e0b;
-    }
-    .scam-box {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .scam-box__title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #92400e;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .scam-box__text {
-      font-size: 0.9rem;
-      color: #78350f;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .scam-box__list {
-      text-align: left;
-      list-style: none;
-      margin-bottom: 16px;
-    }
-    .scam-box__list li {
-      font-size: 0.85rem;
-      color: #78350f;
-      padding: 6px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    .scam-box__list li svg {
-      flex-shrink: 0;
-      margin-top: 3px;
-      color: var(--green);
-    }
-    .scam-box__seal {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 2px solid var(--blue);
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 8px 20px;
-      border-radius: 50px;
     }
   </style>
 </head>
@@ -887,137 +917,126 @@
 
   <!-- Demo Banner -->
   <div class="demo-banner" role="banner">
-    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> -- So k&ouml;nnte Ihre Website aussehen!
+    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &mdash; So k&ouml;nnte Ihre Website aussehen!
+  </div>
+
+  <!-- Pulsing 24/7 Notdienst Bar -->
+  <div class="notdienst-bar" aria-label="24/7 Notdienst aktiv">
+    <span class="notdienst-bar__dot" aria-hidden="true"></span>
+    24/7 NOTDIENST &mdash; JETZT ERREICHBAR
+    <span class="notdienst-bar__dot" aria-hidden="true"></span>
   </div>
 
   <!-- Top Bar / Navigation -->
-  <header class="topbar" role="navigation" aria-label="Hauptnavigation">
+  <header class="topbar" role="banner" aria-label="Hauptnavigation">
     <div class="topbar__inner">
       <div class="topbar__brand">
-        <div class="topbar__icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
-        </div>
-        <div class="topbar__name">
-          Schl&uuml;sseldienst Blitz
-          <small>24h Notdienst Berlin</small>
-        </div>
+        <span class="topbar__logo">
+          <!-- Lightning bolt SVG -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--yellow)" stroke="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          BLITZ
+        </span>
       </div>
-      <div class="topbar__right">
-        <a href="tel:+4930555112" class="topbar__phone-text" aria-label="Anrufen: 030 555 0 112">030 555 0 112</a>
-        <a href="tel:+4930555112" class="topbar__cta">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Jetzt anrufen
-        </a>
-      </div>
+      <a href="tel:+4930555112" class="topbar__phone" aria-label="Anrufen: 030 555 0 112">030 555 0 112</a>
     </div>
   </header>
 
+  <!-- Availability Indicator -->
+  <div class="availability" aria-label="Erreichbarkeit">
+    <span class="availability__dot" aria-hidden="true"></span>
+    <span class="availability__text">Wir sind erreichbar</span>
+    <span>&mdash; Monteur in Ihrer N&auml;he</span>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero" aria-label="Notdienst-Hero">
-    <div class="container">
-      <div class="hero__badge" aria-label="Status: Einsatzbereit">
-        <span class="hero__badge-dot" aria-hidden="true"></span>
-        Jetzt erreichbar &ndash; Monteur in Ihrer N&auml;he
+    <div class="hero__content">
+      <p class="hero__label">Ausgesperrt? Wir &ouml;ffnen Ihre T&uuml;r.</p>
+
+      <div class="hero__phone" aria-label="Telefonnummer">
+        030 555 0 112
       </div>
 
-      <h1 class="hero__title">
-        Ausgesperrt?<br>
-        <span>Wir &ouml;ffnen Ihre T&uuml;r.</span>
-      </h1>
+      <p class="hero__price">T&uuml;r&ouml;ffnung ab <span>59&euro; Festpreis</span></p>
 
-      <a href="tel:+4930555112" class="hero__phone-btn" aria-label="Jetzt anrufen: 030 555 0 112">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Jetzt anrufen: 030 555 0 112
+      <a href="tel:+4930555112" class="hero__cta" aria-label="Jetzt anrufen: 030 555 0 112">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        JETZT ANRUFEN
       </a>
 
-      <div class="hero__promises">
-        <div class="hero__promise">
+      <div class="hero__trust">
+        <div class="hero__trust-item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          In 15&ndash;30 Minuten vor Ort
+          In 15&ndash;30 Min vor Ort
         </div>
-        <div class="hero__promise">
+        <div class="hero__trust-item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Festpreis &ndash; keine versteckten Kosten
+          Keine versteckten Kosten
         </div>
-        <div class="hero__promise">
+        <div class="hero__trust-item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          24 Stunden, 7 Tage, 365 Tage
-        </div>
-      </div>
-
-      <div class="hero__badges">
-        <div class="hero__trust-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Innungsfachbetrieb
-        </div>
-        <div class="hero__trust-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           Keine Anfahrtskosten
-        </div>
-        <div class="hero__trust-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Festpreis ab 59&euro;
         </div>
       </div>
     </div>
   </section>
 
   <!-- Festpreisliste -->
-  <section class="section" id="preise" aria-label="Festpreisliste">
+  <section class="section section--dark-alt" id="preise" aria-label="Festpreisliste">
     <div class="container">
       <h2 class="section__title">Unsere Festpreise</h2>
       <p class="section__subtitle">Transparent, fair und verbindlich &ndash; Sie kennen den Preis, bevor wir anfangen.</p>
 
-      <div class="pricing" role="table" aria-label="Preisliste">
-        <div class="pricing__header" role="row">
+      <div class="pricing-list" role="table" aria-label="Preisliste">
+        <div class="pricing-bar pricing-bar--header" role="row">
           <span role="columnheader">Leistung</span>
           <span role="columnheader">Festpreis</span>
         </div>
-        <div class="pricing__row" role="row">
-          <div class="pricing__service" role="cell">
+        <div class="pricing-bar" role="row">
+          <div class="pricing-bar__service" role="cell">
             T&uuml;r&ouml;ffnung
             <small>T&uuml;r nicht zugefallen, Schl&uuml;ssel steckt</small>
           </div>
-          <div class="pricing__price" role="cell">ab 59&euro;</div>
+          <div class="pricing-bar__price" role="cell">ab 59&euro;</div>
         </div>
-        <div class="pricing__row" role="row">
-          <div class="pricing__service" role="cell">
+        <div class="pricing-bar" role="row">
+          <div class="pricing-bar__service" role="cell">
             T&uuml;r&ouml;ffnung
             <small>T&uuml;r zugefallen, Standardschloss</small>
           </div>
-          <div class="pricing__price" role="cell">ab 89&euro;</div>
+          <div class="pricing-bar__price" role="cell">ab 89&euro;</div>
         </div>
-        <div class="pricing__row" role="row">
-          <div class="pricing__service" role="cell">
+        <div class="pricing-bar" role="row">
+          <div class="pricing-bar__service" role="cell">
             T&uuml;r&ouml;ffnung
             <small>Sicherheitsschloss / Mehrfachverriegelung</small>
           </div>
-          <div class="pricing__price" role="cell">ab 129&euro;</div>
+          <div class="pricing-bar__price" role="cell">ab 129&euro;</div>
         </div>
-        <div class="pricing__row" role="row">
-          <div class="pricing__service" role="cell">
+        <div class="pricing-bar" role="row">
+          <div class="pricing-bar__service" role="cell">
             Schlossaustausch
             <small>Inkl. neues Schloss &amp; Material</small>
           </div>
-          <div class="pricing__price" role="cell">ab 99&euro;</div>
+          <div class="pricing-bar__price" role="cell">ab 99&euro;</div>
         </div>
-        <div class="pricing__row pricing__row--highlight" role="row">
-          <div class="pricing__service" role="cell">
+        <div class="pricing-bar pricing-bar--surcharge" role="row">
+          <div class="pricing-bar__service" role="cell">
             Nachtzuschlag
             <small>22:00 &ndash; 06:00 Uhr</small>
           </div>
-          <div class="pricing__price" role="cell">+30&euro;</div>
+          <div class="pricing-bar__price" role="cell">+30&euro;</div>
         </div>
-        <div class="pricing__row pricing__row--highlight" role="row">
-          <div class="pricing__service" role="cell">
+        <div class="pricing-bar pricing-bar--surcharge" role="row">
+          <div class="pricing-bar__service" role="cell">
             Sonn- &amp; Feiertage
             <small>Ganzt&auml;gig</small>
           </div>
-          <div class="pricing__price" role="cell">+40&euro;</div>
+          <div class="pricing-bar__price" role="cell">+40&euro;</div>
         </div>
       </div>
 
-      <div class="pricing__notice">
+      <div class="pricing-notice">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         <p>
           <strong>Alle Preise inklusive MwSt. Keine versteckten Kosten.</strong><br>
@@ -1028,7 +1047,7 @@
   </section>
 
   <!-- Anfahrtszeiten -->
-  <section class="section section--blue" id="bezirke" aria-label="Anfahrtszeiten nach Bezirk">
+  <section class="section section--dark" id="bezirke" aria-label="Anfahrtszeiten nach Bezirk">
     <div class="container">
       <h2 class="section__title">Anfahrtszeiten nach Bezirk</h2>
       <p class="section__subtitle">Wir sind in ganz Berlin f&uuml;r Sie unterwegs &ndash; schnell und zuverl&auml;ssig.</p>
@@ -1072,63 +1091,72 @@
         <p>Rufen Sie an &ndash; wir sagen Ihnen sofort, wann wir da sind.</p>
         <a href="tel:+4930555112" class="btn-red">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          030 555 0 112 anrufen
+          030 555 0 112 ANRUFEN
         </a>
       </div>
     </div>
   </section>
 
   <!-- Vertrauen / Warum wir -->
-  <section class="section" id="vertrauen" aria-label="Warum Schlüsseldienst Blitz">
+  <section class="section section--dark-alt" id="vertrauen" aria-label="Warum Schl&uuml;sseldienst Blitz">
     <div class="container">
       <h2 class="section__title">Warum Schl&uuml;sseldienst Blitz?</h2>
       <p class="section__subtitle">Seri&ouml;s, fair und transparent &ndash; so wie ein Schl&uuml;sseldienst sein sollte.</p>
 
-      <div class="trust-grid">
-        <div class="trust-card">
-          <div class="trust-card__icon" aria-hidden="true">
+      <div class="trust-list">
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="trust-card__title">Innungsfachbetrieb</h3>
-          <p class="trust-card__text">Gepr&uuml;ft und zertifiziert. Meisterbetrieb mit langj&auml;hriger Erfahrung in Berlin.</p>
+          <div class="trust-item__content">
+            <h3>Innungsfachbetrieb</h3>
+            <p>Gepr&uuml;ft und zertifiziert. Meisterbetrieb mit langj&auml;hriger Erfahrung in Berlin.</p>
+          </div>
         </div>
-        <div class="trust-card">
-          <div class="trust-card__icon" aria-hidden="true">
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
-          <h3 class="trust-card__title">Festpreisgarantie</h3>
-          <p class="trust-card__text">Der Preis steht fest, bevor wir anfangen. Kein Aufschlag, keine b&ouml;sen &Uuml;berraschungen.</p>
+          <div class="trust-item__content">
+            <h3>Festpreisgarantie</h3>
+            <p>Der Preis steht fest, bevor wir anfangen. Kein Aufschlag, keine b&ouml;sen &Uuml;berraschungen.</p>
+          </div>
         </div>
-        <div class="trust-card">
-          <div class="trust-card__icon" aria-hidden="true">
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
-          <h3 class="trust-card__title">Keine Anfahrtskosten</h3>
-          <p class="trust-card__text">In ganz Berlin &ndash; von Spandau bis K&ouml;penick. Die Anfahrt ist immer inklusive.</p>
+          <div class="trust-item__content">
+            <h3>Keine Anfahrtskosten</h3>
+            <p>In ganz Berlin &ndash; von Spandau bis K&ouml;penick. Die Anfahrt ist immer inklusive.</p>
+          </div>
         </div>
-        <div class="trust-card">
-          <div class="trust-card__icon" aria-hidden="true">
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-          <h3 class="trust-card__title">Schadensfreie &Ouml;ffnung</h3>
-          <p class="trust-card__text">In 95% aller F&auml;lle &ouml;ffnen wir Ihre T&uuml;r ohne jegliche Besch&auml;digung.</p>
+          <div class="trust-item__content">
+            <h3>Schadensfreie &Ouml;ffnung</h3>
+            <p>In 95% aller F&auml;lle &ouml;ffnen wir Ihre T&uuml;r ohne jegliche Besch&auml;digung.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Scam Warning / Transparency -->
-  <section class="section scam-section" aria-label="Warnung vor unseriösen Schlüsseldiensten">
-    <div class="container">
-      <div class="scam-box">
-        <h2 class="scam-box__title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+  <section class="section section--dark scam-section" aria-label="Warnung vor unseri&ouml;sen Schl&uuml;sseldiensten">
+    <div class="scam-stripe" aria-hidden="true"></div>
+    <div style="padding: 48px 0;">
+      <div class="scam-content">
+        <h2 class="scam-content__title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Vorsicht vor unseri&ouml;sen Schl&uuml;sseldiensten
         </h2>
-        <p class="scam-box__text">
+        <p class="scam-content__text">
           Leider gibt es in Berlin viele unseri&ouml;se Anbieter, die mit Lockpreisen werben und dann vor Ort deutlich mehr verlangen. So erkennen Sie einen seri&ouml;sen Schl&uuml;sseldienst:
         </p>
-        <ul class="scam-box__list">
+        <ul class="scam-list">
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             Festpreis wird am Telefon genannt &ndash; vor der Anfahrt
@@ -1150,71 +1178,74 @@
             Ordentliche Rechnung mit ausgewiesener MwSt.
           </li>
         </ul>
-        <div class="scam-box__seal">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Gepr&uuml;fter Meisterbetrieb &ndash; Stefan Richter
+        <div style="text-align: center;">
+          <div class="scam-seal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Gepr&uuml;fter Meisterbetrieb &ndash; Stefan Richter
+          </div>
         </div>
       </div>
     </div>
+    <div class="scam-stripe" aria-hidden="true"></div>
   </section>
 
   <!-- Leistungen -->
-  <section class="section section--alt" id="leistungen" aria-label="Unsere Leistungen">
+  <section class="section section--dark-alt" id="leistungen" aria-label="Unsere Leistungen">
     <div class="container">
       <h2 class="section__title">Unsere Leistungen</h2>
       <p class="section__subtitle">Alles rund um Schl&uuml;ssel, Schloss und Sicherheit &ndash; aus einer Hand.</p>
 
-      <div class="services-grid">
-        <div class="service-item">
-          <div class="service-item__icon" aria-hidden="true">
+      <div class="services-list">
+        <div class="service-row">
+          <div class="service-row__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <div class="service-item__content">
+          <div class="service-row__content">
             <h3>T&uuml;r&ouml;ffnung</h3>
             <p>Haus, Wohnung und Auto &ndash; schnell und schadensfrei</p>
           </div>
         </div>
-        <div class="service-item">
-          <div class="service-item__icon" aria-hidden="true">
+        <div class="service-row">
+          <div class="service-row__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           </div>
-          <div class="service-item__content">
+          <div class="service-row__content">
             <h3>Schlossaustausch &amp; Reparatur</h3>
             <p>Neue Schl&ouml;sser &ndash; fachgerecht eingebaut</p>
           </div>
         </div>
-        <div class="service-item">
-          <div class="service-item__icon" aria-hidden="true">
+        <div class="service-row">
+          <div class="service-row__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <div class="service-item__content">
+          <div class="service-row__content">
             <h3>Einbruchschutz</h3>
             <p>Sicherheitsberatung und Nachr&uuml;stung nach Polizei-Empfehlung</p>
           </div>
         </div>
-        <div class="service-item">
-          <div class="service-item__icon" aria-hidden="true">
+        <div class="service-row">
+          <div class="service-row__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
           </div>
-          <div class="service-item__content">
+          <div class="service-row__content">
             <h3>Schlie&szlig;anlagen</h3>
             <p>F&uuml;r Mehrfamilienh&auml;user und Gewerbe</p>
           </div>
         </div>
-        <div class="service-item">
-          <div class="service-item__icon" aria-hidden="true">
+        <div class="service-row">
+          <div class="service-row__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
           </div>
-          <div class="service-item__content">
+          <div class="service-row__content">
             <h3>Tresor&ouml;ffnung</h3>
             <p>Professionelle &Ouml;ffnung ohne Besch&auml;digung</p>
           </div>
         </div>
-        <div class="service-item">
-          <div class="service-item__icon" aria-hidden="true">
+        <div class="service-row">
+          <div class="service-row__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
           </div>
-          <div class="service-item__content">
+          <div class="service-row__content">
             <h3>Schl&uuml;ssel nachmachen</h3>
             <p>Alle g&auml;ngigen Schl&uuml;sseltypen &ndash; auch Sicherheitsschl&uuml;ssel</p>
           </div>
@@ -1224,7 +1255,7 @@
   </section>
 
   <!-- Bewertungen -->
-  <section class="section" id="bewertungen" aria-label="Kundenbewertungen">
+  <section class="section section--dark" id="bewertungen" aria-label="Kundenbewertungen">
     <div class="container">
       <h2 class="section__title">Das sagen unsere Kunden</h2>
 
@@ -1240,54 +1271,54 @@
         <p class="reviews-header__count">Basierend auf 143 Google-Bewertungen</p>
       </div>
 
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-card__stars" aria-label="5 Sterne">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <div class="reviews-stack">
+        <div class="review-quote">
+          <div class="review-quote__stars" aria-label="5 Sterne">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-card__text">&bdquo;Um 1 Uhr nachts ausgesperrt, total verzweifelt angerufen. Nach 18 Minuten war der Monteur da, hat die T&uuml;r in 2 Minuten ge&ouml;ffnet &ndash; ohne einen Kratzer. 89&euro; wie am Telefon gesagt. Absolut fair!&ldquo;</p>
-          <div class="review-card__author">Sandra M.</div>
-          <div class="review-card__meta">Kreuzberg &ndash; vor 2 Wochen</div>
+          <p class="review-quote__text">&bdquo;Um 1 Uhr nachts ausgesperrt, total verzweifelt angerufen. Nach 18 Minuten war der Monteur da, hat die T&uuml;r in 2 Minuten ge&ouml;ffnet &ndash; ohne einen Kratzer. 89&euro; wie am Telefon gesagt. Absolut fair!&ldquo;</p>
+          <div class="review-quote__author">Sandra M.</div>
+          <div class="review-quote__meta">Kreuzberg &ndash; vor 2 Wochen</div>
         </div>
-        <div class="review-card">
-          <div class="review-card__stars" aria-label="5 Sterne">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="review-quote">
+          <div class="review-quote__stars" aria-label="5 Sterne">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-card__text">&bdquo;Endlich ein Schl&uuml;sseldienst, dem man vertrauen kann. Preis am Telefon gesagt, Preis auf der Rechnung &ndash; exakt gleich. Der Monteur war freundlich und hat alles sauber hinterlassen. Sehr empfehlenswert.&ldquo;</p>
-          <div class="review-card__author">Thomas K.</div>
-          <div class="review-card__meta">Charlottenburg &ndash; vor 1 Monat</div>
+          <p class="review-quote__text">&bdquo;Endlich ein Schl&uuml;sseldienst, dem man vertrauen kann. Preis am Telefon gesagt, Preis auf der Rechnung &ndash; exakt gleich. Der Monteur war freundlich und hat alles sauber hinterlassen. Sehr empfehlenswert.&ldquo;</p>
+          <div class="review-quote__author">Thomas K.</div>
+          <div class="review-quote__meta">Charlottenburg &ndash; vor 1 Monat</div>
         </div>
-        <div class="review-card">
-          <div class="review-card__stars" aria-label="5 Sterne">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="review-quote">
+          <div class="review-quote__stars" aria-label="5 Sterne">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-card__text">&bdquo;Nach einem Einbruchversuch hat Herr Richter uns sofort geholfen. Neues Sicherheitsschloss eingebaut und uns beraten, wie wir die T&uuml;r besser sichern k&ouml;nnen. Alles zum vereinbarten Preis. Danke!&ldquo;</p>
-          <div class="review-card__author">Familie Weber</div>
-          <div class="review-card__meta">Neuk&ouml;lln &ndash; vor 3 Wochen</div>
+          <p class="review-quote__text">&bdquo;Nach einem Einbruchversuch hat Herr Richter uns sofort geholfen. Neues Sicherheitsschloss eingebaut und uns beraten, wie wir die T&uuml;r besser sichern k&ouml;nnen. Alles zum vereinbarten Preis. Danke!&ldquo;</p>
+          <div class="review-quote__author">Familie Weber</div>
+          <div class="review-quote__meta">Neuk&ouml;lln &ndash; vor 3 Wochen</div>
         </div>
-        <div class="review-card">
-          <div class="review-card__stars" aria-label="5 Sterne">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="review-quote">
+          <div class="review-quote__stars" aria-label="5 Sterne">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-card__text">&bdquo;Sonntag Nachmittag, Kind hat den Schl&uuml;ssel abgebrochen. In 20 Minuten war der Monteur da. T&uuml;r ge&ouml;ffnet, neues Schloss eingesetzt, alles erkl&auml;rt. Preis war genau wie besprochen. Top!&ldquo;</p>
-          <div class="review-card__author">Markus L.</div>
-          <div class="review-card__meta">Prenzlauer Berg &ndash; vor 5 Tagen</div>
+          <p class="review-quote__text">&bdquo;Sonntag Nachmittag, Kind hat den Schl&uuml;ssel abgebrochen. In 20 Minuten war der Monteur da. T&uuml;r ge&ouml;ffnet, neues Schloss eingesetzt, alles erkl&auml;rt. Preis war genau wie besprochen. Top!&ldquo;</p>
+          <div class="review-quote__author">Markus L.</div>
+          <div class="review-quote__meta">Prenzlauer Berg &ndash; vor 5 Tagen</div>
         </div>
       </div>
 
@@ -1323,20 +1354,20 @@
         </div>
         <div class="footer__contact">
           <p>
-            <strong style="color:#fff;">Adresse:</strong><br>
+            <strong style="color:var(--white);">Adresse:</strong><br>
             Schl&uuml;sseldienst Blitz Berlin<br>
             Inh. Stefan Richter<br>
             Berliner Str. 42, 10715 Berlin
           </p>
           <p style="margin-top:12px;">
-            <strong style="color:#fff;">E-Mail:</strong><br>
+            <strong style="color:var(--white);">E-Mail:</strong><br>
             <a href="mailto:hilfe@schluesseldienst-blitz-berlin.de">hilfe@schluesseldienst-blitz-berlin.de</a>
           </p>
         </div>
         <div class="footer__hours">
           <h4>Unsere Einsatzzeiten</h4>
           <p>
-            Montag &ndash; Sonntag: <strong style="color:#fff;">0:00 &ndash; 24:00 Uhr</strong><br>
+            Montag &ndash; Sonntag: <strong style="color:var(--white);">0:00 &ndash; 24:00 Uhr</strong><br>
             Auch an Feiertagen<br>
             365 Tage im Jahr erreichbar
           </p>
@@ -1355,8 +1386,8 @@
   <!-- Sticky Mobile CTA -->
   <div class="mobile-cta" role="complementary" aria-label="Schnellanruf">
     <a href="tel:+4930555112" class="mobile-cta__btn" aria-label="Jetzt anrufen: 030 555 0 112">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      JETZT ANRUFEN
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      JETZT ANRUFEN &mdash; 030 555 0 112
     </a>
   </div>
 

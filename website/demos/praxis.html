@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Praxis für Physiotherapie am Volkspark | Berlin-Friedrichshain</title>
   <meta name="description" content="Physiotherapie in Berlin-Friedrichshain. Manuelle Therapie, Krankengymnastik, Sportphysiotherapie. Alle Kassen. Online-Terminbuchung.">
   <style>
     /* ===== FONT FACES ===== */
     @font-face {
-      font-family: 'Inter';
+      font-family: 'Source Serif 4';
       font-style: normal;
-      font-weight: 100 900;
+      font-weight: 400;
       font-display: swap;
-      src: url('../assets/fonts/inter-latin.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-        U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
-        U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      src: url('../assets/fonts/source-serif-4-latin.woff2') format('woff2');
     }
     @font-face {
-      font-family: 'Inter';
+      font-family: 'Source Serif 4';
       font-style: normal;
-      font-weight: 100 900;
+      font-weight: 600;
       font-display: swap;
-      src: url('../assets/fonts/inter-latin-ext.woff2') format('woff2');
-      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
-        U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
-        U+A720-A7FF;
+      src: url('../assets/fonts/source-serif-4-latin-600.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('../assets/fonts/dm-sans-latin.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('../assets/fonts/dm-sans-latin-700.woff2') format('woff2');
     }
 
     /* ===== RESET & BASE ===== */
@@ -36,29 +45,29 @@
     }
 
     :root {
-      --primary: #0891b2;
-      --primary-dark: #0e7490;
-      --primary-light: #cffafe;
-      --primary-subtle: #ecfeff;
-      --secondary-bg: #f0fdf4;
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --teal-light: #ccfbf1;
+      --teal-subtle: #f0fdfa;
       --warm: #f59e0b;
-      --warm-dark: #d97706;
       --warm-light: #fef3c7;
-      --dark: #1a1a1a;
-      --body: #3d3d3d;
-      --muted: #6b7280;
-      --light-bg: #f0f9ff;
+      --bg: #fafaf9;
+      --bg-alt: #f5f5f4;
       --white: #ffffff;
-      --border: #e5e7eb;
-      --border-light: #f3f4f6;
+      --text: #292524;
+      --body: #57534e;
+      --muted: #a8a29e;
+      --border: #e7e5e4;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-      --shadow: 0 2px 8px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-      --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
-      --radius: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 20px;
-      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.07);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.09);
+      --radius: 16px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     }
 
     html {
@@ -67,33 +76,34 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-family: var(--font-sans);
       font-size: 17px;
       line-height: 1.7;
       color: var(--body);
-      background: var(--white);
+      background: var(--bg);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
     img { max-width: 100%; display: block; }
-    a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--primary-dark); }
+    a { color: var(--teal); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--teal-dark); }
     a:focus-visible {
-      outline: 2px solid var(--primary);
+      outline: 2px solid var(--teal);
       outline-offset: 2px;
-      border-radius: 4px;
+      border-radius: 12px;
     }
     button:focus-visible {
-      outline: 2px solid var(--primary);
+      outline: 2px solid var(--teal);
       outline-offset: 2px;
-      border-radius: 4px;
+      border-radius: 12px;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      color: var(--dark);
+      font-family: var(--font-serif);
+      color: var(--text);
       line-height: 1.3;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .container {
@@ -105,131 +115,111 @@
 
     /* ===== DEMO BANNER ===== */
     .demo-banner {
-      background: linear-gradient(135deg, var(--dark) 0%, #2d2d2d 100%);
-      color: var(--white);
+      background: var(--teal-subtle);
+      color: var(--teal-dark);
       text-align: center;
       padding: 10px 20px;
       font-size: 14px;
       font-weight: 500;
-      letter-spacing: 0.01em;
+      border-bottom: 1px solid var(--teal-light);
       position: relative;
       z-index: 1001;
     }
     .demo-banner a {
-      color: var(--warm);
-      font-weight: 600;
+      color: var(--teal);
+      font-weight: 700;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
     .demo-banner a:hover {
-      color: var(--warm-light);
+      color: var(--teal-dark);
     }
 
-    /* ===== NAVIGATION ===== */
+    /* ===== FLOATING PILL NAVIGATION ===== */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      pointer-events: none;
+    }
     .nav {
       background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: box-shadow var(--transition);
-    }
-    .nav.scrolled {
-      box-shadow: var(--shadow);
-    }
-    .nav-inner {
+      border-radius: 50px;
+      box-shadow: var(--shadow-md);
+      max-width: 900px;
+      width: 100%;
+      padding: 10px 12px 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      gap: 16px;
+      gap: 12px;
+      pointer-events: auto;
+      border: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .nav.scrolled {
+      box-shadow: var(--shadow-lg);
     }
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
       text-decoration: none;
       flex-shrink: 0;
     }
-    .nav-logo {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .nav-logo svg {
-      width: 24px;
-      height: 24px;
-    }
-    .nav-brand-text {
-      display: flex;
-      flex-direction: column;
+    .nav-brand-name {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--teal);
       line-height: 1.2;
     }
-    .nav-brand-name {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--dark);
-    }
     .nav-brand-sub {
-      font-size: 12px;
-      color: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 15px;
       font-weight: 400;
+      color: var(--muted);
+      line-height: 1.2;
     }
     .nav-links {
       display: none;
       list-style: none;
-      gap: 28px;
+      gap: 24px;
       align-items: center;
     }
     .nav-links a {
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 400;
       color: var(--body);
       text-decoration: none;
       transition: color var(--transition);
       white-space: nowrap;
     }
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--teal);
     }
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       flex-shrink: 0;
-    }
-    .nav-phone {
-      display: none;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--dark);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .nav-phone svg {
-      width: 16px;
-      height: 16px;
-      color: var(--primary);
     }
     .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--warm);
+      background: var(--teal);
       color: var(--white);
-      font-size: 14px;
-      font-weight: 600;
-      padding: 9px 18px;
-      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 50px;
       border: none;
       cursor: pointer;
       text-decoration: none;
@@ -237,31 +227,30 @@
       white-space: nowrap;
     }
     .nav-cta:hover {
-      background: var(--warm-dark);
+      background: var(--teal-dark);
       color: var(--white);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
     }
-    .nav-cta svg { width: 16px; height: 16px; }
 
     /* Mobile menu button */
     .nav-menu-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: none;
+      width: 38px;
+      height: 38px;
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 50%;
       cursor: pointer;
       color: var(--body);
       transition: all var(--transition);
     }
-    .nav-menu-btn:hover { background: var(--light-bg); }
-    .nav-menu-btn svg { width: 20px; height: 20px; }
+    .nav-menu-btn:hover { background: var(--teal-subtle); color: var(--teal); }
+    .nav-menu-btn svg { width: 18px; height: 18px; }
 
-    /* Mobile menu */
+    /* Mobile overlay menu */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -269,64 +258,74 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: var(--white);
+      background: rgba(250,250,249,0.97);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
       z-index: 2000;
-      padding: 20px;
+      padding: 24px;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       overflow-y: auto;
     }
     .mobile-menu.open {
       display: flex;
     }
-    .mobile-menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-    }
     .mobile-menu-close {
-      width: 40px;
-      height: 40px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: none;
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 50%;
       cursor: pointer;
       color: var(--body);
+      transition: all var(--transition);
     }
+    .mobile-menu-close:hover { background: var(--teal-subtle); color: var(--teal); }
+    .mobile-menu-close svg { width: 20px; height: 20px; }
     .mobile-menu-links {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 4px;
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
     }
     .mobile-menu-links a {
       display: block;
-      padding: 14px 16px;
-      font-size: 17px;
-      font-weight: 500;
-      color: var(--dark);
-      border-radius: 10px;
-      transition: background var(--transition);
+      padding: 16px 20px;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+      border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition);
     }
     .mobile-menu-links a:hover {
-      background: var(--light-bg);
+      background: var(--teal-subtle);
+      color: var(--teal);
     }
-    .mobile-menu-contact {
-      margin-top: auto;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+    .mobile-menu-cta {
+      margin-top: 28px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      width: 100%;
+      max-width: 320px;
     }
-    .mobile-menu-contact a.nav-cta {
+    .mobile-menu-cta .nav-cta {
       text-align: center;
       justify-content: center;
-      padding: 14px;
+      padding: 16px;
       font-size: 16px;
+      border-radius: 50px;
     }
     .mobile-menu-phone {
       display: flex;
@@ -334,79 +333,62 @@
       justify-content: center;
       gap: 8px;
       font-size: 16px;
-      font-weight: 600;
-      color: var(--dark);
+      font-weight: 700;
+      color: var(--text);
       padding: 12px;
     }
-    .mobile-menu-phone svg { width: 18px; height: 18px; color: var(--primary); }
+    .mobile-menu-phone svg { width: 18px; height: 18px; color: var(--teal); }
 
     /* ===== HERO SECTION ===== */
     .hero {
-      background: linear-gradient(170deg, var(--white) 0%, var(--light-bg) 40%, var(--primary-subtle) 100%);
-      padding: 60px 0 50px;
+      background: var(--bg);
+      background-image: radial-gradient(ellipse at 50% 40%, rgba(204,251,241,0.5) 0%, transparent 60%);
+      padding: 100px 0 60px;
       position: relative;
-      overflow: hidden;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(8,145,178,0.06) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero-inner {
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      padding: 48px 28px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
       position: relative;
       z-index: 1;
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto;
     }
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 6px 14px;
-      border-radius: 100px;
+      gap: 8px;
+      background: var(--teal-subtle);
+      border: 1px solid var(--teal-light);
+      padding: 6px 16px;
+      border-radius: 50px;
       font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 24px;
-      box-shadow: var(--shadow-sm);
-    }
-    .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 28px;
     }
     .hero h1 {
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
+      font-family: var(--font-serif);
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
       margin-bottom: 18px;
-      color: var(--dark);
+      color: var(--text);
     }
     .hero h1 span {
-      color: var(--primary);
+      color: var(--teal);
     }
     .hero-sub {
-      font-size: 18px;
+      font-size: 17px;
       color: var(--muted);
       line-height: 1.7;
-      margin-bottom: 32px;
-      max-width: 540px;
+      margin-bottom: 36px;
+      max-width: 500px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -415,115 +397,94 @@
       flex-direction: column;
       gap: 12px;
       align-items: center;
-      margin-bottom: 40px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-family: inherit;
-      font-weight: 600;
+      font-family: var(--font-sans);
+      font-weight: 700;
       border: none;
       cursor: pointer;
-      border-radius: 10px;
+      border-radius: 50px;
       transition: all var(--transition);
       text-decoration: none;
       line-height: 1;
     }
     .btn-lg {
       font-size: 16px;
-      padding: 15px 28px;
+      padding: 16px 32px;
     }
-    .btn-warm {
-      background: var(--warm);
+    .btn-teal {
+      background: var(--teal);
       color: var(--white);
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+      box-shadow: 0 2px 12px rgba(13, 148, 136, 0.25);
     }
-    .btn-warm:hover {
-      background: var(--warm-dark);
+    .btn-teal:hover {
+      background: var(--teal-dark);
       color: var(--white);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+      box-shadow: 0 6px 24px rgba(13, 148, 136, 0.35);
     }
-    .btn-outline {
-      background: var(--white);
-      color: var(--primary);
-      border: 2px solid var(--primary);
+    .btn-ghost {
+      background: transparent;
+      color: var(--teal);
+      border: 2px solid var(--teal-light);
     }
-    .btn-outline:hover {
-      background: var(--primary-subtle);
-      color: var(--primary-dark);
+    .btn-ghost:hover {
+      background: var(--teal-subtle);
+      color: var(--teal-dark);
+      border-color: var(--teal);
       transform: translateY(-2px);
     }
     .btn svg { width: 18px; height: 18px; }
 
-    .hero-trust {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-    .hero-trust-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 10px 16px;
-      border-radius: 100px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--body);
-      box-shadow: var(--shadow-sm);
-    }
-    .hero-trust-icon {
-      width: 20px;
-      height: 20px;
-      color: var(--primary);
-      flex-shrink: 0;
-    }
-
     /* ===== SECTION STYLES ===== */
     .section {
-      padding: 72px 0;
+      padding: 80px 0;
     }
-    .section-alt {
-      background: var(--light-bg);
+    .section--bg {
+      background: var(--bg);
     }
-    .section-mint {
-      background: var(--secondary-bg);
+    .section--alt {
+      background: var(--bg-alt);
+    }
+    .section--white {
+      background: var(--white);
     }
     .section-header {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 52px;
     }
     .section-label {
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      font-family: var(--font-sans);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--primary);
+      letter-spacing: 0.08em;
+      color: var(--teal);
       margin-bottom: 12px;
     }
     .section-label svg { width: 16px; height: 16px; }
     .section-title {
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       margin-bottom: 12px;
     }
     .section-desc {
       font-size: 17px;
       color: var(--muted);
-      max-width: 560px;
+      max-width: 540px;
       margin: 0 auto;
     }
 
-    /* ===== BEHANDLUNGEN (SERVICES) ===== */
+    /* ===== SERVICES GRID ===== */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -535,27 +496,39 @@
       border-radius: var(--radius-lg);
       padding: 28px 24px;
       transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--teal);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
     .service-card:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-3px);
-      border-color: var(--primary-light);
     }
     .service-icon {
       width: 52px;
       height: 52px;
-      background: var(--primary-subtle);
-      border-radius: 12px;
+      background: var(--teal-subtle);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
-      color: var(--primary);
+      color: var(--teal);
     }
     .service-icon svg { width: 26px; height: 26px; }
     .service-card h3 {
+      font-family: var(--font-serif);
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 8px;
     }
     .service-card p {
@@ -566,19 +539,19 @@
 
     /* ===== BOOKING SECTION ===== */
     .booking-section {
-      background: linear-gradient(170deg, var(--primary-subtle) 0%, var(--light-bg) 100%);
-      padding: 72px 0;
+      background: var(--white);
+      padding: 80px 0;
     }
     .booking-layout {
       display: grid;
       grid-template-columns: 1fr;
       gap: 40px;
-      align-items: center;
+      align-items: start;
     }
     .booking-text h2 {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 600;
       margin-bottom: 16px;
     }
     .booking-text p {
@@ -599,15 +572,17 @@
       align-items: center;
       gap: 10px;
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 700;
       color: var(--body);
     }
     .booking-features li svg {
       width: 20px;
       height: 20px;
-      color: #22c55e;
+      color: var(--teal);
       flex-shrink: 0;
     }
+
+    /* Multi-step booking widget */
     .booking-widget {
       background: var(--white);
       border: 1px solid var(--border);
@@ -615,77 +590,127 @@
       padding: 28px;
       box-shadow: var(--shadow-md);
     }
-    .booking-widget-header {
+    .booking-steps {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-light);
+      gap: 0;
+      margin-bottom: 24px;
+      position: relative;
     }
-    .booking-widget-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--dark);
+    .booking-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding-bottom: 14px;
     }
-    .booking-widget-badge {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #22c55e;
-      background: #f0fdf4;
-      padding: 4px 10px;
-      border-radius: 100px;
-    }
-    .booking-widget-badge::before {
+    .booking-step::after {
       content: '';
-      width: 6px;
-      height: 6px;
-      background: #22c55e;
-      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
     }
-    .booking-slot {
+    .booking-step.active::after {
+      background: var(--teal);
+    }
+    .booking-step.completed::after {
+      background: var(--teal-light);
+    }
+    .booking-step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      background: var(--bg-alt);
+      color: var(--muted);
+    }
+    .booking-step.active .booking-step-number {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .booking-step.completed .booking-step-number {
+      background: var(--teal-light);
+      color: var(--teal);
+    }
+    .booking-step-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .booking-step.active .booking-step-label {
+      color: var(--teal);
+    }
+    .booking-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .booking-option {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 14px 16px;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 10px;
+      border-radius: 14px;
       transition: all var(--transition);
       cursor: pointer;
     }
-    .booking-slot:hover {
-      border-color: var(--primary);
-      background: var(--primary-subtle);
+    .booking-option:hover {
+      border-color: var(--teal);
+      background: var(--teal-subtle);
     }
-    .booking-slot:last-of-type {
-      margin-bottom: 16px;
+    .booking-option.selected {
+      border-color: var(--teal);
+      background: var(--teal-subtle);
     }
-    .booking-slot-info {
+    .booking-option-info {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
-    .booking-slot-day {
+    .booking-option-name {
       font-size: 14px;
-      font-weight: 600;
-      color: var(--dark);
+      font-weight: 700;
+      color: var(--text);
     }
-    .booking-slot-time {
+    .booking-option-detail {
       font-size: 13px;
       color: var(--muted);
     }
-    .booking-slot-btn {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--primary);
-      background: var(--primary-subtle);
-      padding: 6px 14px;
-      border-radius: 6px;
-      white-space: nowrap;
+    .booking-option-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+    .booking-option.selected .booking-option-check {
+      border-color: var(--teal);
+      background: var(--teal);
+    }
+    .booking-option.selected .booking-option-check svg {
+      display: block;
+    }
+    .booking-option-check svg {
+      display: none;
+      width: 14px;
+      height: 14px;
+      color: var(--white);
     }
     .booking-widget-footer {
       text-align: center;
@@ -695,8 +720,8 @@
       align-items: center;
       gap: 6px;
       font-size: 15px;
-      font-weight: 600;
-      color: var(--primary);
+      font-weight: 700;
+      color: var(--teal);
       text-decoration: none;
     }
     .booking-widget-footer a:hover { text-decoration: underline; }
@@ -708,7 +733,7 @@
       margin-top: 16px;
       padding: 12px 16px;
       background: var(--warm-light);
-      border-radius: 10px;
+      border-radius: 14px;
       font-size: 13px;
       color: var(--body);
     }
@@ -720,17 +745,27 @@
       margin-top: 1px;
     }
 
-    /* ===== TEAM SECTION ===== */
-    .team-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+    /* ===== TEAM SECTION (horizontal scroll) ===== */
+    .team-scroll-wrapper {
+      position: relative;
     }
+    .team-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px;
+      scrollbar-width: none;
+    }
+    .team-scroll::-webkit-scrollbar { display: none; }
     .team-card {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 28px 24px;
+      padding: 28px 20px;
       text-align: center;
       transition: all var(--transition);
     }
@@ -745,47 +780,86 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 16px;
-      font-size: 24px;
-      font-weight: 700;
+      margin: 0 auto 14px;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
       color: var(--white);
     }
-    .team-avatar-ab { background: linear-gradient(135deg, #0891b2, #06b6d4); }
-    .team-avatar-js { background: linear-gradient(135deg, #2563eb, #3b82f6); }
-    .team-avatar-ey { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
-    .team-avatar-mh { background: linear-gradient(135deg, #059669, #10b981); }
+    .team-avatar--ab { background: linear-gradient(135deg, #0d9488, #2dd4bf); }
+    .team-avatar--js { background: linear-gradient(135deg, #0284c7, #38bdf8); }
+    .team-avatar--ey { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+    .team-avatar--mh { background: linear-gradient(135deg, #059669, #34d399); }
     .team-card h3 {
-      font-size: 18px;
-      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 600;
       margin-bottom: 4px;
     }
     .team-card .team-role {
-      font-size: 14px;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-size: 13px;
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 6px;
     }
     .team-card .team-spec {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      line-height: 1.5;
     }
     .team-book-link {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal);
       text-decoration: none;
     }
     .team-book-link:hover { text-decoration: underline; }
     .team-book-link svg { width: 14px; height: 14px; }
 
-    /* ===== KASSE & PRIVAT ===== */
-    .insurance-section {
-      background: var(--secondary-bg);
+    /* ===== INSURANCE LOGOS STRIP ===== */
+    .insurance-strip {
+      padding: 48px 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
+    .insurance-strip-title {
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .insurance-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+    }
+    .insurance-logo-placeholder {
+      width: 100px;
+      height: 40px;
+      background: var(--bg-alt);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== INSURANCE DETAILS ===== */
     .insurance-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -805,16 +879,17 @@
     .insurance-icon {
       width: 42px;
       height: 42px;
-      background: var(--secondary-bg);
-      border-radius: 10px;
+      background: var(--teal-subtle);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: #059669;
+      color: var(--teal);
     }
     .insurance-icon svg { width: 22px; height: 22px; }
     .insurance-card h4 {
+      font-family: var(--font-serif);
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 4px;
@@ -836,25 +911,32 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 28px 24px;
+      border-left: 4px solid var(--teal);
+      position: relative;
     }
-    .testimonial-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 14px;
-      color: var(--warm);
+    .testimonial-quote-mark {
+      font-family: var(--font-serif);
+      font-size: 60px;
+      font-weight: 600;
+      color: var(--teal-light);
+      line-height: 1;
+      position: absolute;
+      top: 16px;
+      right: 24px;
     }
-    .testimonial-stars svg { width: 18px; height: 18px; }
     .testimonial-text {
       font-size: 16px;
       font-style: italic;
       color: var(--body);
       line-height: 1.7;
       margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
     }
     .testimonial-author {
       font-size: 14px;
-      font-weight: 600;
-      color: var(--dark);
+      font-weight: 700;
+      color: var(--text);
     }
     .testimonial-date {
       font-size: 13px;
@@ -862,8 +944,8 @@
     }
     .google-rating {
       text-align: center;
-      margin-top: 36px;
-      padding: 24px;
+      margin-top: 40px;
+      padding: 28px;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
@@ -880,9 +962,10 @@
     }
     .google-rating-stars svg { width: 24px; height: 24px; }
     .google-rating-score {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--dark);
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--text);
     }
     .google-rating-text {
       font-size: 14px;
@@ -912,8 +995,9 @@
       padding: 28px 24px;
     }
     .info-box h3 {
+      font-family: var(--font-serif);
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
@@ -922,24 +1006,22 @@
     .info-box h3 svg {
       width: 22px;
       height: 22px;
-      color: var(--primary);
+      color: var(--teal);
     }
-    .hours-list {
-      list-style: none;
-    }
+    .hours-list { list-style: none; }
     .hours-item {
       display: flex;
       justify-content: space-between;
       padding: 10px 0;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--bg-alt);
       font-size: 15px;
     }
     .hours-item:last-child { border-bottom: none; }
-    .hours-day { font-weight: 500; color: var(--dark); }
+    .hours-day { font-weight: 700; color: var(--text); }
     .hours-time { color: var(--muted); }
     .hours-time.highlight {
-      color: var(--primary);
-      font-weight: 600;
+      color: var(--teal);
+      font-weight: 700;
     }
     .directions-list {
       list-style: none;
@@ -957,19 +1039,20 @@
     .directions-icon {
       width: 36px;
       height: 36px;
-      background: var(--light-bg);
-      border-radius: 8px;
+      background: var(--teal-subtle);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--primary);
+      color: var(--teal);
     }
     .directions-icon svg { width: 18px; height: 18px; }
     .directions-item strong {
       display: block;
-      font-weight: 600;
-      color: var(--dark);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--text);
       font-size: 14px;
     }
     .directions-item span {
@@ -979,7 +1062,7 @@
     .map-placeholder {
       margin-top: 20px;
       height: 180px;
-      background: var(--light-bg);
+      background: var(--bg-alt);
       border: 2px dashed var(--border);
       border-radius: var(--radius);
       display: flex;
@@ -1014,21 +1097,21 @@
     .form-group label {
       display: block;
       font-size: 14px;
-      font-weight: 600;
-      color: var(--dark);
+      font-weight: 700;
+      color: var(--text);
       margin-bottom: 6px;
     }
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 12px 14px;
-      font-family: inherit;
+      padding: 12px 16px;
+      font-family: var(--font-sans);
       font-size: 15px;
-      color: var(--dark);
-      background: var(--white);
+      color: var(--text);
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 14px;
       transition: border-color var(--transition), box-shadow var(--transition);
       appearance: none;
       -webkit-appearance: none;
@@ -1037,17 +1120,18 @@
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+      background: var(--white);
     }
     .form-group textarea {
       resize: vertical;
       min-height: 120px;
     }
     .form-group select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 0 1 .708 0L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a8a29e' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 0 1 .708 0L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 12px center;
+      background-position: right 14px center;
       padding-right: 36px;
     }
     .dsgvo-notice {
@@ -1057,8 +1141,8 @@
       font-size: 13px;
       color: var(--muted);
       padding: 14px;
-      background: var(--light-bg);
-      border-radius: 8px;
+      background: var(--teal-subtle);
+      border-radius: 14px;
       margin-bottom: 18px;
       line-height: 1.6;
     }
@@ -1067,16 +1151,17 @@
       height: 18px;
       flex-shrink: 0;
       margin-top: 1px;
-      color: var(--primary);
+      color: var(--teal);
     }
     .btn-submit {
       width: 100%;
       font-size: 16px;
-      padding: 14px 24px;
+      padding: 16px 24px;
     }
     .contact-info-side h3 {
+      font-family: var(--font-serif);
       font-size: 22px;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 20px;
     }
     .contact-info-items {
@@ -1092,20 +1177,21 @@
     .contact-info-icon {
       width: 44px;
       height: 44px;
-      background: var(--primary-subtle);
-      border-radius: 10px;
+      background: var(--teal-subtle);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--primary);
+      color: var(--teal);
     }
     .contact-info-icon svg { width: 20px; height: 20px; }
     .contact-info-item strong {
       display: block;
+      font-family: var(--font-sans);
       font-size: 15px;
-      font-weight: 600;
-      color: var(--dark);
+      font-weight: 700;
+      color: var(--text);
       margin-bottom: 2px;
     }
     .contact-info-item span,
@@ -1116,35 +1202,39 @@
 
     /* ===== FOOTER ===== */
     .footer {
-      background: var(--dark);
-      color: rgba(255,255,255,0.7);
+      background: var(--bg-alt);
+      color: var(--body);
       padding: 48px 0 24px;
+      border-top: 1px solid var(--border);
     }
     .footer-top {
       display: grid;
       grid-template-columns: 1fr;
       gap: 32px;
       padding-bottom: 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid var(--border);
       margin-bottom: 24px;
     }
     .footer-brand-name {
+      font-family: var(--font-serif);
       font-size: 18px;
-      font-weight: 700;
-      color: var(--white);
+      font-weight: 600;
+      color: var(--text);
       margin-bottom: 8px;
     }
     .footer-brand-desc {
       font-size: 14px;
       line-height: 1.6;
+      color: var(--muted);
       max-width: 300px;
     }
     .footer-col h4 {
-      font-size: 14px;
+      font-family: var(--font-sans);
+      font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--white);
+      letter-spacing: 0.06em;
+      color: var(--text);
       margin-bottom: 14px;
     }
     .footer-links {
@@ -1155,12 +1245,16 @@
     }
     .footer-links a {
       font-size: 14px;
-      color: rgba(255,255,255,0.6);
+      color: var(--muted);
       text-decoration: none;
       transition: color var(--transition);
     }
     .footer-links a:hover {
-      color: var(--white);
+      color: var(--teal);
+    }
+    .footer-links li {
+      font-size: 14px;
+      color: var(--muted);
     }
     .footer-bottom {
       display: flex;
@@ -1169,6 +1263,7 @@
       gap: 12px;
       text-align: center;
       font-size: 13px;
+      color: var(--muted);
     }
     .footer-bottom-links {
       display: flex;
@@ -1176,10 +1271,10 @@
     }
     .footer-bottom-links a {
       font-size: 13px;
-      color: rgba(255,255,255,0.5);
+      color: var(--muted);
       text-decoration: none;
     }
-    .footer-bottom-links a:hover { color: var(--white); }
+    .footer-bottom-links a:hover { color: var(--teal); }
 
     /* ===== MOBILE STICKY CTA ===== */
     .mobile-sticky-cta {
@@ -1193,7 +1288,7 @@
       padding-bottom: max(12px, env(safe-area-inset-bottom));
       background: var(--white);
       border-top: 1px solid var(--border);
-      box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
     }
     .mobile-sticky-cta a {
       display: flex;
@@ -1201,24 +1296,34 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      background: var(--warm);
+      background: var(--teal);
       color: var(--white);
+      font-family: var(--font-sans);
       font-size: 16px;
       font-weight: 700;
       padding: 14px;
-      border-radius: 10px;
+      border-radius: 50px;
       text-decoration: none;
       transition: background var(--transition);
     }
     .mobile-sticky-cta a:hover {
-      background: var(--warm-dark);
+      background: var(--teal-dark);
       color: var(--white);
     }
     .mobile-sticky-cta a svg { width: 20px; height: 20px; }
-
-    /* Add bottom padding on mobile to account for sticky CTA */
     .footer {
       padding-bottom: 100px;
+    }
+
+    /* ===== FADE-IN ANIMATION ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ===== SR-ONLY ===== */
@@ -1236,11 +1341,10 @@
 
     /* ===== RESPONSIVE ===== */
     @media (min-width: 640px) {
-      .hero h1 { font-size: 44px; }
-      .hero-sub { font-size: 19px; }
+      .hero h1 { font-size: 40px; }
+      .hero-card { padding: 56px 40px; }
       .hero-ctas { flex-direction: row; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .team-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-grid .testimonial-card:last-child {
         grid-column: 1 / -1;
@@ -1249,28 +1353,27 @@
       }
       .insurance-grid { grid-template-columns: repeat(2, 1fr); }
       .info-grid { grid-template-columns: repeat(2, 1fr); }
-      .section-title { font-size: 34px; }
+      .section-title { font-size: 32px; }
     }
 
     @media (min-width: 768px) {
-      .hero { padding: 80px 0 60px; }
-      .section { padding: 88px 0; }
-      .hero h1 { font-size: 48px; }
+      .hero { padding: 110px 0 70px; }
+      .hero h1 { font-size: 44px; }
+      .hero-card { padding: 60px 48px; }
+      .section { padding: 96px 0; }
       .services-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .booking-layout { grid-template-columns: 1fr 1fr; gap: 48px; }
       .contact-layout { grid-template-columns: 1fr 1fr; gap: 48px; }
       .container { padding: 0 32px; }
+      .team-card { flex: 0 0 240px; }
     }
 
     @media (min-width: 1024px) {
       .nav-links { display: flex; }
       .nav-menu-btn { display: none; }
-      .nav-phone { display: flex; }
 
-      .hero h1 { font-size: 52px; }
+      .hero h1 { font-size: 48px; }
       .services-grid { grid-template-columns: repeat(3, 1fr); }
-      .team-grid { grid-template-columns: repeat(4, 1fr); }
       .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
       .testimonials-grid .testimonial-card:last-child {
         grid-column: auto;
@@ -1281,8 +1384,23 @@
       .mobile-sticky-cta { display: none; }
       .footer { padding-bottom: 24px; }
 
-      .section-title { font-size: 38px; }
-      .booking-text h2 { font-size: 34px; }
+      .section-title { font-size: 36px; }
+      .booking-text h2 { font-size: 32px; }
+
+      .team-card { flex: 0 0 260px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 90px 0 40px; }
+      .hero-card { padding: 32px 20px; }
+      .hero h1 { font-size: 28px; }
+      .hero-sub { font-size: 15px; }
+      .hero-badge { font-size: 12px; }
+      .section { padding: 60px 0; }
+      .section-title { font-size: 24px; }
+      .nav { padding: 8px 10px 8px 16px; }
+      .nav-brand-sub { display: none; }
+      .team-card { flex: 0 0 200px; }
     }
 
     @media (min-width: 1280px) {
@@ -1297,23 +1415,12 @@
     Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &ndash; So könnte Ihre Praxis-Website aussehen!
   </div>
 
-  <!-- NAVIGATION -->
-  <nav class="nav" id="navbar" role="navigation" aria-label="Hauptnavigation">
-    <div class="nav-inner">
+  <!-- FLOATING PILL NAVIGATION -->
+  <div class="nav-wrapper">
+    <nav class="nav" id="navbar" role="navigation" aria-label="Hauptnavigation">
       <a href="#" class="nav-brand" aria-label="Praxis für Physiotherapie am Volkspark - Startseite">
-        <div class="nav-logo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 8h1a4 4 0 010 8h-1"/>
-            <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
-            <line x1="6" y1="1" x2="6" y2="4"/>
-            <line x1="10" y1="1" x2="10" y2="4"/>
-            <line x1="14" y1="1" x2="14" y2="4"/>
-          </svg>
-        </div>
-        <div class="nav-brand-text">
-          <span class="nav-brand-name">Physio am Volkspark</span>
-          <span class="nav-brand-sub">Berlin-Friedrichshain</span>
-        </div>
+        <span class="nav-brand-name">Physiotherapie</span>
+        <span class="nav-brand-sub">am Volkspark</span>
       </a>
 
       <ul class="nav-links">
@@ -1325,21 +1432,7 @@
       </ul>
 
       <div class="nav-right">
-        <a href="tel:03023456789" class="nav-phone" aria-label="Anrufen: 030 234 567 89">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-          </svg>
-          030 234 567 89
-        </a>
-        <a href="#termin" class="nav-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          Online Termin buchen
-        </a>
+        <a href="#termin" class="nav-cta">Termin buchen</a>
         <button class="nav-menu-btn" aria-label="Menü öffnen" onclick="document.getElementById('mobile-menu').classList.add('open')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -1348,30 +1441,16 @@
           </svg>
         </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="mobile-menu-header">
-      <a href="#" class="nav-brand" aria-label="Startseite">
-        <div class="nav-logo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
-            <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
-          </svg>
-        </div>
-        <div class="nav-brand-text">
-          <span class="nav-brand-name">Physio am Volkspark</span>
-          <span class="nav-brand-sub">Berlin-Friedrichshain</span>
-        </div>
-      </a>
-      <button class="mobile-menu-close" aria-label="Menü schließen" onclick="document.getElementById('mobile-menu').classList.remove('open')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
+    <button class="mobile-menu-close" aria-label="Menü schließen" onclick="document.getElementById('mobile-menu').classList.remove('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
     <ul class="mobile-menu-links">
       <li><a href="#behandlungen" onclick="document.getElementById('mobile-menu').classList.remove('open')">Behandlungen</a></li>
       <li><a href="#team" onclick="document.getElementById('mobile-menu').classList.remove('open')">Unser Team</a></li>
@@ -1379,12 +1458,9 @@
       <li><a href="#ueber-uns" onclick="document.getElementById('mobile-menu').classList.remove('open')">Über uns</a></li>
       <li><a href="#kontakt" onclick="document.getElementById('mobile-menu').classList.remove('open')">Kontakt</a></li>
     </ul>
-    <div class="mobile-menu-contact">
+    <div class="mobile-menu-cta">
       <a href="#termin" class="nav-cta" onclick="document.getElementById('mobile-menu').classList.remove('open')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        Online Termin buchen
+        Termin buchen
       </a>
       <a href="tel:03023456789" class="mobile-menu-phone">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1398,52 +1474,31 @@
   <!-- HERO SECTION -->
   <section class="hero" id="start">
     <div class="container">
-      <div class="hero-inner">
+      <div class="hero-card fade-in">
         <div class="hero-badge">
-          <span class="hero-badge-dot" aria-hidden="true"></span>
-          Termine verfügbar &ndash; jetzt online buchen
+          Alle Kassen &middot; Privatpatienten &middot; Online-Termine
         </div>
         <h1>Ihre Gesundheit in <span>guten Händen.</span></h1>
         <p class="hero-sub">Physiotherapie in Berlin-Friedrichshain. Individuelle Behandlung mit persönlicher Betreuung. Kasse &amp; Privat.</p>
         <div class="hero-ctas">
-          <a href="#termin" class="btn btn-lg btn-warm">
+          <a href="#termin" class="btn btn-lg btn-teal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
             </svg>
             Online Termin buchen
           </a>
-          <a href="#behandlungen" class="btn btn-lg btn-outline">
+          <a href="#behandlungen" class="btn btn-lg btn-ghost">
             Behandlungen ansehen
           </a>
-        </div>
-        <div class="hero-trust">
-          <div class="hero-trust-item">
-            <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            Alle Kassen
-          </div>
-          <div class="hero-trust-item">
-            <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-            Online buchbar
-          </div>
-          <div class="hero-trust-item">
-            <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-            </svg>
-            5 Therapeut:innen
-          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- BEHANDLUNGEN / SERVICES -->
-  <section class="section" id="behandlungen">
+  <section class="section section--white" id="behandlungen">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <div class="section-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -1454,8 +1509,7 @@
         <p class="section-desc">Individuelle Therapie, abgestimmt auf Ihre Beschwerden und Ziele. Alle Behandlungen auf Rezept oder privat.</p>
       </div>
       <div class="services-grid">
-        <!-- Manuelle Therapie -->
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2"/><path d="M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 012 2v7.5a4.5 4.5 0 01-4.5 4.5h-3A4.5 4.5 0 018 17.5 4.5 4.5 0 014 13v-1a2 2 0 011-1.73"/>
@@ -1464,8 +1518,7 @@
           <h3>Manuelle Therapie</h3>
           <p>Gezielte Handgriffe zur Mobilisierung von Gelenken und zur Linderung von Schmerzen. Besonders wirksam bei Rücken-, Nacken- und Gelenkbeschwerden.</p>
         </div>
-        <!-- Krankengymnastik -->
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="5" r="3"/><path d="M12 8v4"/><path d="M8 20l4-8 4 8"/><path d="M6 16l2-4"/><path d="M18 16l-2-4"/>
@@ -1474,8 +1527,7 @@
           <h3>Krankengymnastik</h3>
           <p>Aktive und passive Übungen zum Aufbau von Kraft, Beweglichkeit und Koordination. Die Basis jeder physiotherapeutischen Behandlung, individuell auf Sie abgestimmt.</p>
         </div>
-        <!-- Lymphdrainage -->
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
@@ -1484,8 +1536,7 @@
           <h3>Lymphdrainage</h3>
           <p>Sanfte, rhythmische Massagetechnik zur Entstauung und Anregung des Lymphsystems. Ideal nach Operationen, bei Schwellungen oder chronischen Lymphödemen.</p>
         </div>
-        <!-- Sportphysiotherapie -->
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><line x1="2" y1="12" x2="22" y2="12"/>
@@ -1494,8 +1545,7 @@
           <h3>Sportphysiotherapie</h3>
           <p>Spezialisierte Therapie für Sportler:innen. Von der Verletzungsprävention über die Rehabilitation bis zur Leistungsoptimierung - für alle Sportarten und Niveaus.</p>
         </div>
-        <!-- Rückenschule -->
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22c-4.97 0-9-2.24-9-5v-3.5c0-2.76 4.03-5 9-5s9 2.24 9 5V17c0 2.76-4.03 5-9 5z"/><path d="M12 8.5V2"/><path d="M8 5l4-3 4 3"/>
@@ -1504,8 +1554,7 @@
           <h3>Rückenschule &amp; Prävention</h3>
           <p>Erlernen Sie rückenfreundliche Bewegungsmuster und stärken Sie Ihre Rumpfmuskulatur. Prävention gegen Rückenschmerzen im Alltag und am Arbeitsplatz.</p>
         </div>
-        <!-- CMD -->
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
@@ -1522,7 +1571,7 @@
   <section class="booking-section" id="termin">
     <div class="container">
       <div class="booking-layout">
-        <div class="booking-text">
+        <div class="booking-text fade-in">
           <div class="section-label">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
@@ -1564,36 +1613,72 @@
             <span>Terminbuchung über Doctolib &ndash; auch abends und am Wochenende möglich.</span>
           </div>
         </div>
-        <div>
+        <div class="fade-in">
           <div class="booking-widget">
-            <div class="booking-widget-header">
-              <span class="booking-widget-title">Nächste freie Termine</span>
-              <span class="booking-widget-badge">Verfügbar</span>
-            </div>
-            <div class="booking-slot" role="button" tabindex="0" aria-label="Termin buchen: Dienstag, 4. März um 10 Uhr">
-              <div class="booking-slot-info">
-                <span class="booking-slot-day">Dienstag, 4. März</span>
-                <span class="booking-slot-time">10:00 Uhr &middot; Manuelle Therapie</span>
+            <!-- Multi-step appearance -->
+            <div class="booking-steps">
+              <div class="booking-step active">
+                <span class="booking-step-number">1</span>
+                <span class="booking-step-label">Behandlung</span>
               </div>
-              <span class="booking-slot-btn">Buchen</span>
-            </div>
-            <div class="booking-slot" role="button" tabindex="0" aria-label="Termin buchen: Mittwoch, 5. März um 14:30 Uhr">
-              <div class="booking-slot-info">
-                <span class="booking-slot-day">Mittwoch, 5. März</span>
-                <span class="booking-slot-time">14:30 Uhr &middot; Krankengymnastik</span>
+              <div class="booking-step">
+                <span class="booking-step-number">2</span>
+                <span class="booking-step-label">Therapeut</span>
               </div>
-              <span class="booking-slot-btn">Buchen</span>
-            </div>
-            <div class="booking-slot" role="button" tabindex="0" aria-label="Termin buchen: Donnerstag, 6. März um 9 Uhr">
-              <div class="booking-slot-info">
-                <span class="booking-slot-day">Donnerstag, 6. März</span>
-                <span class="booking-slot-time">9:00 Uhr &middot; Sportphysiotherapie</span>
+              <div class="booking-step">
+                <span class="booking-step-number">3</span>
+                <span class="booking-step-label">Termin</span>
               </div>
-              <span class="booking-slot-btn">Buchen</span>
+            </div>
+            <div class="booking-options">
+              <div class="booking-option selected" role="button" tabindex="0" aria-label="Manuelle Therapie auswählen">
+                <div class="booking-option-info">
+                  <span class="booking-option-name">Manuelle Therapie</span>
+                  <span class="booking-option-detail">25 Min. &middot; mit Rezept oder privat</span>
+                </div>
+                <span class="booking-option-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="booking-option" role="button" tabindex="0" aria-label="Krankengymnastik auswählen">
+                <div class="booking-option-info">
+                  <span class="booking-option-name">Krankengymnastik</span>
+                  <span class="booking-option-detail">20 Min. &middot; mit Rezept</span>
+                </div>
+                <span class="booking-option-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="booking-option" role="button" tabindex="0" aria-label="Sportphysiotherapie auswählen">
+                <div class="booking-option-info">
+                  <span class="booking-option-name">Sportphysiotherapie</span>
+                  <span class="booking-option-detail">30 Min. &middot; Rezept oder privat</span>
+                </div>
+                <span class="booking-option-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="booking-option" role="button" tabindex="0" aria-label="Lymphdrainage auswählen">
+                <div class="booking-option-info">
+                  <span class="booking-option-name">Lymphdrainage</span>
+                  <span class="booking-option-detail">30/45/60 Min. &middot; mit Rezept</span>
+                </div>
+                <span class="booking-option-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+              </div>
             </div>
             <div class="booking-widget-footer">
               <a href="#termin">
-                Alle Termine anzeigen
+                Weiter: Therapeut wählen
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                 </svg>
@@ -1606,9 +1691,9 @@
   </section>
 
   <!-- TEAM -->
-  <section class="section" id="team">
+  <section class="section section--bg" id="team">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <div class="section-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
@@ -1618,67 +1703,82 @@
         <h2 class="section-title">Menschen, die sich um Sie kümmern</h2>
         <p class="section-desc">Unser erfahrenes Team aus fünf Therapeut:innen freut sich auf Sie. Persönlich, kompetent und immer auf Augenhöhe.</p>
       </div>
-      <div class="team-grid">
-        <!-- Dr. Anna Bergmann -->
-        <div class="team-card">
-          <div class="team-avatar team-avatar-ab" aria-hidden="true">AB</div>
-          <h3>Dr. med. Anna Bergmann</h3>
-          <p class="team-role">Leitende Therapeutin</p>
-          <p class="team-spec">Manuelle Therapie, Wirbelsäule &amp; Gelenke</p>
-          <a href="#termin" class="team-book-link">
-            Termin buchen
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-        </div>
-        <!-- Jonas Schreiber -->
-        <div class="team-card">
-          <div class="team-avatar team-avatar-js" aria-hidden="true">JS</div>
-          <h3>Jonas Schreiber</h3>
-          <p class="team-role">Physiotherapeut</p>
-          <p class="team-spec">Sportphysiotherapie, Rehabilitation</p>
-          <a href="#termin" class="team-book-link">
-            Termin buchen
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-        </div>
-        <!-- Elif Yilmaz -->
-        <div class="team-card">
-          <div class="team-avatar team-avatar-ey" aria-hidden="true">EY</div>
-          <h3>Elif Y&#305;lmaz</h3>
-          <p class="team-role">Physiotherapeutin</p>
-          <p class="team-spec">Lymphdrainage, Manuelle Therapie</p>
-          <a href="#termin" class="team-book-link">
-            Termin buchen
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-        </div>
-        <!-- Marie Hoffmann -->
-        <div class="team-card">
-          <div class="team-avatar team-avatar-mh" aria-hidden="true">MH</div>
-          <h3>Marie Hoffmann</h3>
-          <p class="team-role">Physiotherapeutin</p>
-          <p class="team-spec">Rückenschule, CMD-Therapie</p>
-          <a href="#termin" class="team-book-link">
-            Termin buchen
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
+      <div class="team-scroll-wrapper fade-in">
+        <div class="team-scroll">
+          <div class="team-card">
+            <div class="team-avatar team-avatar--ab" aria-hidden="true">AB</div>
+            <h3>Dr. med. Anna Bergmann</h3>
+            <p class="team-role">Leitende Therapeutin</p>
+            <p class="team-spec">Manuelle Therapie, Wirbelsäule &amp; Gelenke</p>
+            <a href="#termin" class="team-book-link">
+              Termin buchen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar team-avatar--js" aria-hidden="true">JS</div>
+            <h3>Jonas Schreiber</h3>
+            <p class="team-role">Physiotherapeut</p>
+            <p class="team-spec">Sportphysiotherapie, Rehabilitation</p>
+            <a href="#termin" class="team-book-link">
+              Termin buchen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar team-avatar--ey" aria-hidden="true">EY</div>
+            <h3>Elif Y&#305;lmaz</h3>
+            <p class="team-role">Physiotherapeutin</p>
+            <p class="team-spec">Lymphdrainage, Manuelle Therapie</p>
+            <a href="#termin" class="team-book-link">
+              Termin buchen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar team-avatar--mh" aria-hidden="true">MH</div>
+            <h3>Marie Hoffmann</h3>
+            <p class="team-role">Physiotherapeutin</p>
+            <p class="team-spec">Rückenschule, CMD-Therapie</p>
+            <a href="#termin" class="team-book-link">
+              Termin buchen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KASSE & PRIVAT -->
-  <section class="section insurance-section" id="ueber-uns">
+  <!-- INSURANCE LOGOS STRIP -->
+  <div class="insurance-strip fade-in">
     <div class="container">
-      <div class="section-header">
+      <p class="insurance-strip-title">Wir arbeiten mit allen Kassen</p>
+      <div class="insurance-logos">
+        <div class="insurance-logo-placeholder">AOK</div>
+        <div class="insurance-logo-placeholder">TK</div>
+        <div class="insurance-logo-placeholder">Barmer</div>
+        <div class="insurance-logo-placeholder">DAK</div>
+        <div class="insurance-logo-placeholder">IKK</div>
+        <div class="insurance-logo-placeholder">BKK</div>
+        <div class="insurance-logo-placeholder">KKH</div>
+        <div class="insurance-logo-placeholder">HEK</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KASSE & PRIVAT -->
+  <section class="section section--alt" id="ueber-uns">
+    <div class="container">
+      <div class="section-header fade-in">
         <div class="section-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -1689,7 +1789,7 @@
         <p class="section-desc">Egal wie Sie versichert sind: Bei uns sind Sie richtig. Hier erfahren Sie alles Wichtige zur Abrechnung.</p>
       </div>
       <div class="insurance-grid">
-        <div class="insurance-card">
+        <div class="insurance-card fade-in">
           <div class="insurance-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
@@ -1700,7 +1800,7 @@
             <p>Wir behandeln alle gesetzlichen Krankenkassen. Bringen Sie einfach Ihr Rezept vom Arzt mit &ndash; den Rest regeln wir.</p>
           </div>
         </div>
-        <div class="insurance-card">
+        <div class="insurance-card fade-in">
           <div class="insurance-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
@@ -1711,7 +1811,7 @@
             <p>Privatpatient:innen können auch ohne Rezept direkt einen Termin bei uns vereinbaren. Wir rechnen direkt mit Ihrer Versicherung ab.</p>
           </div>
         </div>
-        <div class="insurance-card">
+        <div class="insurance-card fade-in">
           <div class="insurance-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
@@ -1722,7 +1822,7 @@
             <p>Wir akzeptieren Beihilfe und arbeiten mit allen gängigen Zusatzversicherungen zusammen.</p>
           </div>
         </div>
-        <div class="insurance-card">
+        <div class="insurance-card fade-in">
           <div class="insurance-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
@@ -1738,9 +1838,9 @@
   </section>
 
   <!-- BEWERTUNGEN / TESTIMONIALS -->
-  <section class="section" id="bewertungen">
+  <section class="section section--white" id="bewertungen">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <div class="section-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -1751,44 +1851,26 @@
         <p class="section-desc">Vertrauen entsteht durch Erfahrung. Lesen Sie, was andere über uns berichten.</p>
       </div>
       <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 von 5 Sternen">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
+        <div class="testimonial-card fade-in">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
           <p class="testimonial-text">&bdquo;Endlich schmerzfrei nach nur drei Wochen Behandlung bei Frau Dr. Bergmann. Die manuelle Therapie hat mir enorm geholfen. Ich kann die Praxis nur weiterempfehlen!&ldquo;</p>
           <p class="testimonial-author">Michael K.</p>
           <p class="testimonial-date">vor 2 Wochen</p>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 von 5 Sternen">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
+        <div class="testimonial-card fade-in">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
           <p class="testimonial-text">&bdquo;Das ganze Team ist unglaublich freundlich und kompetent. Man fühlt sich sofort wohl und gut aufgehoben. Die Praxis ist modern und einladend &ndash; genau so, wie es sein soll.&ldquo;</p>
           <p class="testimonial-author">Sandra L.</p>
           <p class="testimonial-date">vor 1 Monat</p>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 von 5 Sternen">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
+        <div class="testimonial-card fade-in">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
           <p class="testimonial-text">&bdquo;Die Online-Buchung ist super praktisch &ndash; ich konnte abends um 22 Uhr noch einen Termin für den nächsten Tag buchen. So muss es heute laufen! Vielen Dank.&ldquo;</p>
           <p class="testimonial-author">Thomas R.</p>
           <p class="testimonial-date">vor 3 Wochen</p>
         </div>
       </div>
-      <div class="google-rating">
+      <div class="google-rating fade-in">
         <div class="google-rating-stars" aria-label="4.8 von 5 Sternen">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -1812,9 +1894,9 @@
   </section>
 
   <!-- ÖFFNUNGSZEITEN & ANFAHRT -->
-  <section class="section section-alt" id="anfahrt">
+  <section class="section section--bg" id="anfahrt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <div class="section-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
@@ -1825,7 +1907,7 @@
         <p class="section-desc">Wir freuen uns auf Ihren Besuch. Hier finden Sie alle wichtigen Informationen zu unserer Praxis.</p>
       </div>
       <div class="info-grid">
-        <div class="info-box">
+        <div class="info-box fade-in">
           <h3>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
@@ -1863,7 +1945,7 @@
             </li>
           </ul>
         </div>
-        <div class="info-box">
+        <div class="info-box fade-in">
           <h3>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
@@ -1929,9 +2011,9 @@
   </section>
 
   <!-- KONTAKT -->
-  <section class="section" id="kontakt">
+  <section class="section section--white" id="kontakt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <div class="section-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
@@ -1942,7 +2024,7 @@
         <p class="section-desc">Sie haben Fragen oder möchten einen Termin vereinbaren? Schreiben Sie uns &ndash; wir melden uns schnellstmöglich zurück.</p>
       </div>
       <div class="contact-layout">
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Dies ist eine Demo-Website. Das Formular sendet keine Daten.');" novalidate>
+        <form class="contact-form fade-in" onsubmit="event.preventDefault(); alert('Dies ist eine Demo-Website. Das Formular sendet keine Daten.');" novalidate>
           <div class="form-group">
             <label for="contact-name">Name *</label>
             <input type="text" id="contact-name" name="name" placeholder="Ihr vollständiger Name" required autocomplete="name">
@@ -1970,14 +2052,14 @@
             </svg>
             <span>Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. Weitere Informationen finden Sie in unserer <a href="#datenschutz">Datenschutzerklärung</a>.</span>
           </div>
-          <button type="submit" class="btn btn-lg btn-warm btn-submit">
+          <button type="submit" class="btn btn-lg btn-teal btn-submit">
             Nachricht senden
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
             </svg>
           </button>
         </form>
-        <div class="contact-info-side">
+        <div class="contact-info-side fade-in">
           <h3>Kontaktinformationen</h3>
           <div class="contact-info-items">
             <div class="contact-info-item">
@@ -2035,7 +2117,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-col">
-          <div class="footer-brand-name">Physio am Volkspark</div>
+          <div class="footer-brand-name">Physiotherapie am Volkspark</div>
           <p class="footer-brand-desc">Praxis für Physiotherapie in Berlin-Friedrichshain. Individuelle Behandlung, persönliche Betreuung. Alle Kassen.</p>
         </div>
         <div class="footer-col">
@@ -2089,20 +2171,18 @@
     </a>
   </div>
 
-  <!-- MINIMAL JAVASCRIPT -->
+  <!-- JAVASCRIPT -->
   <script>
-    // Sticky nav shadow on scroll
+    // Floating nav shadow on scroll
     (function() {
       var nav = document.getElementById('navbar');
-      var lastScroll = 0;
       window.addEventListener('scroll', function() {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 10) {
+        if (scrollTop > 60) {
           nav.classList.add('scrolled');
         } else {
           nav.classList.remove('scrolled');
         }
-        lastScroll = scrollTop;
       }, { passive: true });
     })();
 
@@ -2120,18 +2200,60 @@
       }
     });
 
-    // Smooth scroll for anchor links (fallback for browsers without CSS scroll-behavior)
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         var target = document.querySelector(this.getAttribute('href'));
         if (target) {
           e.preventDefault();
-          var offset = 80; // nav height
+          var offset = 80;
           var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
       });
     });
+
+    // Booking option selection (interactive mock)
+    document.querySelectorAll('.booking-option').forEach(function(option) {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.booking-option').forEach(function(o) {
+          o.classList.remove('selected');
+        });
+        this.classList.add('selected');
+      });
+      option.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    // IntersectionObserver fade-in animations
+    (function() {
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+        fadeEls.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback: show all
+        fadeEls.forEach(function(el) {
+          el.classList.add('visible');
+        });
+      }
+    })();
   </script>
 </body>
 </html>
