@@ -446,6 +446,62 @@ img { max-width: 100%; display: block; }
 }
 
 /* ========================================
+   AGITATION (Problem section)
+   ======================================== */
+.agitation {
+  padding: 100px 0;
+  background: var(--bg-white);
+}
+
+.agitation__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.agitation__card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition);
+}
+
+.agitation__card:hover {
+  border-color: var(--border-hover);
+}
+
+.agitation__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fef2f2;
+  border-radius: var(--radius);
+  color: #dc2626;
+  margin-bottom: 18px;
+}
+
+.agitation__card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.agitation__card-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .agitation__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
    LEISTUNGEN (Kernleistung)
    ======================================== */
 .leistungen {
