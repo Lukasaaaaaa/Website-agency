@@ -1368,6 +1368,11 @@ img { max-width: 100%; display: block; }
   margin-top: 10px;
 }
 
+.form__required {
+  color: #dc2626;
+  font-weight: 500;
+}
+
 .form__error {
   font-size: 0.85rem;
   color: #dc2626;

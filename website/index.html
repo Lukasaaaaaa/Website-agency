@@ -900,19 +900,19 @@
         <div class="contact__form-wrap anim-fade-up" data-delay="100">
           <form class="contact__form" id="contactForm" action="https://formspree.io/f/mjgarnga" method="POST">
             <div class="form__group">
-              <label for="name" class="form__label">Name</label>
+              <label for="name" class="form__label">Name <span class="form__required">*</span></label>
               <input type="text" id="name" name="name" class="form__input" placeholder="Ihr Name" required>
             </div>
             <div class="form__group">
-              <label for="email" class="form__label">E-Mail</label>
+              <label for="email" class="form__label">E-Mail <span class="form__required">*</span></label>
               <input type="email" id="email" name="email" class="form__input" placeholder="ihre@email.de" required>
             </div>
             <div class="form__group">
-              <label for="phone" class="form__label">Telefon</label>
+              <label for="phone" class="form__label">Telefon <span class="form__required">*</span></label>
               <input type="tel" id="phone" name="phone" class="form__input" placeholder="+49 ..." required>
             </div>
             <div class="form__group">
-              <label for="branche" class="form__label">Branche</label>
+              <label for="branche" class="form__label">Branche <span class="form__required">*</span></label>
               <select id="branche" name="branche" class="form__input form__select" required>
                 <option value="">Bitte wählen...</option>
                 <option value="handwerk">Handwerk (Maler, Elektriker, etc.)</option>
@@ -927,7 +927,7 @@
               </select>
             </div>
             <div class="form__group">
-              <label for="message" class="form__label">Nachricht</label>
+              <label for="message" class="form__label">Nachricht <span class="form__required">*</span></label>
               <textarea id="message" name="message" class="form__input form__textarea" placeholder="Erzählen Sie mir kurz von Ihrem Projekt..." rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--full">
