@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ferienwohnung am Scharmützelsee | Urlaub in Brandenburg</title>
+  <meta name="description" content="Gemütliche Ferienwohnung direkt am Scharmützelsee in Bad Saarow. Natur pur, Seezugang, familienfreundlich. Direkt beim Vermieter buchen – ohne Buchungsportal.">
+  <style>
+    /* ===== FERIENWOHNUNG AM SEE — Demo Website =====
+       Calm/Nature Theme
+       Erstellt von Websitepolierer.de
+       ================================================ */
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --forest: #166534;
+      --forest-dark: #14532d;
+      --forest-light: #dcfce7;
+      --forest-subtle: #f0fdf4;
+      --lake: #0369a1;
+      --lake-light: #e0f2fe;
+      --sand: #92400e;
+      --sand-light: #fef3c7;
+      --bg: #fafaf9;
+      --bg-alt: #f5f5f0;
+      --white: #ffffff;
+      --text: #1c1917;
+      --body: #57534e;
+      --muted: #a8a29e;
+      --border: #e7e5e4;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.07);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.09);
+      --radius: 16px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-serif: Georgia, 'Times New Roman', serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-sans); font-size: 17px; line-height: 1.7;
+      color: var(--body); background: var(--bg); -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--forest); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--forest-dark); }
+    h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--text); line-height: 1.3; font-weight: 600; }
+    ul { list-style: none; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* DEMO BANNER */
+    .demo-banner {
+      background: var(--forest-subtle); color: var(--forest-dark); text-align: center;
+      padding: 10px 20px; font-size: 14px; font-weight: 500; border-bottom: 1px solid var(--forest-light);
+      position: relative; z-index: 1001;
+    }
+    .demo-banner a { color: var(--forest); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* NAVIGATION */
+    .nav-wrapper {
+      position: fixed; top: 16px; left: 0; right: 0; z-index: 1000;
+      display: flex; justify-content: center; padding: 0 16px; pointer-events: none;
+    }
+    .nav {
+      background: var(--white); border-radius: 50px; box-shadow: var(--shadow-md);
+      max-width: 900px; width: 100%; padding: 10px 12px 10px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      pointer-events: auto; border: 1px solid var(--border); transition: box-shadow var(--transition);
+    }
+    .nav.scrolled { box-shadow: var(--shadow-lg); }
+    .nav-brand { display: flex; align-items: center; gap: 6px; text-decoration: none; flex-shrink: 0; }
+    .nav-brand-name { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--forest); }
+    .nav-brand-sub { font-size: 15px; color: var(--muted); }
+    .nav-links { display: none; list-style: none; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--body); transition: color var(--transition); white-space: nowrap; }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--forest); color: var(--white); font-size: 13px; font-weight: 700;
+      padding: 8px 18px; border-radius: 50px; border: none; cursor: pointer;
+      text-decoration: none; transition: all var(--transition); white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--forest-dark); color: var(--white); transform: translateY(-1px); }
+    .nav-menu-btn {
+      display: flex; align-items: center; justify-content: center; width: 38px; height: 38px;
+      background: var(--bg-alt); border: 1px solid var(--border); border-radius: 50%;
+      cursor: pointer; color: var(--body); transition: all var(--transition);
+    }
+    .nav-menu-btn:hover { background: var(--forest-subtle); color: var(--forest); }
+    .nav-menu-btn svg { width: 18px; height: 18px; }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: rgba(250,250,249,0.97);
+      backdrop-filter: blur(20px); z-index: 2000; padding: 24px;
+      flex-direction: column; align-items: center; justify-content: center;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-close {
+      position: absolute; top: 20px; right: 20px; width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--white); border: 1px solid var(--border); border-radius: 50%; cursor: pointer; color: var(--body);
+    }
+    .mobile-menu-close svg { width: 20px; height: 20px; }
+    .mobile-menu-links { display: flex; flex-direction: column; gap: 4px; text-align: center; width: 100%; max-width: 320px; }
+    .mobile-menu-links a {
+      display: block; padding: 16px 20px; font-family: var(--font-serif); font-size: 20px;
+      font-weight: 600; color: var(--text); border-radius: var(--radius); transition: background var(--transition);
+    }
+    .mobile-menu-links a:hover { background: var(--forest-subtle); color: var(--forest); }
+    .mobile-menu-cta { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 320px; }
+    .mobile-menu-cta .nav-cta { text-align: center; justify-content: center; padding: 16px; font-size: 16px; }
+
+    /* HERO */
+    .hero {
+      background: var(--bg);
+      background-image: radial-gradient(ellipse at 50% 40%, rgba(220,252,231,0.5) 0%, transparent 60%);
+      padding: 100px 0 60px;
+    }
+    .hero-card {
+      background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);
+      border: 1px solid var(--border); padding: 48px 28px; max-width: 780px; margin: 0 auto; text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--forest-subtle); border: 1px solid var(--forest-light);
+      padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; color: var(--forest); margin-bottom: 28px;
+    }
+    .hero h1 { font-size: 34px; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 18px; }
+    .hero h1 span { color: var(--forest); }
+    .hero-sub { font-size: 17px; color: var(--muted); margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .hero-ctas { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font-sans); font-weight: 700; border: none; cursor: pointer;
+      border-radius: 50px; transition: all var(--transition); text-decoration: none; line-height: 1;
+    }
+    .btn-lg { font-size: 16px; padding: 16px 32px; }
+    .btn-forest { background: var(--forest); color: var(--white); box-shadow: 0 2px 12px rgba(22,101,52,0.25); }
+    .btn-forest:hover { background: var(--forest-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(22,101,52,0.35); }
+    .btn-ghost { background: transparent; color: var(--forest); border: 2px solid var(--forest-light); }
+    .btn-ghost:hover { background: var(--forest-subtle); border-color: var(--forest); transform: translateY(-2px); }
+    .btn svg { width: 18px; height: 18px; }
+
+    /* SECTIONS */
+    .section { padding: 80px 0; }
+    .section--bg { background: var(--bg); }
+    .section--alt { background: var(--bg-alt); }
+    .section--white { background: var(--white); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--forest); margin-bottom: 12px;
+    }
+    .section-label svg { width: 16px; height: 16px; }
+    .section-title { font-size: 28px; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .section-desc { font-size: 17px; color: var(--muted); max-width: 560px; margin: 0 auto; }
+
+    /* FEATURES */
+    .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .feature-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 28px 24px; transition: all var(--transition); position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--forest); border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .feature-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .feature-icon {
+      width: 52px; height: 52px; background: var(--forest-subtle); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--forest);
+    }
+    .feature-icon svg { width: 26px; height: 26px; }
+    .feature-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .feature-card p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .gallery-item {
+      background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius);
+      aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 8px; transition: all var(--transition);
+    }
+    .gallery-item:hover { box-shadow: var(--shadow); transform: scale(1.02); }
+    .gallery-item svg { width: 32px; height: 32px; color: var(--muted); opacity: 0.4; }
+    .gallery-item span { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .gallery-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
+
+    /* CALENDAR PLACEHOLDER */
+    .calendar-section { padding: 80px 0; background: var(--white); }
+    .calendar-wrapper {
+      max-width: 700px; margin: 0 auto; background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 32px 24px;
+    }
+    .calendar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+    .calendar-header h3 { font-size: 20px; }
+    .calendar-nav { display: flex; gap: 8px; }
+    .calendar-nav button {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border);
+      background: var(--white); cursor: pointer; display: flex; align-items: center;
+      justify-content: center; color: var(--body); transition: all var(--transition);
+    }
+    .calendar-nav button:hover { border-color: var(--forest); color: var(--forest); }
+    .calendar-nav button svg { width: 16px; height: 16px; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+    .calendar-day-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; padding: 8px 0; }
+    .calendar-day {
+      padding: 10px 4px; border-radius: 10px; font-size: 14px; font-weight: 500;
+      color: var(--body); transition: all var(--transition);
+    }
+    .calendar-day--empty { visibility: hidden; }
+    .calendar-day--available { background: var(--forest-subtle); color: var(--forest); font-weight: 700; cursor: pointer; }
+    .calendar-day--available:hover { background: var(--forest-light); }
+    .calendar-day--booked { background: #fef2f2; color: #b91c1c; text-decoration: line-through; }
+    .calendar-day--today { border: 2px solid var(--forest); font-weight: 700; }
+    .calendar-legend { display: flex; gap: 20px; margin-top: 20px; justify-content: center; flex-wrap: wrap; }
+    .calendar-legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--body); }
+    .calendar-legend-dot {
+      width: 12px; height: 12px; border-radius: 4px;
+    }
+    .calendar-legend-dot--available { background: var(--forest-subtle); border: 1px solid var(--forest-light); }
+    .calendar-legend-dot--booked { background: #fef2f2; border: 1px solid #fecaca; }
+
+    .calendar-note {
+      text-align: center; margin-top: 24px; padding: 16px; background: var(--sand-light);
+      border-radius: var(--radius); font-size: 14px; color: var(--sand);
+    }
+
+    /* PRICING */
+    .pricing-card {
+      max-width: 600px; margin: 0 auto; background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 36px 28px; text-align: center;
+    }
+    .pricing-card h3 { font-size: 24px; margin-bottom: 8px; }
+    .pricing-card .price-big { font-family: var(--font-serif); font-size: 48px; font-weight: 600; color: var(--forest); margin: 16px 0; }
+    .pricing-card .price-detail { font-size: 15px; color: var(--muted); margin-bottom: 24px; }
+    .pricing-features { display: flex; flex-direction: column; gap: 10px; text-align: left; margin-bottom: 28px; }
+    .pricing-features li {
+      display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: var(--body);
+    }
+    .pricing-features li svg { width: 20px; height: 20px; color: var(--forest); flex-shrink: 0; }
+
+    /* DIRECTIONS */
+    .directions-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .directions-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px;
+    }
+    .directions-card h3 { font-size: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .directions-card h3 svg { width: 22px; height: 22px; color: var(--forest); }
+    .directions-list { display: flex; flex-direction: column; gap: 14px; }
+    .directions-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--body); }
+    .directions-icon {
+      width: 36px; height: 36px; background: var(--forest-subtle); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--forest);
+    }
+    .directions-icon svg { width: 18px; height: 18px; }
+    .directions-item strong { display: block; font-weight: 700; color: var(--text); font-size: 14px; }
+    .directions-item span { font-size: 14px; color: var(--muted); }
+
+    .map-placeholder {
+      margin-top: 20px; height: 180px; background: var(--bg-alt); border: 2px dashed var(--border);
+      border-radius: var(--radius); display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 8px; color: var(--muted); font-size: 14px;
+    }
+    .map-placeholder svg { width: 28px; height: 28px; opacity: 0.5; }
+
+    /* REVIEWS */
+    .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .testimonial-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 28px 24px; border-left: 4px solid var(--forest);
+    }
+    .testimonial-stars { display: flex; gap: 2px; color: #f59e0b; margin-bottom: 12px; }
+    .testimonial-stars svg { width: 16px; height: 16px; }
+    .testimonial-text { font-size: 16px; font-style: italic; color: var(--body); line-height: 1.7; margin-bottom: 16px; }
+    .testimonial-author { font-size: 14px; font-weight: 700; color: var(--text); }
+
+    /* CONTACT FORM */
+    .contact-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
+    .contact-form { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 16px; font-family: var(--font-sans); font-size: 15px;
+      color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 14px;
+      transition: border-color var(--transition); appearance: none;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--forest); box-shadow: 0 0 0 3px rgba(22,101,52,0.1); background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit { width: 100%; font-size: 16px; padding: 16px 24px; }
+
+    /* BOOKING CTA */
+    .booking-cta {
+      background: linear-gradient(135deg, var(--forest-dark), var(--forest));
+      padding: 64px 0; text-align: center; color: var(--white);
+    }
+    .booking-cta h2 { font-size: 28px; color: var(--white); margin-bottom: 12px; }
+    .booking-cta p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 28px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-white { background: var(--white); color: var(--forest); }
+    .btn-white:hover { background: var(--forest-light); color: var(--forest-dark); transform: translateY(-2px); }
+
+    /* INFO BOXES */
+    .info-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .info-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; }
+    .info-box h3 { font-size: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .info-box h3 svg { width: 22px; height: 22px; color: var(--forest); }
+
+    .contact-info-items { display: flex; flex-direction: column; gap: 18px; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-info-icon {
+      width: 44px; height: 44px; background: var(--forest-subtle); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--forest);
+    }
+    .contact-info-icon svg { width: 20px; height: 20px; }
+    .contact-info-item strong { display: block; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .contact-info-item span, .contact-info-item a { font-size: 15px; color: var(--muted); }
+
+    /* FOOTER */
+    .footer { background: var(--bg-alt); padding: 48px 0 24px; border-top: 1px solid var(--border); }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px;
+      border-bottom: 1px solid var(--border); margin-bottom: 24px;
+    }
+    .footer-brand-name { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+    .footer-brand-desc { font-size: 14px; color: var(--muted); max-width: 300px; line-height: 1.6; }
+    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); margin-bottom: 14px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a { font-size: 14px; color: var(--muted); }
+    .footer-links a:hover { color: var(--forest); }
+    .footer-links li { font-size: 14px; color: var(--muted); }
+    .footer-bottom {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      text-align: center; font-size: 13px; color: var(--muted);
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 13px; color: var(--muted); }
+    .footer-bottom-links a:hover { color: var(--forest); }
+
+    /* MOBILE STICKY */
+    .mobile-sticky-cta {
+      display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+      padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom));
+      background: var(--white); border-top: 1px solid var(--border); box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    }
+    .mobile-sticky-cta a {
+      display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+      background: var(--forest); color: var(--white); font-size: 16px; font-weight: 700;
+      padding: 14px; border-radius: 50px; text-decoration: none;
+    }
+    .mobile-sticky-cta a:hover { background: var(--forest-dark); color: var(--white); }
+    .mobile-sticky-cta a svg { width: 20px; height: 20px; }
+    .footer { padding-bottom: 100px; }
+
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 40px; }
+      .hero-card { padding: 56px 40px; }
+      .hero-ctas { flex-direction: row; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-item--wide { grid-column: span 3; aspect-ratio: 16/5; }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-grid, .directions-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-title { font-size: 32px; }
+    }
+    @media (min-width: 768px) {
+      .hero { padding: 110px 0 70px; }
+      .hero h1 { font-size: 44px; }
+      .section { padding: 96px 0; }
+      .contact-layout { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .container { padding: 0 32px; }
+    }
+    @media (min-width: 1024px) {
+      .nav-links { display: flex; }
+      .nav-menu-btn { display: none; }
+      .hero h1 { font-size: 48px; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+      .gallery-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
+      .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; }
+      .mobile-sticky-cta { display: none; }
+      .footer { padding-bottom: 24px; }
+      .section-title { font-size: 36px; }
+      .booking-cta h2 { font-size: 36px; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 90px 0 40px; }
+      .hero-card { padding: 32px 20px; }
+      .hero h1 { font-size: 28px; }
+      .section { padding: 60px 0; }
+      .section-title { font-size: 24px; }
+      .nav { padding: 8px 10px 8px 16px; }
+      .nav-brand-sub { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .calendar-grid { gap: 2px; }
+      .calendar-day { padding: 8px 2px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DEMO BANNER -->
+  <div class="demo-banner" role="banner">
+    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &ndash; So könnte Ihre Ferienwohnungs-Website aussehen!
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="nav-wrapper">
+    <nav class="nav" id="navbar" role="navigation" aria-label="Hauptnavigation">
+      <a href="#" class="nav-brand">
+        <span class="nav-brand-name">Ferienwohnung</span>
+        <span class="nav-brand-sub">am See</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#ausstattung">Ausstattung</a></li>
+        <li><a href="#galerie">Fotos</a></li>
+        <li><a href="#verfuegbarkeit">Verfügbarkeit</a></li>
+        <li><a href="#anreise">Anreise</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#buchen" class="nav-cta">Direkt buchen</a>
+        <button class="nav-menu-btn" aria-label="Menü öffnen" onclick="document.getElementById('mobile-menu').classList.add('open')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <button class="mobile-menu-close" aria-label="Menü schließen" onclick="document.getElementById('mobile-menu').classList.remove('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <ul class="mobile-menu-links">
+      <li><a href="#ausstattung" onclick="document.getElementById('mobile-menu').classList.remove('open')">Ausstattung</a></li>
+      <li><a href="#galerie" onclick="document.getElementById('mobile-menu').classList.remove('open')">Fotos</a></li>
+      <li><a href="#verfuegbarkeit" onclick="document.getElementById('mobile-menu').classList.remove('open')">Verfügbarkeit</a></li>
+      <li><a href="#anreise" onclick="document.getElementById('mobile-menu').classList.remove('open')">Anreise</a></li>
+      <li><a href="#kontakt" onclick="document.getElementById('mobile-menu').classList.remove('open')">Kontakt</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
+      <a href="#buchen" class="nav-cta" onclick="document.getElementById('mobile-menu').classList.remove('open')">Direkt buchen</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="start">
+    <div class="container">
+      <div class="hero-card fade-in">
+        <div class="hero-badge">🌿 Bad Saarow &middot; Direkt am See &middot; Bis 4 Personen</div>
+        <h1>Urlaub direkt am <span>Scharmützelsee.</span></h1>
+        <p class="hero-sub">Gemütliche Ferienwohnung mit Seezugang in Bad Saarow, Brandenburg. Ruhe, Natur und Erholung – nur 60 km von Berlin.</p>
+        <div class="hero-ctas">
+          <a href="#buchen" class="btn btn-lg btn-forest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Verfügbarkeit prüfen
+          </a>
+          <a href="#galerie" class="btn btn-lg btn-ghost">Fotos ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUSSTATTUNG -->
+  <section class="section section--white" id="ausstattung">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Ausstattung
+        </div>
+        <h2 class="section-title">Alles für Ihren perfekten Urlaub</h2>
+        <p class="section-desc">65 m² Wohnfläche, 2 Schlafzimmer, voll ausgestattete Küche und ein Balkon mit Seeblick – hier fehlt es an nichts.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>2 Schlafzimmer</h3>
+          <p>Ein Doppelzimmer und ein Kinderzimmer mit zwei Einzelbetten. Hochwertige Matratzen und frische Bettwäsche inklusive.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+          <h3>Bis 4 Personen</h3>
+          <p>Ideal für Familien oder kleine Gruppen. Kinderbett und Hochstuhl auf Anfrage vorhanden.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+          <h3>Voll ausgestattete Küche</h3>
+          <p>Herd, Backofen, Kühlschrank, Geschirrspüler, Kaffeemaschine und alles, was Sie zum Kochen brauchen.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+          <h3>Balkon mit Seeblick</h3>
+          <p>Sonniger Süd-Balkon mit Blick auf den Scharmützelsee. Perfekt für den Morgenkaffee oder ein Glas Wein am Abend.</p>
