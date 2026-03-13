@@ -1,35 +1,20 @@
-# SCORING.md - Lead Qualification Rules
+# SCORING.md - Lead Qualification
 
-## Scoring Formula
+## Simple Rule
+The only thing that matters: does this business have a good website?
 
-### Disqualifiers (score = 0, discard immediately)
-- reviews < 5
-- reviews > 200
-- name contains franchise/kette/ag/filiale
-- has modern website (ssl + responsive + recent cms)
-- industry in [friseur, barbershop]
-
-### Positive Signals
+### Scoring
 | Signal                              | Points |
 |-------------------------------------|--------|
-| 15-100 Google reviews               | +30    |
-| 5-14 Google reviews                 | +10    |
-| No website / returns 404            | +25    |
-| Website exists but not responsive   | +20    |
-| Owner uploads photos (last 6 months)| +15    |
-| Reviews are answered                | +10    |
-| GmbH or GmbH & Co. KG              | +10    |
-| Rating >= 4.0 stars                 | +5     |
-| Niche = Handwerker                  | +10    |
-| Niche = Physio                      | +8     |
-| Niche = GaLaBau                     | +6     |
-| Niche = Fahrschule                  | +4     |
+| No website at all                   | +50    |
+| Website HTTP only (no SSL)          | +30    |
+| Website not responsive              | +30    |
+| Website looks outdated (old CMS/©)  | +20    |
+| Has email address                   | +10    |
 
-### Score Interpretation
-| Score | Action                                        |
-|-------|-----------------------------------------------|
-| 0     | Blacklisted, discard                          |
-| 1-39  | Too low potential, discard                    |
-| 40-59 | Low priority, process if queue is empty       |
-| 60-79 | Medium priority, generate website             |
-| 80-100| Hot lead, generate + rush to approval queue   |
+### Interpretation
+- **50+** = Hot. They need us.
+- **20-49** = Worth a look. Bad website.
+- **Under 20** = Already has a decent site. Skip.
+
+No disqualifiers. Lukas decides on everything.
