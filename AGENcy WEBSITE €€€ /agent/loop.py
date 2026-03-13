@@ -320,6 +320,7 @@ def _hitl_prompt(args):
 # ══════════════════════════════════════════════════════════════
 
 def _search(query, location):
+    # Try SerpAPI first if key exists
     key = os.environ.get("SERPAPI_KEY")
     if key:
         try:
@@ -331,15 +332,16 @@ def _search(query, location):
                         "category": x.get("type","")} for x in r.get("local_results", [])[:20]]
             return json.dumps({"results": results, "total_found": len(results), "source": "serpapi"}, ensure_ascii=False)
         except Exception as e:
-            return json.dumps({"results": [], "error": str(e), "source": "serpapi"})
-    return json.dumps({"results": [
-        {"name": "Mueller Elektrotechnik", "address": "Hauptstr. 12, 10115 Berlin", "phone": "0170-1234567",
-         "rating": 4.6, "review_count": 14, "website": None, "place_id": "mock_001", "category": "Elektriker"},
-        {"name": "Physiotherapie Schmidt", "address": "Friedrichstr. 88, 10117 Berlin", "phone": "030-9876543",
-         "rating": 4.8, "review_count": 45, "website": None, "place_id": "mock_002", "category": "Physiotherapeut"},
-        {"name": "Gruenanlagen Meier", "address": "Berliner Str. 5, 14467 Potsdam", "phone": "0151-9988776",
-         "rating": 4.3, "review_count": 22, "website": None, "place_id": "mock_003", "category": "Garten- und Landschaftsbau"},
-    ], "total_found": 3, "source": "mock"}, ensure_ascii=False)
+            log.warning(f"SerpAPI failed: {e}, falling back to Playwright")
+
+    # Fallback: Playwright scraper (real Google Maps data)
+    try:
+        from scraper import search_google_maps
+        result = search_google_maps(query, location, max_results=15)
+        return json.dumps(result, ensure_ascii=False)
+    except Exception as e:
+        log.error(f"Playwright scraper failed: {e}")
+        return json.dumps({"results": [], "error": str(e), "source": "playwright_error"}, ensure_ascii=False)
 
 # ══════════════════════════════════════════════════════════════
 #  URL Check

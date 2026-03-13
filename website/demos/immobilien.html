@@ -3,596 +3,1374 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berliner Hausverwaltung Schröder | Professionelle Immobilienverwaltung</title>
+  <meta name="description" content="Hausverwaltung Schröder – WEG-Verwaltung, Mietverwaltung und Sondereigentumsverwaltung in Berlin-Wilmersdorf. Über 2.500 Einheiten, seit 1998. Ihr Partner für Immobilien.">
   <meta name="robots" content="noindex, nofollow">
-  <title>Berliner Hausverwaltung Schröder | Immobilienverwaltung seit 1998</title>
-  <meta name="description" content="Professionelle Hausverwaltung in Berlin. WEG-Verwaltung, Mietverwaltung, Sondereigentumsverwaltung. Über 25 Jahre Erfahrung. Berliner Hausverwaltung Schröder.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%231e293b'/><text y='22' x='4' font-size='16' fill='%2394a3b8' font-family='Georgia' font-weight='bold'>HS</text></svg>">
   <style>
+    /* ========================================
+       BERLINER HAUSVERWALTUNG SCHRÖDER
+       Corporate, structured, data-forward
+       Erstellt von Websitepolierer.de
+       ======================================== */
+
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --navy: #1e3a5f; --navy-dark: #152d4a; --navy-light: #dbeafe; --navy-subtle: #eff6ff;
-      --accent: #0369a1; --accent-dark: #075985; --accent-light: #e0f2fe;
-      --gold: #b45309; --gold-light: #fef3c7;
-      --bg: #f8fafc; --bg-alt: #f1f5f9; --white: #fff; --text: #0f172a; --body: #475569; --muted: #94a3b8;
-      --border: #e2e8f0; --shadow-md: 0 4px 20px rgba(0,0,0,0.07); --shadow-lg: 0 8px 32px rgba(0,0,0,0.09);
-      --shadow: 0 2px 12px rgba(0,0,0,0.06);
-      --radius: 16px; --radius-lg: 20px; --radius-xl: 24px;
-      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
-      --font-serif: Georgia, 'Times New Roman', serif;
-      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --navy: #0f172a;
+      --navy-medium: #1e293b;
+      --navy-light: #334155;
+      --slate: #64748b;
+      --slate-light: #94a3b8;
+      --accent: #2563eb;
+      --accent-light: #3b82f6;
+      --accent-pale: #eff6ff;
+      --success: #059669;
+      --success-pale: #ecfdf5;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --body: #475569;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, sans-serif;
+      --font-mono: 'SF Mono', 'Fira Code', monospace;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.06), 0 4px 6px rgba(0,0,0,0.04);
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-sans); font-size: 17px; line-height: 1.7; color: var(--body); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--body);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
     img { max-width: 100%; display: block; }
-    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--accent-dark); }
-    h1,h2,h3,h4 { font-family: var(--font-serif); color: var(--text); line-height: 1.3; font-weight: 600; }
-    ul { list-style: none; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
 
-    .demo-banner { background: var(--navy-subtle); color: var(--navy); text-align: center; padding: 10px 20px; font-size: 14px; font-weight: 500; border-bottom: 1px solid var(--navy-light); position: relative; z-index: 1001; }
-    .demo-banner a { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
-
-    .nav-wrapper { position: fixed; top: 16px; left: 0; right: 0; z-index: 1000; display: flex; justify-content: center; padding: 0 16px; pointer-events: none; }
-    .nav { background: var(--white); border-radius: 50px; box-shadow: var(--shadow-md); max-width: 920px; width: 100%; padding: 10px 12px 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; pointer-events: auto; border: 1px solid var(--border); }
-    .nav.scrolled { box-shadow: var(--shadow-lg); }
-    .nav-brand { display: flex; align-items: center; gap: 6px; text-decoration: none; flex-shrink: 0; }
-    .nav-brand-name { font-family: var(--font-serif); font-size: 15px; font-weight: 600; color: var(--navy); }
-    .nav-brand-sub { font-size: 14px; color: var(--muted); }
-    .nav-links { display: none; list-style: none; gap: 22px; align-items: center; }
-    .nav-links a { font-size: 14px; color: var(--body); white-space: nowrap; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--navy); color: var(--white); font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 50px; border: none; cursor: pointer; text-decoration: none; transition: all var(--transition); white-space: nowrap; }
-    .nav-cta:hover { background: var(--navy-dark); color: var(--white); transform: translateY(-1px); }
-    .nav-menu-btn { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 50%; cursor: pointer; color: var(--body); }
-    .nav-menu-btn:hover { background: var(--navy-subtle); color: var(--navy); }
-    .nav-menu-btn svg { width: 18px; height: 18px; }
-
-    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(248,250,252,0.97); backdrop-filter: blur(20px); z-index: 2000; padding: 24px; flex-direction: column; align-items: center; justify-content: center; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu-close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--white); border: 1px solid var(--border); border-radius: 50%; cursor: pointer; color: var(--body); }
-    .mobile-menu-close svg { width: 20px; height: 20px; }
-    .mobile-menu-links { display: flex; flex-direction: column; gap: 4px; text-align: center; width: 100%; max-width: 320px; }
-    .mobile-menu-links a { display: block; padding: 16px 20px; font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--text); border-radius: var(--radius); }
-    .mobile-menu-links a:hover { background: var(--navy-subtle); color: var(--navy); }
-    .mobile-menu-cta { margin-top: 28px; width: 100%; max-width: 320px; }
-    .mobile-menu-cta .nav-cta { display: block; text-align: center; padding: 16px; font-size: 16px; }
-
-    .hero { background: var(--bg); background-image: radial-gradient(ellipse at 50% 40%, rgba(219,234,254,0.5) 0%, transparent 60%); padding: 100px 0 60px; }
-    .hero-card { background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); border: 1px solid var(--border); padding: 48px 28px; max-width: 780px; margin: 0 auto; text-align: center; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--navy-subtle); border: 1px solid var(--navy-light); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 28px; }
-    .hero h1 { font-size: 34px; line-height: 1.2; margin-bottom: 18px; }
-    .hero h1 span { color: var(--navy); }
-    .hero-sub { font-size: 17px; color: var(--muted); margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
-    .hero-ctas { display: flex; flex-direction: column; gap: 12px; align-items: center; }
-    .hero-stats { display: flex; justify-content: center; gap: 32px; margin-top: 36px; flex-wrap: wrap; }
-    .hero-stat { text-align: center; }
-    .hero-stat-number { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--navy); }
-    .hero-stat-label { font-size: 13px; color: var(--muted); font-weight: 500; }
-
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-sans); font-weight: 700; border: none; cursor: pointer; border-radius: 50px; transition: all var(--transition); text-decoration: none; line-height: 1; }
-    .btn-lg { font-size: 16px; padding: 16px 32px; }
-    .btn-navy { background: var(--navy); color: var(--white); box-shadow: 0 2px 12px rgba(30,58,95,0.25); }
-    .btn-navy:hover { background: var(--navy-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(30,58,95,0.35); }
-    .btn-ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy-light); }
-    .btn-ghost:hover { background: var(--navy-subtle); border-color: var(--navy); transform: translateY(-2px); }
-    .btn-white { background: var(--white); color: var(--navy); }
-    .btn-white:hover { background: var(--navy-light); transform: translateY(-2px); }
-    .btn svg { width: 18px; height: 18px; }
-
-    .section { padding: 80px 0; }
-    .section--bg { background: var(--bg); }
-    .section--alt { background: var(--bg-alt); }
-    .section--white { background: var(--white); }
-    .section-header { text-align: center; margin-bottom: 52px; }
-    .section-label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 12px; }
-    .section-label svg { width: 16px; height: 16px; }
-    .section-title { font-size: 28px; margin-bottom: 12px; }
-    .section-desc { font-size: 17px; color: var(--muted); max-width: 560px; margin: 0 auto; }
-
-    /* Services */
-    .services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    .service-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; transition: all var(--transition); position: relative; overflow: hidden; }
-    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--navy); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-    .service-icon { width: 52px; height: 52px; background: var(--navy-subtle); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--navy); }
-    .service-icon svg { width: 26px; height: 26px; }
-    .service-card h3 { font-size: 18px; margin-bottom: 8px; }
-    .service-card p { font-size: 15px; color: var(--muted); line-height: 1.65; }
-
-    /* Portfolio */
-    .portfolio-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    .portfolio-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition); }
-    .portfolio-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-    .portfolio-img { height: 160px; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; color: var(--muted); border-bottom: 1px solid var(--border); }
-    .portfolio-img svg { width: 40px; height: 40px; opacity: 0.3; }
-    .portfolio-body { padding: 20px; }
-    .portfolio-type { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 6px; }
-    .portfolio-card h3 { font-size: 17px; margin-bottom: 6px; }
-    .portfolio-details { font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .portfolio-stats { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
-    .portfolio-stat { font-size: 13px; font-weight: 600; color: var(--body); display: flex; align-items: center; gap: 4px; }
-    .portfolio-stat svg { width: 14px; height: 14px; color: var(--accent); }
-
-    /* Trust signals */
-    .trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .trust-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px 20px; text-align: center; transition: all var(--transition); }
-    .trust-card:hover { box-shadow: var(--shadow); }
-    .trust-icon { width: 56px; height: 56px; background: var(--navy-subtle); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; color: var(--navy); }
-    .trust-icon svg { width: 28px; height: 28px; }
-    .trust-card h4 { font-size: 15px; margin-bottom: 4px; }
-    .trust-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-    /* Experience */
-    .experience-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
-    .experience-text h2 { font-size: 28px; margin-bottom: 16px; }
-    .experience-text p { font-size: 17px; color: var(--body); margin-bottom: 16px; line-height: 1.7; }
-    .experience-highlights { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
-    .experience-highlight { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--navy-subtle); border-radius: 14px; }
-    .experience-highlight-icon { width: 40px; height: 40px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--white); }
-    .experience-highlight-icon svg { width: 20px; height: 20px; }
-    .experience-highlight-text { font-size: 15px; font-weight: 600; color: var(--text); }
-    .experience-highlight-sub { font-size: 13px; color: var(--muted); }
-
-    /* References */
-    .references-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .reference-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--border); border-radius: 50px; padding: 8px 18px; font-size: 14px; font-weight: 600; color: var(--body); }
-    .reference-badge svg { width: 16px; height: 16px; color: var(--accent); }
-
-    /* Contact */
-    .contact-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
-    .contact-form { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; }
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; font-family: var(--font-sans); font-size: 15px; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 14px; transition: border-color var(--transition); appearance: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(3,105,161,0.1); background: var(--white); }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 0 1 .708 0L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .btn-submit { width: 100%; font-size: 16px; padding: 16px 24px; }
-
-    .contact-info-items { display: flex; flex-direction: column; gap: 18px; }
-    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; }
-    .contact-info-icon { width: 44px; height: 44px; background: var(--navy-subtle); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--navy); }
-    .contact-info-icon svg { width: 20px; height: 20px; }
-    .contact-info-item strong { display: block; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-    .contact-info-item span, .contact-info-item a { font-size: 15px; color: var(--muted); }
-
-    /* CTA */
-    .booking-cta { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); padding: 64px 0; text-align: center; color: var(--white); }
-    .booking-cta h2 { font-size: 28px; color: var(--white); margin-bottom: 12px; }
-    .booking-cta p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 28px; max-width: 520px; margin-left: auto; margin-right: auto; }
-
-    .footer { background: var(--bg-alt); padding: 48px 0 24px; border-top: 1px solid var(--border); }
-    .footer-top { display: grid; grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
-    .footer-brand-name { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-    .footer-brand-desc { font-size: 14px; color: var(--muted); max-width: 300px; line-height: 1.6; }
-    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); margin-bottom: 14px; }
-    .footer-links { display: flex; flex-direction: column; gap: 8px; }
-    .footer-links a { font-size: 14px; color: var(--muted); }
-    .footer-links a:hover { color: var(--accent); }
-    .footer-links li { font-size: 14px; color: var(--muted); }
-    .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-size: 13px; color: var(--muted); }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-links a { font-size: 13px; color: var(--muted); }
-    .footer-bottom-links a:hover { color: var(--accent); }
-
-    .mobile-sticky-cta { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom)); background: var(--white); border-top: 1px solid var(--border); box-shadow: 0 -4px 16px rgba(0,0,0,0.06); }
-    .mobile-sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--navy); color: var(--white); font-size: 16px; font-weight: 700; padding: 14px; border-radius: 50px; text-decoration: none; }
-    .mobile-sticky-cta a:hover { background: var(--navy-dark); color: var(--white); }
-    .mobile-sticky-cta a svg { width: 20px; height: 20px; }
-    .footer { padding-bottom: 100px; }
-
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    @media (min-width: 640px) {
-      .hero h1 { font-size: 40px; } .hero-card { padding: 56px 40px; } .hero-ctas { flex-direction: row; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-      .trust-grid { grid-template-columns: repeat(4, 1fr); }
-      .section-title { font-size: 32px; }
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--text);
+      line-height: 1.25;
     }
-    @media (min-width: 768px) {
-      .hero { padding: 110px 0 70px; } .hero h1 { font-size: 44px; } .section { padding: 96px 0; }
-      .contact-layout { grid-template-columns: 1fr 1fr; gap: 48px; }
-      .experience-layout { grid-template-columns: 1fr 1fr; gap: 48px; }
-      .container { padding: 0 32px; }
+
+    /* === DEMO BANNER === */
+    .demo-banner {
+      background: var(--navy);
+      color: var(--slate-light);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
     }
-    @media (min-width: 1024px) {
-      .nav-links { display: flex; } .nav-menu-btn { display: none; }
-      .hero h1 { font-size: 48px; } .services-grid { grid-template-columns: repeat(3, 1fr); }
-      .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
-      .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; }
-      .mobile-sticky-cta { display: none; } .footer { padding-bottom: 24px; }
-      .section-title { font-size: 36px; } .booking-cta h2 { font-size: 36px; }
+    .demo-banner a {
+      color: var(--accent-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 600;
+    }
+    .demo-banner a:hover { color: #93c5fd; }
+
+    /* === TOPBAR — Formal corporate === */
+    .topbar {
+      background: var(--navy);
+      color: var(--slate-light);
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+    }
+    .topbar-left {
+      display: flex;
+      gap: 24px;
+    }
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .topbar-item svg { width: 14px; height: 14px; }
+    .topbar-right a {
+      color: var(--slate-light);
+      margin-left: 16px;
+      transition: color 0.2s;
+    }
+    .topbar-right a:hover { color: white; }
+
+    @media (max-width: 768px) {
+      .topbar { display: none; }
+    }
+
+    /* === MAIN NAV — Formal bar === */
+    .main-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-brand-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+    .nav-brand-text {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .nav-brand-text span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--slate);
+      letter-spacing: 0.03em;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      height: 100%;
+      align-items: stretch;
+    }
+    .nav-menu a {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      height: 100%;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--slate);
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 8px 20px;
+      background: var(--accent);
+      color: white !important;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-bottom: none !important;
+      transition: background 0.2s;
+      height: auto !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; border-bottom-color: transparent !important; }
+
+    .nav-mobile {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      .nav-menu { display: none; }
+      .nav-mobile { display: block; }
+      .main-nav.open .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        padding: 8px 0;
+        gap: 0;
+      }
+      .main-nav.open .nav-menu a {
+        height: 48px;
+        padding: 0 24px;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+      }
+      .main-nav.open .nav-menu a:hover,
+      .main-nav.open .nav-menu a.active {
+        border-left-color: var(--accent);
+        background: var(--accent-pale);
+      }
+    }
+
+    /* === HERO — Corporate split === */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-medium) 100%);
+      padding: 80px 24px;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Subtle grid pattern */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      color: #93c5fd;
+      margin-bottom: 20px;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+      animation: pulse-dot 2s ease infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: white;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--slate-light);
+      margin-bottom: 32px;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-hero {
+      padding: 12px 28px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .btn-hero.primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-hero.primary:hover { background: var(--accent-light); }
+    .btn-hero.secondary {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .btn-hero.secondary:hover { background: rgba(255,255,255,0.15); }
+
+    /* Hero stats cards */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .stat-value {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .stat-value .accent { color: var(--accent-light); }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--slate-light);
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 48px 24px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === SECTION PATTERNS === */
+    .section { padding: 72px 24px; }
+    .section-alt { background: var(--white); }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-header {
+      margin-bottom: 48px;
+    }
+    .section-header.center { text-align: center; }
+    .section-overline {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      color: var(--slate);
+      max-width: 600px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .section-header.center .section-desc { margin: 0 auto; }
+
+    /* === TRUST BAR === */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--slate);
+      white-space: nowrap;
+    }
+    .trust-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === SERVICES GRID — Structured cards === */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .service-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .service-link {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 8px; }
+
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === STATS SECTION === */
+    .stats-section {
+      background: var(--navy);
+      padding: 64px 24px;
+    }
+    .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .stats-item .stats-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: white;
+      font-weight: 700;
+    }
+    .stats-item .stats-label {
+      font-size: 0.85rem;
+      color: var(--slate-light);
+      margin-top: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    }
+
+    /* === PROPERTY LISTINGS — Data cards === */
+    .listings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .listing-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    .listing-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .listing-image {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      position: relative;
+    }
+    .listing-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .listing-badge.weg { background: var(--accent-pale); color: var(--accent); }
+    .listing-badge.miet { background: var(--success-pale); color: var(--success); }
+
+    .listing-body {
+      padding: 20px;
+    }
+    .listing-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .listing-address {
+      font-size: 0.85rem;
+      color: var(--slate);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .listing-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .listing-meta-item {
+      text-align: center;
+    }
+    .listing-meta-value {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .listing-meta-label {
+      font-size: 0.7rem;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 600px) {
+      .listings-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === PROCESS STEPS === */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step-card {
+      text-align: center;
+      position: relative;
+    }
+    .step-card::after {
+      content: '→';
+      position: absolute;
+      right: -20px;
+      top: 28px;
+      color: var(--border-dark);
+      font-size: 1.2rem;
+    }
+    .step-card:last-child::after { content: none; }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .step-card::after { content: none; }
     }
     @media (max-width: 480px) {
-      .hero { padding: 90px 0 40px; } .hero-card { padding: 32px 20px; } .hero h1 { font-size: 28px; }
-      .section { padding: 60px 0; } .section-title { font-size: 24px; }
-      .nav { padding: 8px 10px 8px 16px; } .nav-brand-sub { display: none; }
-      .form-row { grid-template-columns: 1fr; }
-      .hero-stats { gap: 20px; } .hero-stat-number { font-size: 24px; }
-      .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+
+    /* === TEAM === */
+    .team-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .team-member {
+      text-align: center;
+    }
+    .team-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .team-name {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .team-role {
+      font-size: 0.8rem;
+      color: var(--slate);
+    }
+
+    @media (max-width: 768px) {
+      .team-row { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === TESTIMONIALS === */
+    .testimonials-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+    }
+    .testimonial-card .stars {
+      color: #f59e0b;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-card .author {
+      font-size: 0.8rem;
+      color: var(--slate);
+    }
+    .testimonial-card .author strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 600px) {
+      .testimonials-row { grid-template-columns: 1fr; }
+    }
+
+    /* === CONTACT SECTION === */
+    .contact-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-sidebar {
+      padding: 32px;
+      background: var(--navy);
+      border-radius: 8px;
+      color: white;
+    }
+    .contact-sidebar h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+    .contact-sidebar-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .contact-sidebar-item svg {
+      flex-shrink: 0;
+      color: var(--accent-light);
+      margin-top: 3px;
+    }
+    .contact-sidebar-item p {
+      color: var(--slate-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .contact-sidebar-item a {
+      color: var(--accent-light);
+    }
+
+    .contact-form-area h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .contact-form-area > p {
+      color: var(--slate);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group { margin-bottom: 0; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 16px;
+    }
+    .btn-submit:hover { background: var(--accent-light); }
+
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === FOOTER === */
+    .site-footer {
+      background: var(--navy);
+      color: var(--slate-light);
+      padding: 56px 24px 24px;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand h3 {
+      font-family: var(--font-heading);
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--slate);
+    }
+    .footer-col h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      padding: 4px 0;
+    }
+    .footer-col a {
+      font-size: 0.85rem;
+      color: var(--slate-light);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: white; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--slate);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-bottom a {
+      color: var(--accent-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === FADE IN === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <div class="demo-banner" role="banner">
-    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &ndash; So könnte Ihre Hausverwaltungs-Website aussehen!
+  <!-- Demo Banner -->
+  <div class="demo-banner">
+    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &mdash; So könnte Ihre Website aussehen!
   </div>
 
-  <div class="nav-wrapper">
-    <nav class="nav" id="navbar" role="navigation" aria-label="Hauptnavigation">
-      <a href="#" class="nav-brand"><span class="nav-brand-name">Hausverwaltung</span><span class="nav-brand-sub">Schröder</span></a>
-      <ul class="nav-links">
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#erfahrung">Über uns</a></li>
-        <li><a href="#referenzen">Referenzen</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-      <div class="nav-right">
-        <a href="#kontakt" class="nav-cta">Anfrage stellen</a>
-        <button class="nav-menu-btn" aria-label="Menü öffnen" onclick="document.getElementById('mobile-menu').classList.add('open')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        030 890 44 210
+      </span>
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
+        info@hausverwaltung-schroeder.de
+      </span>
+    </div>
+    <div class="topbar-right">
+      <a href="#">Eigentümerportal</a>
+      <a href="#">Mieterportal</a>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-brand">
+      <div class="nav-brand-icon">HS</div>
+      <div class="nav-brand-text">
+        Hausverwaltung Schröder
+        <span>Berlin · Seit 1998</span>
       </div>
-    </nav>
-  </div>
-
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
-    <button class="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <ul class="mobile-menu-links">
-      <li><a href="#leistungen" onclick="document.getElementById('mobile-menu').classList.remove('open')">Leistungen</a></li>
-      <li><a href="#portfolio" onclick="document.getElementById('mobile-menu').classList.remove('open')">Portfolio</a></li>
-      <li><a href="#erfahrung" onclick="document.getElementById('mobile-menu').classList.remove('open')">Über uns</a></li>
-      <li><a href="#referenzen" onclick="document.getElementById('mobile-menu').classList.remove('open')">Referenzen</a></li>
-      <li><a href="#kontakt" onclick="document.getElementById('mobile-menu').classList.remove('open')">Kontakt</a></li>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#" class="active">Startseite</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#objekte">Objekte</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt aufnehmen</a></li>
     </ul>
-    <div class="mobile-menu-cta"><a href="#kontakt" class="nav-cta" onclick="document.getElementById('mobile-menu').classList.remove('open')">Anfrage stellen</a></div>
+    <button class="nav-mobile" id="navMobile" aria-label="Menü">☰</button>
+  </nav>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar fade-in">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <span class="trust-icon">🏢</span>
+        <span>Über 2.500 verwaltete Einheiten</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">📋</span>
+        <span>IVD-Mitglied</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">⭐</span>
+        <span>4.7/5 auf Google (89 Bewertungen)</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🔒</span>
+        <span>DSGVO-konformes Eigentümerportal</span>
+      </div>
+    </div>
   </div>
 
-  <!-- HERO -->
-  <section class="hero" id="start">
-    <div class="container">
-      <div class="hero-card fade-in">
-        <div class="hero-badge">🏢 Berlin &middot; Seit 1998 &middot; Über 1.200 Einheiten</div>
-        <h1>Ihre Immobilie in <span>besten Händen.</span></h1>
-        <p class="hero-sub">Professionelle Hausverwaltung in Berlin. WEG-Verwaltung, Mietverwaltung und Sondereigentum – zuverlässig, transparent und persönlich.</p>
-        <div class="hero-ctas">
-          <a href="#kontakt" class="btn btn-lg btn-navy">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Unverbindlich anfragen
-          </a>
-          <a href="#leistungen" class="btn btn-lg btn-ghost">Leistungen ansehen</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Aktuell: Freie Kapazitäten für neue Objekte
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="hero-stat-number">25+</div><div class="hero-stat-label">Jahre Erfahrung</div></div>
-          <div class="hero-stat"><div class="hero-stat-number">1.200+</div><div class="hero-stat-label">Verwaltete Einheiten</div></div>
-          <div class="hero-stat"><div class="hero-stat-number">48</div><div class="hero-stat-label">Objekte in Berlin</div></div>
-          <div class="hero-stat"><div class="hero-stat-number">98%</div><div class="hero-stat-label">Weiterempfehlung</div></div>
+        <h1>Professionelle Hausverwaltung für Berlin</h1>
+        <p class="hero-sub">Wir verwalten Ihre Immobilie wie unsere eigene — transparent, zuverlässig und wirtschaftlich. WEG-Verwaltung, Mietverwaltung und Sondereigentumsverwaltung aus einer Hand.</p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn-hero primary">Kostenlos beraten lassen</a>
+          <a href="#leistungen" class="btn-hero secondary">Leistungen ansehen</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-value">2.500<span class="accent">+</span></div>
+          <div class="stat-label">Verwaltete Einheiten</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">27</div>
+          <div class="stat-label">Jahre Erfahrung</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">98<span class="accent">%</span></div>
+          <div class="stat-label">Vertragsverlängerung</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">14</div>
+          <div class="stat-label">Mitarbeiter im Team</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LEISTUNGEN -->
-  <section class="section section--white" id="leistungen">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Leistungen</div>
-        <h2 class="section-title">Rundum-Service für Ihre Immobilie</h2>
-        <p class="section-desc">Von der WEG-Verwaltung bis zur Mietverwaltung – wir kümmern uns um alle Belange Ihrer Immobilie.</p>
+  <!-- Services -->
+  <section class="section" id="leistungen">
+    <div class="container fade-in">
+      <div class="section-header center">
+        <p class="section-overline">Leistungen</p>
+        <h2 class="section-title">Umfassende Verwaltung für Ihre Immobilie</h2>
+        <p class="section-desc">Von der WEG-Verwaltung bis zum technischen Gebäudemanagement — alles aus einer Hand, transparent und professionell.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card fade-in">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="service-card">
+          <div class="service-icon">🏘</div>
           <h3>WEG-Verwaltung</h3>
-          <p>Professionelle Verwaltung von Wohnungseigentümergemeinschaften. Eigentümerversammlungen, Wirtschaftsplanung, Instandhaltung und Abrechnungen.</p>
+          <p>Professionelle Verwaltung von Wohnungseigentümergemeinschaften. Eigentümerversammlungen, Wirtschaftspläne, Jahresabrechnungen und Instandhaltungsmanagement.</p>
+          <a href="#kontakt" class="service-link">Mehr erfahren →</a>
         </div>
-        <div class="service-card fade-in">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
           <h3>Mietverwaltung</h3>
-          <p>Komplette Betreuung Ihrer Mietimmobilien. Mieterbetreuung, Nebenkostenabrechnung, Mietinkasso und Instandhaltungsmanagement.</p>
+          <p>Komplette Betreuung Ihrer vermieteten Immobilie. Mieterbuchhaltung, Nebenkostenabrechnungen, Mietanpassungen und Leerstandsmanagement.</p>
+          <a href="#kontakt" class="service-link">Mehr erfahren →</a>
         </div>
-        <div class="service-card fade-in">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
-          <h3>Sondereigentumsverwaltung</h3>
-          <p>Individuelle Verwaltung von Sondereigentum für Kapitalanleger. Mietersuche, Übergaben und technische Betreuung Ihrer Einheit.</p>
+        <div class="service-card">
+          <div class="service-icon">🔑</div>
+          <h3>Sondereigentum</h3>
+          <p>Individuelle Verwaltung Ihres Sondereigentums. Wohnungsabnahmen, Übergaben, Mietvertragsmanagement und Renditeoptimierung.</p>
+          <a href="#kontakt" class="service-link">Mehr erfahren →</a>
         </div>
-        <div class="service-card fade-in">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-          <h3>Technische Verwaltung</h3>
-          <p>Koordination von Handwerkern, Wartungsverträge, Schadenmanagement und energetische Sanierungsberatung.</p>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Technisches Management</h3>
+          <p>Koordination aller technischen Maßnahmen. Wartungsverträge, Sanierungsplanung, Energieberatung und Handwerker-Netzwerk.</p>
+          <a href="#kontakt" class="service-link">Mehr erfahren →</a>
         </div>
-        <div class="service-card fade-in">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <h3>Kaufmännische Verwaltung</h3>
-          <p>Buchhaltung, Wirtschaftspläne, Hausgeldabrechnungen, Mahnwesen und transparente Finanzberichte für Eigentümer.</p>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Buchhaltung & Reporting</h3>
+          <p>Transparente Finanzverwaltung mit digitalem Eigentümerportal. Monatliche Reports, Rücklagenplanung und Belegprüfung.</p>
+          <a href="#kontakt" class="service-link">Mehr erfahren →</a>
         </div>
-        <div class="service-card fade-in">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg></div>
-          <h3>Mieterbetreuung</h3>
-          <p>Persönlicher Ansprechpartner für Mieter. Schnelle Reaktionszeiten bei Schadensmeldungen und professionelle Kommunikation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST SIGNALS -->
-  <section class="section section--alt" id="referenzen">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Vertrauen & Qualität</div>
-        <h2 class="section-title">Darauf können Sie sich verlassen</h2>
-      </div>
-      <div class="trust-grid fade-in">
-        <div class="trust-card">
-          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h4>IHK-zertifiziert</h4>
-          <p>Zertifizierter Verwalter nach §26a WEG</p>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-          <h4>DDIV Mitglied</h4>
-          <p>Dachverband Deutscher Immobilienverwalter</p>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <h4>Haftpflichtversichert</h4>
-          <p>Vermögensschaden-Haftpflicht bis 1 Mio. €</p>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <h4>Digitale Verwaltung</h4>
-          <p>Online-Portal für Eigentümer & Mieter</p>
-        </div>
-      </div>
-      <div class="references-strip fade-in" style="margin-top: 40px;">
-        <div class="reference-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> §34c GewO</div>
-        <div class="reference-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Weiterbildungspflicht erfüllt</div>
-        <div class="reference-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Datenschutz-konform (DSGVO)</div>
-        <div class="reference-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Treuhandkonto bei Berliner Volksbank</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="section section--white" id="portfolio">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg> Portfolio</div>
-        <h2 class="section-title">Ausgewählte Objekte</h2>
-        <p class="section-desc">Ein Auszug aus unserem Verwaltungsportfolio in Berlin.</p>
-      </div>
-      <div class="portfolio-grid">
-        <div class="portfolio-card fade-in">
-          <div class="portfolio-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">WEG-Verwaltung</div>
-            <h3>Gründerzeithaus Charlottenburg</h3>
-            <p class="portfolio-details">Denkmalgeschütztes Mehrfamilienhaus, Baujahr 1905, umfassend saniert 2018.</p>
-            <div class="portfolio-stats">
-              <span class="portfolio-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> 24 WE</span>
-              <span class="portfolio-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Seit 2010</span>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-card fade-in">
-          <div class="portfolio-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Mietverwaltung</div>
-            <h3>Neubau-Ensemble Friedrichshain</h3>
-            <p class="portfolio-details">Moderner Neubaukomplex mit Tiefgarage, Baujahr 2021.</p>
-            <div class="portfolio-stats">
-              <span class="portfolio-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> 56 WE</span>
-              <span class="portfolio-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Seit 2021</span>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-card fade-in">
-          <div class="portfolio-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Gewerbe & Wohnen</div>
-            <h3>Gewerbehof Kreuzberg</h3>
-            <p class="portfolio-details">Gemischt genutztes Objekt mit Gewerbe im EG und Wohnungen in den OG.</p>
-            <div class="portfolio-stats">
-              <span class="portfolio-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> 18 WE + 4 GE</span>
-              <span class="portfolio-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Seit 2015</span>
-            </div>
-          </div>
+        <div class="service-card">
+          <div class="service-icon">⚖️</div>
+          <h3>Recht & Compliance</h3>
+          <p>Aktuelle Rechtsumsetzung bei Mietrecht, WEG-Reform, Heizkostenverordnung und DSGVO. Zusammenarbeit mit spezialisierten Kanzleien.</p>
+          <a href="#kontakt" class="service-link">Mehr erfahren →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ERFAHRUNG / ÜBER UNS -->
-  <section class="section section--bg" id="erfahrung">
-    <div class="container">
-      <div class="experience-layout">
-        <div class="experience-text fade-in">
-          <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Über uns</div>
-          <h2>Hausverwaltung mit Erfahrung und Persönlichkeit</h2>
-          <p>Die Berliner Hausverwaltung Schröder wurde 1998 von Dipl.-Kfm. Markus Schröder gegründet. Was als Ein-Mann-Betrieb begann, ist heute ein eingespieltes Team von 8 Mitarbeitern.</p>
-          <p>Unser Anspruch: Jede Immobilie verdient individuelle Aufmerksamkeit. Wir setzen auf persönlichen Kontakt, transparente Prozesse und digitale Effizienz – keine anonyme Massenverwaltung.</p>
-        </div>
-        <div class="fade-in">
-          <div class="experience-highlights">
-            <div class="experience-highlight">
-              <div class="experience-highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-              <div><div class="experience-highlight-text">Gegründet 1998</div><div class="experience-highlight-sub">Über 25 Jahre Erfahrung in Berlin</div></div>
-            </div>
-            <div class="experience-highlight">
-              <div class="experience-highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-              <div><div class="experience-highlight-text">8 Mitarbeiter</div><div class="experience-highlight-sub">Feste Ansprechpartner für jedes Objekt</div></div>
-            </div>
-            <div class="experience-highlight">
-              <div class="experience-highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-              <div><div class="experience-highlight-text">Eigentümer-Portal</div><div class="experience-highlight-sub">24/7 Zugang zu Dokumenten & Abrechnungen</div></div>
-            </div>
-            <div class="experience-highlight">
-              <div class="experience-highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-              <div><div class="experience-highlight-text">98% Weiterempfehlung</div><div class="experience-highlight-sub">Unsere beste Referenz sind zufriedene Eigentümer</div></div>
-            </div>
-          </div>
-        </div>
+  <!-- Stats -->
+  <section class="stats-section fade-in">
+    <div class="stats-grid">
+      <div class="stats-item">
+        <div class="stats-number">48</div>
+        <div class="stats-label">Verwaltete Objekte</div>
+      </div>
+      <div class="stats-item">
+        <div class="stats-number">2.500+</div>
+        <div class="stats-label">Wohn- & Gewerbeeinheiten</div>
+      </div>
+      <div class="stats-item">
+        <div class="stats-number">Ø 8,3 J.</div>
+        <div class="stats-label">Vertragslaufzeit</div>
+      </div>
+      <div class="stats-item">
+        <div class="stats-number">&lt; 2%</div>
+        <div class="stats-label">Leerstandsquote</div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="booking-cta">
+  <!-- Property Listings -->
+  <section class="section" id="objekte">
     <div class="container fade-in">
-      <h2>Suchen Sie eine neue Hausverwaltung?</h2>
-      <p>Wir erstellen Ihnen ein unverbindliches Angebot – transparent, fair und auf Ihr Objekt zugeschnitten.</p>
-      <a href="#kontakt" class="btn btn-lg btn-white">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Unverbindlich anfragen
-      </a>
+      <div class="section-header">
+        <p class="section-overline">Referenzobjekte</p>
+        <h2 class="section-title">Ausgewählte Objekte aus unserem Portfolio</h2>
+        <p class="section-desc">Ein Auszug der Immobilien, die wir professionell betreuen — von Altbau-WEGs bis zu modernen Wohnanlagen.</p>
+      </div>
+      <div class="listings-grid">
+        <div class="listing-card">
+          <div class="listing-image" style="background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);">
+            🏢
+          </div>
+          <div class="listing-body">
+            <span class="listing-badge weg">WEG</span>
+            <h3 class="listing-title">Wohnanlage Fasanenstraße</h3>
+            <p class="listing-address">📍 Fasanenstraße 18–22, 10719 Berlin-Wilmersdorf</p>
+            <div class="listing-meta">
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">42</div>
+                <div class="listing-meta-label">Einheiten</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">1962</div>
+                <div class="listing-meta-label">Baujahr</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">Seit 2005</div>
+                <div class="listing-meta-label">Verwaltung</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-image" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);">
+            🏗
+          </div>
+          <div class="listing-body">
+            <span class="listing-badge miet">Mietverwaltung</span>
+            <h3 class="listing-title">Neubau Schmargendorf</h3>
+            <p class="listing-address">📍 Berkaer Straße 31, 14199 Berlin-Schmargendorf</p>
+            <div class="listing-meta">
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">28</div>
+                <div class="listing-meta-label">Einheiten</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">2019</div>
+                <div class="listing-meta-label">Baujahr</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">Seit 2019</div>
+                <div class="listing-meta-label">Verwaltung</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-image" style="background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);">
+            🏛
+          </div>
+          <div class="listing-body">
+            <span class="listing-badge weg">WEG</span>
+            <h3 class="listing-title">Altbau-Ensemble Uhlandstraße</h3>
+            <p class="listing-address">📍 Uhlandstraße 155–157, 10719 Berlin-Wilmersdorf</p>
+            <div class="listing-meta">
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">67</div>
+                <div class="listing-meta-label">Einheiten</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">1907</div>
+                <div class="listing-meta-label">Baujahr</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-value">Seit 1998</div>
+                <div class="listing-meta-label">Verwaltung</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- KONTAKT -->
-  <section class="section section--white" id="kontakt">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Kontakt</div>
-        <h2 class="section-title">Eigentümer-Anfrage</h2>
-        <p class="section-desc">Teilen Sie uns Details zu Ihrem Objekt mit – wir erstellen Ihnen ein individuelles Angebot.</p>
+  <!-- Process -->
+  <section class="section section-alt">
+    <div class="container fade-in">
+      <div class="section-header center">
+        <p class="section-overline">So starten wir</p>
+        <h2 class="section-title">In 4 Schritten zur professionellen Verwaltung</h2>
       </div>
+      <div class="process-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Erstgespräch</h4>
+          <p>Kostenlose Bestandsaufnahme Ihrer Immobilie und Ihrer Anforderungen.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Angebot</h4>
+          <p>Individuelles Angebot mit transparenter Kostenaufstellung.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Übernahme</h4>
+          <p>Strukturierte Objektübernahme inkl. Dokumentation und Mieterkommunikation.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Betreuung</h4>
+          <p>Laufende Verwaltung mit digitalem Portal und persönlichem Ansprechpartner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" id="team">
+    <div class="container fade-in">
+      <div class="section-header center">
+        <p class="section-overline">Unser Team</p>
+        <h2 class="section-title">Kompetenz trifft Engagement</h2>
+        <p class="section-desc">14 Mitarbeiter betreuen Ihre Immobilie — mit Fachwissen, Erfahrung und echtem Interesse an Ihrem Eigentum.</p>
+      </div>
+      <div class="team-row">
+        <div class="team-member">
+          <div class="team-avatar">👨‍💼</div>
+          <p class="team-name">Dirk Schröder</p>
+          <p class="team-role">Geschäftsführer, Immobilienfachwirt (IHK)</p>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">👩‍💼</div>
+          <p class="team-name">Andrea Weber</p>
+          <p class="team-role">Prokuristin, WEG-Verwaltung</p>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">👨‍🔧</div>
+          <p class="team-name">Marcus Hahn</p>
+          <p class="team-role">Technischer Verwalter</p>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">👩‍💻</div>
+          <p class="team-name">Katrin Nowak</p>
+          <p class="team-role">Buchhaltung & Abrechnung</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-alt">
+    <div class="container fade-in">
+      <div class="section-header center">
+        <p class="section-overline">Referenzen</p>
+        <h2 class="section-title">Was unsere Kunden sagen</h2>
+      </div>
+      <div class="testimonials-row">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>„Nach Jahren mit einer unzuverlässigen Hausverwaltung war der Wechsel zu Schröder eine Erlösung. Transparente Abrechnungen, erreichbare Ansprechpartner und endlich wird sich um unser Haus gekümmert."</blockquote>
+          <p class="author"><strong>Dr. Petra Engel</strong> · Beiratsvorsitzende, WEG Fasanenstraße</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>„Als Kapitalanleger mit mehreren Einheiten schätze ich die professionelle Mietverwaltung. Monatliche Reports, proaktive Mieteranpassungen und sehr geringe Fluktuation."</blockquote>
+          <p class="author"><strong>Stefan Reimann</strong> · Eigentümer, 12 Einheiten</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact-section" id="kontakt">
+    <div class="container fade-in">
       <div class="contact-layout">
-        <form class="contact-form fade-in" onsubmit="event.preventDefault(); alert('Dies ist eine Demo-Website. Das Formular sendet keine Daten.');">
-          <div class="form-row">
-            <div class="form-group"><label for="c-name">Name *</label><input type="text" id="c-name" placeholder="Ihr Name" required></div>
-            <div class="form-group"><label for="c-email">E-Mail *</label><input type="email" id="c-email" placeholder="Ihre E-Mail" required></div>
+        <div class="contact-sidebar">
+          <h3>Kontaktdaten</h3>
+          <div class="contact-sidebar-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p>Berliner Hausverwaltung Schröder GmbH<br>Brandenburgische Str. 45<br>10707 Berlin-Wilmersdorf</p>
           </div>
-          <div class="form-row">
-            <div class="form-group"><label for="c-phone">Telefon</label><input type="tel" id="c-phone" placeholder="Ihre Telefonnummer"></div>
+          <div class="contact-sidebar-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <p><a href="tel:03089044210">030 890 44 210</a><br>Fax: 030 890 44 211</p>
+          </div>
+          <div class="contact-sidebar-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
+            <p><a href="mailto:info@hausverwaltung-schroeder.de">info@hausverwaltung-schroeder.de</a></p>
+          </div>
+          <div class="contact-sidebar-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <p>Mo – Fr: 09:00 – 17:00 Uhr<br>Havarienotdienst: 24/7</p>
+          </div>
+        </div>
+        <div class="contact-form-area">
+          <h3>Unverbindliche Anfrage</h3>
+          <p>Beschreiben Sie uns Ihr Objekt und Ihre Wünsche — wir erstellen Ihnen innerhalb von 48 Stunden ein individuelles Angebot.</p>
+          <div class="form-grid">
             <div class="form-group">
-              <label for="c-type">Art der Verwaltung</label>
-              <select id="c-type">
-                <option value="" disabled selected>Bitte wählen…</option>
+              <label>Vorname *</label>
+              <input type="text" placeholder="Max">
+            </div>
+            <div class="form-group">
+              <label>Nachname *</label>
+              <input type="text" placeholder="Mustermann">
+            </div>
+            <div class="form-group">
+              <label>E-Mail *</label>
+              <input type="email" placeholder="max@beispiel.de">
+            </div>
+            <div class="form-group">
+              <label>Telefon</label>
+              <input type="tel" placeholder="030 ...">
+            </div>
+            <div class="form-group">
+              <label>Verwaltungsart</label>
+              <select>
+                <option value="">Bitte wählen...</option>
                 <option>WEG-Verwaltung</option>
                 <option>Mietverwaltung</option>
                 <option>Sondereigentumsverwaltung</option>
                 <option>Gewerbeverwaltung</option>
-                <option>Sonstiges</option>
               </select>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="c-units">Anzahl Einheiten</label><input type="number" id="c-units" placeholder="z.B. 24"></div>
-            <div class="form-group"><label for="c-location">Standort / PLZ</label><input type="text" id="c-location" placeholder="z.B. 10585 Berlin"></div>
-          </div>
-          <div class="form-group"><label for="c-msg">Nachricht</label><textarea id="c-msg" placeholder="Beschreiben Sie Ihr Objekt und Ihre Anforderungen…"></textarea></div>
-          <button type="submit" class="btn btn-lg btn-navy btn-submit">
-            Anfrage senden
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-        </form>
-        <div class="fade-in">
-          <h3 style="font-size: 22px; margin-bottom: 20px;">Kontaktinformationen</h3>
-          <div class="contact-info-items">
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-              <div><strong>Dipl.-Kfm. Markus Schröder</strong><span>Geschäftsführer &middot; Seit 1998</span></div>
+            <div class="form-group">
+              <label>Anzahl Einheiten</label>
+              <input type="number" placeholder="z.B. 24" min="1">
             </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
-              <div><strong>Telefon</strong><a href="tel:+493034567890">030 345 678 90</a></div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-              <div><strong>E-Mail</strong><a href="mailto:info@hv-schroeder-berlin.de">info@hv-schroeder-berlin.de</a></div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-              <div><strong>Adresse</strong><span>Bundesallee 68<br>10715 Berlin-Wilmersdorf</span></div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div><strong>Bürozeiten</strong><span>Mo–Fr: 9:00–17:00 Uhr<br>Notfall-Hotline: rund um die Uhr</span></div>
+            <div class="form-group full">
+              <label>Ihre Nachricht</label>
+              <textarea placeholder="Objektadresse, aktuelle Situation, gewünschter Verwaltungsbeginn..."></textarea>
             </div>
           </div>
+          <button class="btn-submit">Anfrage absenden →</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-col">
-          <div class="footer-brand-name">Berliner Hausverwaltung Schröder</div>
-          <p class="footer-brand-desc">Professionelle Immobilienverwaltung in Berlin. WEG, Miete, Sondereigentum – seit 1998.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Leistungen</h4>
-          <ul class="footer-links">
-            <li><a href="#leistungen">WEG-Verwaltung</a></li>
-            <li><a href="#leistungen">Mietverwaltung</a></li>
-            <li><a href="#leistungen">Sondereigentum</a></li>
-            <li><a href="#leistungen">Technische Verwaltung</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Unternehmen</h4>
-          <ul class="footer-links">
-            <li><a href="#erfahrung">Über uns</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#referenzen">Referenzen</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Kontakt</h4>
-          <ul class="footer-links">
-            <li><a href="tel:+493034567890">030 345 678 90</a></li>
-            <li><a href="mailto:info@hv-schroeder-berlin.de">info@hv-schroeder-berlin.de</a></li>
-            <li>Bundesallee 68</li>
-            <li>10715 Berlin</li>
-          </ul>
-        </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Berliner Hausverwaltung Schröder GmbH</h3>
+        <p>Professionelle Immobilienverwaltung in Berlin — WEG-Verwaltung, Mietverwaltung und technisches Gebäudemanagement seit 1998.</p>
       </div>
-      <div class="footer-bottom">
-        <span>Berliner Hausverwaltung Schröder &middot; IHK-zertifiziert &middot; DDIV-Mitglied &middot; Erstellt von <a href="https://websitepolierer.de" style="color: var(--accent);">Websitepolierer.de</a></span>
-        <div class="footer-bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+      <div class="footer-col">
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#leistungen">WEG-Verwaltung</a></li>
+          <li><a href="#leistungen">Mietverwaltung</a></li>
+          <li><a href="#leistungen">Sondereigentum</a></li>
+          <li><a href="#leistungen">Technik</a></li>
+        </ul>
       </div>
+      <div class="footer-col">
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#objekte">Referenzen</a></li>
+          <li><a href="#">Karriere</a></li>
+          <li><a href="#">IVD-Mitgliedschaft</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
+          <li><a href="#">Cookie-Einstellungen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Berliner Hausverwaltung Schröder GmbH. Alle Rechte vorbehalten.</span>
+      <span>Website erstellt von <a href="https://websitepolierer.de">Websitepolierer.de</a></span>
     </div>
   </footer>
 
-  <div class="mobile-sticky-cta">
-    <a href="tel:+493034567890">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      Jetzt anrufen: 030 345 678 90
-    </a>
-  </div>
-
   <script>
     (function() {
-      'use strict';
-      var nav = document.getElementById('navbar');
-      window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.pageYOffset > 60); }, { passive: true });
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') document.getElementById('mobile-menu').classList.remove('open'); });
-      document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-        a.addEventListener('click', function(e) {
-          var t = document.querySelector(this.getAttribute('href'));
-          if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' }); }
-        });
+      // Mobile nav
+      var toggle = document.getElementById('navMobile');
+      var nav = document.getElementById('mainNav');
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('open');
       });
+
+      // Fade-in observer
       var fadeEls = document.querySelectorAll('.fade-in');
       if ('IntersectionObserver' in window) {
         var obs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         fadeEls.forEach(function(el) { obs.observe(el); });
-      } else { fadeEls.forEach(function(el) { el.classList.add('visible'); }); }
+      } else {
+        fadeEls.forEach(function(el) { el.classList.add('is-visible'); });
+      }
     })();
   </script>
+
 </body>
 </html>

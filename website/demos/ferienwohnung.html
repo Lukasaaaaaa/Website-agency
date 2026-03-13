@@ -3,606 +3,1369 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferienwohnung am Scharmützelsee | Bad Saarow — Urlaub am Wasser</title>
+  <meta name="description" content="Gemütliche Ferienwohnung am Scharmützelsee in Bad Saarow. Seeblick, eigener Steg, 2 Schlafzimmer, komplett ausgestattet. Direkt beim Vermieter buchen.">
   <meta name="robots" content="noindex, nofollow">
-  <title>Ferienwohnung am Scharmützelsee | Urlaub in Brandenburg</title>
-  <meta name="description" content="Gemütliche Ferienwohnung direkt am Scharmützelsee in Bad Saarow. Natur pur, Seezugang, familienfreundlich. Direkt beim Vermieter buchen – ohne Buchungsportal.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='26'>🏡</text></svg>">
   <style>
+    /* ========================================
+       FERIENWOHNUNG AM SCHARMÜTZELSEE
+       Warm, photographic, nature-inspired
+       Erstellt von Websitepolierer.de
+       ======================================== */
+
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --forest: #166534; --forest-dark: #14532d; --forest-light: #dcfce7; --forest-subtle: #f0fdf4;
-      --lake: #0369a1; --lake-light: #e0f2fe; --sand: #92400e; --sand-light: #fef3c7;
-      --bg: #fafaf9; --bg-alt: #f5f5f0; --white: #fff; --text: #1c1917; --body: #57534e; --muted: #a8a29e;
-      --border: #e7e5e4; --shadow-md: 0 4px 20px rgba(0,0,0,0.07); --shadow-lg: 0 8px 32px rgba(0,0,0,0.09);
-      --shadow: 0 2px 12px rgba(0,0,0,0.06);
-      --radius: 16px; --radius-lg: 20px; --radius-xl: 24px;
-      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
-      --font-serif: Georgia, 'Times New Roman', serif;
-      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --forest: #2d5016;
+      --forest-light: #4a7c2e;
+      --lake: #3b7a9e;
+      --lake-light: #6db5d6;
+      --lake-pale: #e4f2f8;
+      --sand: #c4a76c;
+      --sand-light: #e8d5a8;
+      --warm-bg: #faf6f0;
+      --cream: #fff9f0;
+      --white: #ffffff;
+      --wood: #6b4226;
+      --wood-light: #8b6340;
+      --text: #3a3226;
+      --text-muted: #7a7062;
+      --border: #e0d6c8;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-sans); font-size: 17px; line-height: 1.7; color: var(--body); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--warm-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
     img { max-width: 100%; display: block; }
-    a { color: var(--forest); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--forest-dark); }
-    h1,h2,h3,h4 { font-family: var(--font-serif); color: var(--text); line-height: 1.3; font-weight: 600; }
-    ul { list-style: none; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
 
-    .demo-banner { background: var(--forest-subtle); color: var(--forest-dark); text-align: center; padding: 10px 20px; font-size: 14px; font-weight: 500; border-bottom: 1px solid var(--forest-light); position: relative; z-index: 1001; }
-    .demo-banner a { color: var(--forest); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
-
-    .nav-wrapper { position: fixed; top: 16px; left: 0; right: 0; z-index: 1000; display: flex; justify-content: center; padding: 0 16px; pointer-events: none; }
-    .nav { background: var(--white); border-radius: 50px; box-shadow: var(--shadow-md); max-width: 900px; width: 100%; padding: 10px 12px 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; pointer-events: auto; border: 1px solid var(--border); }
-    .nav.scrolled { box-shadow: var(--shadow-lg); }
-    .nav-brand { display: flex; align-items: center; gap: 6px; text-decoration: none; flex-shrink: 0; }
-    .nav-brand-name { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--forest); }
-    .nav-brand-sub { font-size: 15px; color: var(--muted); }
-    .nav-links { display: none; list-style: none; gap: 24px; align-items: center; }
-    .nav-links a { font-size: 14px; color: var(--body); white-space: nowrap; }
-    .nav-links a:hover { color: var(--forest); }
-    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--forest); color: var(--white); font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 50px; border: none; cursor: pointer; text-decoration: none; transition: all var(--transition); white-space: nowrap; }
-    .nav-cta:hover { background: var(--forest-dark); color: var(--white); transform: translateY(-1px); }
-    .nav-menu-btn { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 50%; cursor: pointer; color: var(--body); }
-    .nav-menu-btn:hover { background: var(--forest-subtle); color: var(--forest); }
-    .nav-menu-btn svg { width: 18px; height: 18px; }
-
-    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(250,250,249,0.97); backdrop-filter: blur(20px); z-index: 2000; padding: 24px; flex-direction: column; align-items: center; justify-content: center; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu-close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--white); border: 1px solid var(--border); border-radius: 50%; cursor: pointer; color: var(--body); }
-    .mobile-menu-close svg { width: 20px; height: 20px; }
-    .mobile-menu-links { display: flex; flex-direction: column; gap: 4px; text-align: center; width: 100%; max-width: 320px; }
-    .mobile-menu-links a { display: block; padding: 16px 20px; font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--text); border-radius: var(--radius); }
-    .mobile-menu-links a:hover { background: var(--forest-subtle); color: var(--forest); }
-    .mobile-menu-cta { margin-top: 28px; width: 100%; max-width: 320px; }
-    .mobile-menu-cta .nav-cta { display: block; text-align: center; padding: 16px; font-size: 16px; }
-
-    .hero { background: var(--bg); background-image: radial-gradient(ellipse at 50% 40%, rgba(220,252,231,0.5) 0%, transparent 60%); padding: 100px 0 60px; }
-    .hero-card { background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); border: 1px solid var(--border); padding: 48px 28px; max-width: 780px; margin: 0 auto; text-align: center; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--forest-subtle); border: 1px solid var(--forest-light); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; color: var(--forest); margin-bottom: 28px; }
-    .hero h1 { font-size: 34px; line-height: 1.2; margin-bottom: 18px; }
-    .hero h1 span { color: var(--forest); }
-    .hero-sub { font-size: 17px; color: var(--muted); margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
-    .hero-ctas { display: flex; flex-direction: column; gap: 12px; align-items: center; }
-
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-sans); font-weight: 700; border: none; cursor: pointer; border-radius: 50px; transition: all var(--transition); text-decoration: none; line-height: 1; }
-    .btn-lg { font-size: 16px; padding: 16px 32px; }
-    .btn-forest { background: var(--forest); color: var(--white); box-shadow: 0 2px 12px rgba(22,101,52,0.25); }
-    .btn-forest:hover { background: var(--forest-dark); color: var(--white); transform: translateY(-2px); }
-    .btn-ghost { background: transparent; color: var(--forest); border: 2px solid var(--forest-light); }
-    .btn-ghost:hover { background: var(--forest-subtle); border-color: var(--forest); transform: translateY(-2px); }
-    .btn-white { background: var(--white); color: var(--forest); }
-    .btn-white:hover { background: var(--forest-light); transform: translateY(-2px); }
-    .btn svg { width: 18px; height: 18px; }
-
-    .section { padding: 80px 0; }
-    .section--bg { background: var(--bg); }
-    .section--alt { background: var(--bg-alt); }
-    .section--white { background: var(--white); }
-    .section-header { text-align: center; margin-bottom: 52px; }
-    .section-label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--forest); margin-bottom: 12px; }
-    .section-label svg { width: 16px; height: 16px; }
-    .section-title { font-size: 28px; margin-bottom: 12px; }
-    .section-desc { font-size: 17px; color: var(--muted); max-width: 560px; margin: 0 auto; }
-
-    .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; transition: all var(--transition); position: relative; overflow: hidden; }
-    .feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--forest); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-    .feature-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-    .feature-icon { width: 52px; height: 52px; background: var(--forest-subtle); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--forest); }
-    .feature-icon svg { width: 26px; height: 26px; }
-    .feature-card h3 { font-size: 18px; margin-bottom: 8px; }
-    .feature-card p { font-size: 15px; color: var(--muted); line-height: 1.65; }
-
-    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .gallery-item { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: all var(--transition); }
-    .gallery-item:hover { box-shadow: var(--shadow); transform: scale(1.02); }
-    .gallery-item svg { width: 32px; height: 32px; color: var(--muted); opacity: 0.4; }
-    .gallery-item span { font-size: 12px; color: var(--muted); font-weight: 600; }
-    .gallery-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
-
-    .calendar-section { padding: 80px 0; background: var(--white); }
-    .calendar-wrapper { max-width: 700px; margin: 0 auto; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px 24px; }
-    .calendar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
-    .calendar-header h3 { font-size: 20px; }
-    .calendar-nav { display: flex; gap: 8px; }
-    .calendar-nav button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--body); }
-    .calendar-nav button:hover { border-color: var(--forest); color: var(--forest); }
-    .calendar-nav button svg { width: 16px; height: 16px; }
-    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
-    .calendar-day-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; padding: 8px 0; }
-    .calendar-day { padding: 10px 4px; border-radius: 10px; font-size: 14px; font-weight: 500; color: var(--body); }
-    .calendar-day--empty { visibility: hidden; }
-    .calendar-day--available { background: var(--forest-subtle); color: var(--forest); font-weight: 700; cursor: pointer; }
-    .calendar-day--available:hover { background: var(--forest-light); }
-    .calendar-day--booked { background: #fef2f2; color: #b91c1c; text-decoration: line-through; }
-    .calendar-legend { display: flex; gap: 20px; margin-top: 20px; justify-content: center; flex-wrap: wrap; }
-    .calendar-legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--body); }
-    .calendar-legend-dot { width: 12px; height: 12px; border-radius: 4px; }
-    .calendar-legend-dot--available { background: var(--forest-subtle); border: 1px solid var(--forest-light); }
-    .calendar-legend-dot--booked { background: #fef2f2; border: 1px solid #fecaca; }
-    .calendar-note { text-align: center; margin-top: 24px; padding: 16px; background: var(--sand-light); border-radius: var(--radius); font-size: 14px; color: var(--sand); }
-
-    .pricing-card { max-width: 600px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 36px 28px; text-align: center; }
-    .pricing-card h3 { font-size: 24px; margin-bottom: 8px; }
-    .pricing-card .price-big { font-family: var(--font-serif); font-size: 48px; font-weight: 600; color: var(--forest); margin: 16px 0; }
-    .pricing-card .price-detail { font-size: 15px; color: var(--muted); margin-bottom: 24px; }
-    .pricing-features { display: flex; flex-direction: column; gap: 10px; text-align: left; margin-bottom: 28px; }
-    .pricing-features li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: var(--body); }
-    .pricing-features li svg { width: 20px; height: 20px; color: var(--forest); flex-shrink: 0; }
-
-    .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    .testimonial-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; border-left: 4px solid var(--forest); }
-    .testimonial-stars { display: flex; gap: 2px; color: #f59e0b; margin-bottom: 12px; }
-    .testimonial-stars svg { width: 16px; height: 16px; }
-    .testimonial-text { font-size: 16px; font-style: italic; color: var(--body); line-height: 1.7; margin-bottom: 16px; }
-    .testimonial-author { font-size: 14px; font-weight: 700; color: var(--text); }
-
-    .directions-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    .directions-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; }
-    .directions-card h3 { font-size: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-    .directions-card h3 svg { width: 22px; height: 22px; color: var(--forest); }
-    .directions-list { display: flex; flex-direction: column; gap: 14px; }
-    .directions-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--body); }
-    .directions-icon { width: 36px; height: 36px; background: var(--forest-subtle); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--forest); }
-    .directions-icon svg { width: 18px; height: 18px; }
-    .directions-item strong { display: block; font-weight: 700; color: var(--text); font-size: 14px; }
-    .directions-item span { font-size: 14px; color: var(--muted); }
-    .map-placeholder { margin-top: 20px; height: 180px; background: var(--bg-alt); border: 2px dashed var(--border); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 14px; }
-    .map-placeholder svg { width: 28px; height: 28px; opacity: 0.5; }
-
-    .booking-cta { background: linear-gradient(135deg, var(--forest-dark), var(--forest)); padding: 64px 0; text-align: center; color: var(--white); }
-    .booking-cta h2 { font-size: 28px; color: var(--white); margin-bottom: 12px; }
-    .booking-cta p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 28px; max-width: 520px; margin-left: auto; margin-right: auto; }
-
-    .contact-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
-    .contact-form { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; }
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; font-family: var(--font-sans); font-size: 15px; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 14px; transition: border-color var(--transition); appearance: none; }
-    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--forest); box-shadow: 0 0 0 3px rgba(22,101,52,0.1); background: var(--white); }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .btn-submit { width: 100%; font-size: 16px; padding: 16px 24px; }
-
-    .contact-info-items { display: flex; flex-direction: column; gap: 18px; }
-    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; }
-    .contact-info-icon { width: 44px; height: 44px; background: var(--forest-subtle); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--forest); }
-    .contact-info-icon svg { width: 20px; height: 20px; }
-    .contact-info-item strong { display: block; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-    .contact-info-item span, .contact-info-item a { font-size: 15px; color: var(--muted); }
-
-    .footer { background: var(--bg-alt); padding: 48px 0 24px; border-top: 1px solid var(--border); }
-    .footer-top { display: grid; grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
-    .footer-brand-name { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-    .footer-brand-desc { font-size: 14px; color: var(--muted); max-width: 300px; line-height: 1.6; }
-    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); margin-bottom: 14px; }
-    .footer-links { display: flex; flex-direction: column; gap: 8px; }
-    .footer-links a { font-size: 14px; color: var(--muted); }
-    .footer-links a:hover { color: var(--forest); }
-    .footer-links li { font-size: 14px; color: var(--muted); }
-    .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-size: 13px; color: var(--muted); }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-links a { font-size: 13px; color: var(--muted); }
-    .footer-bottom-links a:hover { color: var(--forest); }
-
-    .mobile-sticky-cta { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom)); background: var(--white); border-top: 1px solid var(--border); box-shadow: 0 -4px 16px rgba(0,0,0,0.06); }
-    .mobile-sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--forest); color: var(--white); font-size: 16px; font-weight: 700; padding: 14px; border-radius: 50px; text-decoration: none; }
-    .mobile-sticky-cta a:hover { background: var(--forest-dark); color: var(--white); }
-    .mobile-sticky-cta a svg { width: 20px; height: 20px; }
-    .footer { padding-bottom: 100px; }
-
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    @media (min-width: 640px) {
-      .hero h1 { font-size: 40px; } .hero-card { padding: 56px 40px; } .hero-ctas { flex-direction: row; }
-      .features-grid { grid-template-columns: repeat(2, 1fr); } .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-      .gallery-item--wide { grid-column: span 3; aspect-ratio: 16/5; }
-      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-      .directions-grid { grid-template-columns: repeat(2, 1fr); } .section-title { font-size: 32px; }
+    /* === DEMO BANNER === */
+    .demo-banner {
+      background: var(--forest);
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
     }
-    @media (min-width: 768px) {
-      .hero { padding: 110px 0 70px; } .hero h1 { font-size: 44px; } .section { padding: 96px 0; }
-      .contact-layout { grid-template-columns: 1fr 1fr; gap: 48px; } .container { padding: 0 32px; }
+    .demo-banner a {
+      color: var(--sand-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 600;
     }
-    @media (min-width: 1024px) {
-      .nav-links { display: flex; } .nav-menu-btn { display: none; }
-      .hero h1 { font-size: 48px; } .features-grid { grid-template-columns: repeat(3, 1fr); }
-      .gallery-grid { grid-template-columns: repeat(4, 1fr); } .gallery-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
-      .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; }
-      .mobile-sticky-cta { display: none; } .footer { padding-bottom: 24px; }
-      .section-title { font-size: 36px; } .booking-cta h2 { font-size: 36px; }
+    .demo-banner a:hover { color: #fff; }
+
+    /* === NAVIGATION — Transparent overlay style === */
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    @media (max-width: 480px) {
-      .hero { padding: 90px 0 40px; } .hero-card { padding: 32px 20px; } .hero h1 { font-size: 28px; }
-      .section { padding: 60px 0; } .section-title { font-size: 24px; }
-      .nav { padding: 8px 10px 8px 16px; } .nav-brand-sub { display: none; }
-      .form-row { grid-template-columns: 1fr; }
-      .calendar-grid { gap: 2px; } .calendar-day { padding: 8px 2px; font-size: 13px; }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-logo-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .header-logo-text {
+      font-family: var(--font-display);
+      color: white;
+      font-size: 1.1rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+    .header-logo-text span {
+      display: block;
+      font-size: 0.7rem;
+      font-family: var(--font-body);
+      opacity: 0.8;
+      letter-spacing: 0.05em;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+    .header-nav a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: #fff; }
+
+    .header-cta {
+      padding: 10px 24px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      color: white !important;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .header-cta:hover {
+      background: rgba(255,255,255,0.35);
+    }
+
+    .mobile-toggle {
+      display: none;
+      color: white;
+      font-size: 1.5rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .site-header { padding: 16px 20px; }
+      .header-nav { display: none; }
+      .mobile-toggle { display: block; }
+      .site-header.open .header-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(45, 80, 22, 0.95);
+        backdrop-filter: blur(16px);
+        padding: 24px;
+        gap: 16px;
+      }
+    }
+
+    /* === HERO — Full-width landscape simulation === */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 0 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      /* Lake landscape gradient simulation */
+      background:
+        /* Sky */
+        linear-gradient(180deg,
+          #87CEEB 0%,
+          #B0D4E8 25%,
+          #D4E8C7 40%,
+          /* Treeline */
+          #2d5016 40%,
+          #3a6b20 42%,
+          #2d5016 42.5%,
+          #4a7c2e 43%,
+          #2d5016 44%,
+          /* Lake */
+          #5a9ab5 44%,
+          #3b7a9e 55%,
+          #4a8aae 65%,
+          /* Shore/sand */
+          #c4a76c 65%,
+          #d4b87c 67%,
+          /* Grass foreground */
+          #5a7e3a 67%,
+          #4a6e2a 100%
+        );
+    }
+    /* Sun */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 12%;
+      right: 25%;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, #fff5cc 0%, #ffd700 40%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+    /* Lake reflection */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 48%;
+      left: 30%;
+      right: 30%;
+      height: 12%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.15) 70%, transparent);
+      filter: blur(4px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 0 40px;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      color: white;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 32px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+    .hero-features {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .hero-feature-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      animation: bounce-down 2s ease infinite;
+    }
+    .hero-scroll::after {
+      content: '↓';
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 4px;
+    }
+    @keyframes bounce-down {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 0 0 60px; }
+      .hero-content { padding: 0 20px; }
+    }
+
+    /* === QUICK FACTS BAR === */
+    .facts-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--white);
+      border-bottom: 3px solid var(--forest);
+      position: relative;
+      z-index: 3;
+    }
+    .fact-item {
+      padding: 28px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .fact-item:last-child { border-right: none; }
+    .fact-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .fact-value {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--forest);
+      font-weight: 700;
+    }
+    .fact-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .facts-bar { grid-template-columns: repeat(2, 1fr); }
+      .fact-item:nth-child(2) { border-right: none; }
+    }
+
+    /* === SECTION PATTERNS === */
+    .section { padding: 80px 24px; }
+    .section-cream { background: var(--cream); }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest);
+      background: rgba(45, 80, 22, 0.08);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--text);
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* === PHOTO STRIP — Horizontal scroll === */
+    .photo-strip {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 24px 16px;
+      margin: 0 -24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--sand) var(--border);
+    }
+    .photo-strip::-webkit-scrollbar { height: 6px; }
+    .photo-strip::-webkit-scrollbar-track { background: var(--border); border-radius: 3px; }
+    .photo-strip::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
+
+    .photo-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .photo-card-img {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .photo-card-caption {
+      padding: 16px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* === DESCRIPTION — Side by side === */
+    .desc-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .desc-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .desc-text p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .amenity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .amenity-icon { font-size: 1.2rem; }
+
+    @media (max-width: 768px) {
+      .desc-grid { grid-template-columns: 1fr; }
+      .amenities-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === AVAILABILITY CALENDAR === */
+    .calendar-wrap {
+      max-width: 420px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .calendar-header h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    .calendar-nav {
+      display: flex;
+      gap: 8px;
+    }
+    .calendar-nav button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .calendar-nav button:hover {
+      border-color: var(--forest);
+      color: var(--forest);
+    }
+
+    .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .calendar-weekdays span {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 4px;
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    .cal-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .cal-day:hover { background: var(--lake-pale); }
+    .cal-day.empty { pointer-events: none; }
+    .cal-day.available { background: rgba(45, 80, 22, 0.08); color: var(--forest); font-weight: 600; }
+    .cal-day.booked { background: rgba(0,0,0,0.04); color: #bbb; text-decoration: line-through; cursor: not-allowed; }
+    .cal-day.today { border: 2px solid var(--forest); font-weight: 700; }
+
+    .calendar-legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+    .legend-dot.available { background: rgba(45, 80, 22, 0.2); }
+    .legend-dot.booked { background: rgba(0,0,0,0.08); }
+
+    /* === PRICING CARD === */
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .pricing-card.featured {
+      border-color: var(--forest);
+      position: relative;
+    }
+    .pricing-card.featured::before {
+      content: 'Beliebt';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--forest);
+      color: white;
+      padding: 3px 16px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .pricing-season {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .pricing-months {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--forest);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pricing-unit {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .pricing-features li {
+      padding: 8px 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--forest);
+      font-weight: 700;
+    }
+
+    .btn-book {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 32px;
+      background: var(--forest);
+      color: white;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-book:hover {
+      background: var(--forest-light);
+      transform: translateY(-1px);
+    }
+
+    /* === LOCATION / MAP PLACEHOLDER === */
+    .location-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .location-map {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #d4e8c7 0%, #a8c896 40%, #6db5d6 60%, #5a9ab5 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .location-map::after {
+      content: '📍 Bad Saarow';
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(255,255,255,0.9);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+    .location-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .location-info p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+    .location-distances {
+      list-style: none;
+      margin-top: 20px;
+    }
+    .location-distances li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .location-distances li span:last-child {
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .location-split { grid-template-columns: 1fr; }
+    }
+
+    /* === REVIEWS === */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .review-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+    .review-stars {
+      color: #f59e0b;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .review-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .review-author {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .review-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* === CONTACT / BOOKING FORM === */
+    .booking-section {
+      background: var(--forest);
+      color: white;
+      padding: 80px 24px;
+    }
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .booking-info h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .booking-info p {
+      opacity: 0.85;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    .host-card {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .host-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .host-name {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .host-response {
+      font-size: 0.8rem;
+      opacity: 0.75;
+    }
+
+    .booking-form {
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(8px);
+    }
+    .booking-form label {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+      margin-bottom: 6px;
+      margin-top: 16px;
+    }
+    .booking-form label:first-child { margin-top: 0; }
+    .booking-form input,
+    .booking-form textarea,
+    .booking-form select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      color: white;
+      font-size: 0.95rem;
+    }
+    .booking-form input::placeholder,
+    .booking-form textarea::placeholder { color: rgba(255,255,255,0.5); }
+    .booking-form input:focus,
+    .booking-form textarea:focus {
+      outline: none;
+      border-color: var(--sand-light);
+    }
+    .booking-form textarea { min-height: 100px; resize: vertical; }
+    .booking-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      margin-top: 24px;
+      padding: 14px;
+      background: var(--sand);
+      color: var(--text);
+      border: none;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .btn-submit:hover {
+      background: var(--sand-light);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .booking-grid { grid-template-columns: 1fr; }
+      .booking-form .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* === FOOTER === */
+    .site-footer {
+      padding: 48px 24px 24px;
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      padding: 4px 0;
+    }
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--forest); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-bottom a {
+      color: var(--forest);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    /* === FADE IN === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <div class="demo-banner" role="banner">
-    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &ndash; So könnte Ihre Ferienwohnungs-Website aussehen!
+  <!-- Demo Banner -->
+  <div class="demo-banner">
+    Dies ist eine Demo-Website von <a href="../index.html#kontakt">Websitepolierer.de</a> &mdash; So könnte Ihre Website aussehen!
   </div>
 
-  <div class="nav-wrapper">
-    <nav class="nav" id="navbar" role="navigation" aria-label="Hauptnavigation">
-      <a href="#" class="nav-brand"><span class="nav-brand-name">Ferienwohnung</span><span class="nav-brand-sub">am See</span></a>
-      <ul class="nav-links">
-        <li><a href="#ausstattung">Ausstattung</a></li>
-        <li><a href="#galerie">Fotos</a></li>
-        <li><a href="#verfuegbarkeit">Verfügbarkeit</a></li>
-        <li><a href="#anreise">Anreise</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-      <div class="nav-right">
-        <a href="#buchen" class="nav-cta">Direkt buchen</a>
-        <button class="nav-menu-btn" aria-label="Menü öffnen" onclick="document.getElementById('mobile-menu').classList.add('open')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-logo">
+      <div class="header-logo-icon">🏡</div>
+      <div class="header-logo-text">
+        Ferienwohnung am See
+        <span>Bad Saarow · Scharmützelsee</span>
       </div>
-    </nav>
-  </div>
-
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
-    <button class="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <ul class="mobile-menu-links">
-      <li><a href="#ausstattung" onclick="document.getElementById('mobile-menu').classList.remove('open')">Ausstattung</a></li>
-      <li><a href="#galerie" onclick="document.getElementById('mobile-menu').classList.remove('open')">Fotos</a></li>
-      <li><a href="#verfuegbarkeit" onclick="document.getElementById('mobile-menu').classList.remove('open')">Verfügbarkeit</a></li>
-      <li><a href="#anreise" onclick="document.getElementById('mobile-menu').classList.remove('open')">Anreise</a></li>
-      <li><a href="#kontakt" onclick="document.getElementById('mobile-menu').classList.remove('open')">Kontakt</a></li>
+    </div>
+    <ul class="header-nav">
+      <li><a href="#wohnung">Die Wohnung</a></li>
+      <li><a href="#fotos">Fotos</a></li>
+      <li><a href="#preise">Preise</a></li>
+      <li><a href="#lage">Lage</a></li>
+      <li><a href="#buchen" class="header-cta">Jetzt buchen</a></li>
     </ul>
-    <div class="mobile-menu-cta"><a href="#buchen" class="nav-cta" onclick="document.getElementById('mobile-menu').classList.remove('open')">Direkt buchen</a></div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menü">☰</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-badge">⭐ 4.9 / 5 · 127 Bewertungen</span>
+      <h1>Urlaub am Scharmützelsee</h1>
+      <p class="hero-sub">Ihre Auszeit vom Alltag – direkt am Wasser, umgeben von Natur. Gemütlich eingerichtet, mit eigenem Seezugang.</p>
+      <div class="hero-features">
+        <div class="hero-feature">
+          <span class="hero-feature-icon">🛏</span>
+          <span>2 Schlafzimmer</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-icon">👥</span>
+          <span>Bis 4 Gäste</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-icon">🌊</span>
+          <span>Eigener Steg</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">Entdecken</div>
+  </section>
+
+  <!-- Quick Facts -->
+  <div class="facts-bar fade-in">
+    <div class="fact-item">
+      <div class="fact-icon">📐</div>
+      <div class="fact-value">75 m²</div>
+      <div class="fact-label">Wohnfläche</div>
+    </div>
+    <div class="fact-item">
+      <div class="fact-icon">🏖</div>
+      <div class="fact-value">50 m</div>
+      <div class="fact-label">zum See</div>
+    </div>
+    <div class="fact-item">
+      <div class="fact-icon">📶</div>
+      <div class="fact-value">WLAN</div>
+      <div class="fact-label">Kostenlos</div>
+    </div>
+    <div class="fact-item">
+      <div class="fact-icon">🅿️</div>
+      <div class="fact-value">Gratis</div>
+      <div class="fact-label">Parkplatz</div>
+    </div>
   </div>
 
-  <!-- HERO -->
-  <section class="hero" id="start">
+  <!-- Photo Strip -->
+  <section class="section" id="fotos">
     <div class="container">
-      <div class="hero-card fade-in">
-        <div class="hero-badge">🌿 Bad Saarow &middot; Direkt am See &middot; Bis 4 Personen</div>
-        <h1>Urlaub direkt am <span>Scharmützelsee.</span></h1>
-        <p class="hero-sub">Gemütliche Ferienwohnung mit Seezugang in Bad Saarow, Brandenburg. Ruhe, Natur und Erholung – nur 60 km von Berlin.</p>
-        <div class="hero-ctas">
-          <a href="#buchen" class="btn btn-lg btn-forest">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Verfügbarkeit prüfen
-          </a>
-          <a href="#galerie" class="btn btn-lg btn-ghost">Fotos ansehen</a>
-        </div>
+      <div class="section-header fade-in">
+        <span class="section-tag">Impressionen</span>
+        <h2 class="section-title">Ein Blick in Ihr Zuhause auf Zeit</h2>
+        <p class="section-sub">Liebevoll eingerichtet, hell und freundlich — mit Blick auf den See und die Natur</p>
+      </div>
+    </div>
+    <div class="photo-strip fade-in">
+      <div class="photo-card">
+        <div class="photo-card-img" style="background: linear-gradient(135deg, #e8d5a8 0%, #f5f0e8 100%);">🛋️</div>
+        <div class="photo-card-caption">Offener Wohn- & Essbereich</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-card-img" style="background: linear-gradient(135deg, #d4e8c7 0%, #a8c896 100%);">🌳</div>
+        <div class="photo-card-caption">Terrasse mit Gartenblick</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-card-img" style="background: linear-gradient(135deg, #6db5d6 0%, #3b7a9e 100%);">🌅</div>
+        <div class="photo-card-caption">Sonnenuntergang am Steg</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-card-img" style="background: linear-gradient(135deg, #f0e6d8 0%, #e0d0b8 100%);">🛏️</div>
+        <div class="photo-card-caption">Schlafzimmer mit Seeblick</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-card-img" style="background: linear-gradient(135deg, #e0eee0 0%, #c4dcc4 100%);">🍳</div>
+        <div class="photo-card-caption">Voll ausgestattete Küche</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-card-img" style="background: linear-gradient(135deg, #d0e8f0 0%, #b0d0e0 100%);">🚿</div>
+        <div class="photo-card-caption">Modernes Badezimmer</div>
       </div>
     </div>
   </section>
 
-  <!-- AUSSTATTUNG -->
-  <section class="section section--white" id="ausstattung">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Ausstattung</div>
-        <h2 class="section-title">Alles für Ihren perfekten Urlaub</h2>
-        <p class="section-desc">65 m² Wohnfläche, 2 Schlafzimmer, voll ausgestattete Küche und ein Balkon mit Seeblick.</p>
+  <!-- Description & Amenities -->
+  <section class="section section-cream" id="wohnung">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag">Die Wohnung</span>
+        <h2 class="section-title">Ihr Rückzugsort am Wasser</h2>
       </div>
-      <div class="features-grid">
-        <div class="feature-card fade-in">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <h3>2 Schlafzimmer</h3>
-          <p>Ein Doppelzimmer und ein Kinderzimmer mit zwei Einzelbetten. Hochwertige Matratzen und frische Bettwäsche inklusive.</p>
+      <div class="desc-grid">
+        <div class="desc-text">
+          <h3>Gemütlichkeit trifft Natur</h3>
+          <p>Unsere Ferienwohnung liegt eingebettet in die sanfte Hügellandschaft am Scharmützelsee — dem größten See in Brandenburg. Von der eigenen Terrasse aus genießen Sie freien Blick über das Wasser und können den Sonnenuntergang direkt vom privaten Steg beobachten.</p>
+          <p>Die Wohnung bietet auf 75 m² alles, was Sie für einen entspannten Urlaub brauchen: zwei helle Schlafzimmer, eine voll ausgestattete Küche, ein modernes Bad und einen gemütlichen Wohnbereich mit Kaminofen für kühlere Abende.</p>
+          <p>Bad Saarow ist der ideale Ausgangspunkt für Wanderungen, Radtouren, Wassersport oder einfach nur Ruhe. Die SaarowTherme, Restaurants und der Kurpark sind fußläufig erreichbar.</p>
         </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
-          <h3>Balkon mit Seeblick</h3>
-          <p>Sonniger Süd-Balkon mit direktem Blick auf den Scharmützelsee. Perfekt für Morgenkaffee oder Abendrot.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
-          <h3>Voll ausgestattete Küche</h3>
-          <p>Herd, Backofen, Kühlschrank, Geschirrspüler, Kaffeemaschine und alles zum Kochen.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
-          <h3>Direkter Seezugang</h3>
-          <p>Eigener Steg und Badestelle nur 50 Meter entfernt. Ruderboot kann optional dazu gebucht werden.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <h3>WLAN & Smart-TV</h3>
-          <p>Kostenloses Highspeed-WLAN und ein Smart-TV mit Netflix, ARD/ZDF Mediathek und mehr.</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
-          <h3>Familienfreundlich</h3>
-          <p>Kinderbett, Hochstuhl, Spielzeug und ein eingezäunter Garten. Hunde auf Anfrage willkommen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERIE -->
-  <section class="section section--alt" id="galerie">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Fotos</div>
-        <h2 class="section-title">Impressionen</h2>
-        <p class="section-desc">Ein Einblick in die Ferienwohnung und die traumhafte Umgebung am Scharmützelsee.</p>
-      </div>
-      <div class="gallery-grid fade-in">
-        <div class="gallery-item gallery-item--wide">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Panorama – Seeblick vom Balkon</span>
-        </div>
-        <div class="gallery-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Wohnzimmer</span></div>
-        <div class="gallery-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Schlafzimmer</span></div>
-        <div class="gallery-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Küche</span></div>
-        <div class="gallery-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Badezimmer</span></div>
-        <div class="gallery-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Garten & Steg</span></div>
-        <div class="gallery-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Badestelle</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VERFÜGBARKEIT -->
-  <section class="calendar-section" id="verfuegbarkeit">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Verfügbarkeit</div>
-        <h2 class="section-title">Wann möchten Sie kommen?</h2>
-        <p class="section-desc">Prüfen Sie die Verfügbarkeit und buchen Sie direkt – ohne Buchungsportal, ohne Provision.</p>
-      </div>
-      <div class="calendar-wrapper fade-in">
-        <div class="calendar-header">
-          <h3>Juli 2026</h3>
-          <div class="calendar-nav">
-            <button aria-label="Vorheriger Monat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button aria-label="Nächster Monat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 16px;">Ausstattung</h3>
+          <div class="amenities-grid">
+            <div class="amenity"><span class="amenity-icon">📶</span> Highspeed-WLAN</div>
+            <div class="amenity"><span class="amenity-icon">🔥</span> Kaminofen</div>
+            <div class="amenity"><span class="amenity-icon">🍳</span> Vollküche</div>
+            <div class="amenity"><span class="amenity-icon">📺</span> Smart-TV</div>
+            <div class="amenity"><span class="amenity-icon">🧺</span> Waschmaschine</div>
+            <div class="amenity"><span class="amenity-icon">🚲</span> 2 Fahrräder</div>
+            <div class="amenity"><span class="amenity-icon">🛶</span> Kanu am Steg</div>
+            <div class="amenity"><span class="amenity-icon">🅿️</span> Parkplatz</div>
+            <div class="amenity"><span class="amenity-icon">🐕</span> Hunde willkommen</div>
+            <div class="amenity"><span class="amenity-icon">🧒</span> Kinderbett</div>
           </div>
         </div>
-        <div class="calendar-grid">
-          <div class="calendar-day-label">Mo</div><div class="calendar-day-label">Di</div><div class="calendar-day-label">Mi</div><div class="calendar-day-label">Do</div><div class="calendar-day-label">Fr</div><div class="calendar-day-label">Sa</div><div class="calendar-day-label">So</div>
-          <div class="calendar-day calendar-day--empty">–</div><div class="calendar-day calendar-day--empty">–</div><div class="calendar-day calendar-day--available">1</div><div class="calendar-day calendar-day--available">2</div><div class="calendar-day calendar-day--available">3</div><div class="calendar-day calendar-day--available">4</div><div class="calendar-day calendar-day--available">5</div>
-          <div class="calendar-day calendar-day--available">6</div><div class="calendar-day calendar-day--available">7</div><div class="calendar-day calendar-day--available">8</div><div class="calendar-day calendar-day--available">9</div><div class="calendar-day calendar-day--available">10</div><div class="calendar-day calendar-day--booked">11</div><div class="calendar-day calendar-day--booked">12</div>
-          <div class="calendar-day calendar-day--booked">13</div><div class="calendar-day calendar-day--booked">14</div><div class="calendar-day calendar-day--booked">15</div><div class="calendar-day calendar-day--booked">16</div><div class="calendar-day calendar-day--booked">17</div><div class="calendar-day calendar-day--booked">18</div><div class="calendar-day calendar-day--booked">19</div>
-          <div class="calendar-day calendar-day--available">20</div><div class="calendar-day calendar-day--available">21</div><div class="calendar-day calendar-day--available">22</div><div class="calendar-day calendar-day--available">23</div><div class="calendar-day calendar-day--available">24</div><div class="calendar-day calendar-day--available">25</div><div class="calendar-day calendar-day--available">26</div>
-          <div class="calendar-day calendar-day--available">27</div><div class="calendar-day calendar-day--available">28</div><div class="calendar-day calendar-day--available">29</div><div class="calendar-day calendar-day--available">30</div><div class="calendar-day calendar-day--available">31</div><div class="calendar-day calendar-day--empty">–</div><div class="calendar-day calendar-day--empty">–</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendar -->
+  <section class="section">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag">Verfügbarkeit</span>
+        <h2 class="section-title">Freie Termine</h2>
+        <p class="section-sub">Grün markierte Tage sind noch verfügbar — buchen Sie direkt und sparen Sie Vermittlungsgebühren</p>
+      </div>
+      <div class="calendar-wrap">
+        <div class="calendar-header">
+          <h4>März 2026</h4>
+          <div class="calendar-nav">
+            <button aria-label="Vorheriger Monat">‹</button>
+            <button aria-label="Nächster Monat">›</button>
+          </div>
+        </div>
+        <div class="calendar-weekdays">
+          <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
+        </div>
+        <div class="calendar-days">
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day booked">1</div>
+          <div class="cal-day booked">2</div>
+          <div class="cal-day booked">3</div>
+          <div class="cal-day booked">4</div>
+          <div class="cal-day booked">5</div>
+          <div class="cal-day booked">6</div>
+          <div class="cal-day booked">7</div>
+          <div class="cal-day booked">8</div>
+          <div class="cal-day available">9</div>
+          <div class="cal-day available">10</div>
+          <div class="cal-day available">11</div>
+          <div class="cal-day available">12</div>
+          <div class="cal-day today">13</div>
+          <div class="cal-day available">14</div>
+          <div class="cal-day available">15</div>
+          <div class="cal-day available">16</div>
+          <div class="cal-day available">17</div>
+          <div class="cal-day available">18</div>
+          <div class="cal-day available">19</div>
+          <div class="cal-day available">20</div>
+          <div class="cal-day booked">21</div>
+          <div class="cal-day booked">22</div>
+          <div class="cal-day booked">23</div>
+          <div class="cal-day booked">24</div>
+          <div class="cal-day booked">25</div>
+          <div class="cal-day booked">26</div>
+          <div class="cal-day booked">27</div>
+          <div class="cal-day booked">28</div>
+          <div class="cal-day available">29</div>
+          <div class="cal-day available">30</div>
+          <div class="cal-day available">31</div>
         </div>
         <div class="calendar-legend">
-          <div class="calendar-legend-item"><div class="calendar-legend-dot calendar-legend-dot--available"></div> Verfügbar</div>
-          <div class="calendar-legend-item"><div class="calendar-legend-dot calendar-legend-dot--booked"></div> Belegt</div>
+          <div class="legend-item"><span class="legend-dot available"></span> Verfügbar</div>
+          <div class="legend-item"><span class="legend-dot booked"></span> Belegt</div>
         </div>
-        <div class="calendar-note">📞 Für Buchungen kontaktieren Sie uns direkt – kein Booking.com, keine versteckten Gebühren!</div>
       </div>
     </div>
   </section>
 
-  <!-- PREISE -->
-  <section class="section section--alt" id="buchen">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Preise & Buchen</div>
-        <h2 class="section-title">Direkt buchen – ohne Umwege</h2>
-        <p class="section-desc">Buchen Sie direkt bei uns und sparen Sie die Provision der großen Portale.</p>
+  <!-- Pricing -->
+  <section class="section section-cream" id="preise">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag">Preise</span>
+        <h2 class="section-title">Faire Preise, direkt vom Vermieter</h2>
+        <p class="section-sub">Keine versteckten Gebühren. Endreinigung inklusive. Mindestaufenthalt 3 Nächte.</p>
       </div>
-      <div class="pricing-card fade-in">
-        <h3>Ferienwohnung am See</h3>
-        <p style="font-size: 15px; color: var(--muted);">65 m² · 2 Schlafzimmer · Seezugang · WLAN</p>
-        <div class="price-big">ab 89 €</div>
-        <div class="price-detail">pro Nacht · Mindestaufenthalt 3 Nächte</div>
-        <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Endreinigung inklusive</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Bettwäsche & Handtücher inklusive</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Kostenloser Parkplatz</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Check-in ab 15:00, Check-out bis 11:00</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Saisonpreise: Juni–Aug. ab 109 €/Nacht</li>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <p class="pricing-season">Nebensaison</p>
+          <p class="pricing-months">November – März</p>
+          <p class="pricing-price">79 €</p>
+          <p class="pricing-unit">pro Nacht</p>
+          <ul class="pricing-features">
+            <li>Endreinigung inklusive</li>
+            <li>Bettwäsche & Handtücher</li>
+            <li>WLAN & Smart-TV</li>
+            <li>Parkplatz</li>
+          </ul>
+          <a href="#buchen" class="btn-book">Anfragen</a>
+        </div>
+        <div class="pricing-card featured">
+          <p class="pricing-season">Hauptsaison</p>
+          <p class="pricing-months">April – Oktober</p>
+          <p class="pricing-price">119 €</p>
+          <p class="pricing-unit">pro Nacht</p>
+          <ul class="pricing-features">
+            <li>Alles aus der Nebensaison</li>
+            <li>Kanu-Nutzung inklusive</li>
+            <li>Fahrräder inklusive</li>
+            <li>Grillplatz im Garten</li>
+          </ul>
+          <a href="#buchen" class="btn-book">Anfragen</a>
+        </div>
+        <div class="pricing-card">
+          <p class="pricing-season">Feiertage</p>
+          <p class="pricing-months">Weihnachten, Ostern, Silvester</p>
+          <p class="pricing-price">139 €</p>
+          <p class="pricing-unit">pro Nacht · min. 5 Nächte</p>
+          <ul class="pricing-features">
+            <li>Alles aus der Hauptsaison</li>
+            <li>Willkommenspaket</li>
+            <li>Kaminholz inklusive</li>
+            <li>Späterer Checkout</li>
+          </ul>
+          <a href="#buchen" class="btn-book">Anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="section" id="lage">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag">Lage</span>
+        <h2 class="section-title">Mitten in der Natur, nah an allem</h2>
+      </div>
+      <div class="location-split">
+        <div class="location-map">🗺</div>
+        <div class="location-info">
+          <h3>Bad Saarow am Scharmützelsee</h3>
+          <p>Die Ferienwohnung liegt im ruhigen Ortsteil direkt am See. Der Kurpark, Restaurants und der Bahnhof sind in wenigen Minuten erreichbar. Berlin ist nur eine Stunde entfernt — ideal für Tagesausflüge.</p>
+          <ul class="location-distances">
+            <li><span>🌊 Scharmützelsee (Steg)</span><span>50 m</span></li>
+            <li><span>🌿 Kurpark Bad Saarow</span><span>800 m</span></li>
+            <li><span>♨️ SaarowTherme</span><span>1,2 km</span></li>
+            <li><span>🚉 Bahnhof Bad Saarow</span><span>1,5 km</span></li>
+            <li><span>🏌️ A-Rosa Golf Resort</span><span>3 km</span></li>
+            <li><span>🏙 Berlin Zentrum</span><span>~70 km</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section-cream">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag">Bewertungen</span>
+        <h2 class="section-title">Das sagen unsere Gäste</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">„Wunderschöne Lage direkt am See! Die Wohnung ist liebevoll eingerichtet und hat alles, was man braucht. Wir kommen definitiv wieder."</p>
+          <p class="review-author"><strong>Familie Bergmann</strong></p>
+          <p class="review-date">September 2025</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">„Perfekt für eine Auszeit mit Hund. Der Steg ist ein Traum, das Kanu super. Vermieter sehr freundlich und unkompliziert."</p>
+          <p class="review-author"><strong>Thomas & Kira M.</strong></p>
+          <p class="review-date">Juli 2025</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">„Ruhig, sauber, gemütlich. Der Kaminofen im Herbst war das Highlight. Sehr empfehlenswert für Naturliebhaber."</p>
+          <p class="review-author"><strong>Sabine K.</strong></p>
+          <p class="review-date">Oktober 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking / Contact -->
+  <section class="booking-section" id="buchen">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <h2>Direkt buchen & sparen</h2>
+        <p>Buchen Sie direkt bei uns und sparen Sie die Vermittlungsgebühren der großen Portale. Wir antworten in der Regel innerhalb weniger Stunden und freuen uns auf Ihre Anfrage!</p>
+        <div class="host-card">
+          <div class="host-avatar">👨‍👩‍👦</div>
+          <div>
+            <p class="host-name">Familie Lehmann</p>
+            <p class="host-response">Antwortet meist innerhalb von 2 Stunden</p>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form">
+        <label>Ihr Name</label>
+        <input type="text" placeholder="Vor- und Nachname">
+        <div class="form-row">
+          <div>
+            <label>Anreise</label>
+            <input type="date">
+          </div>
+          <div>
+            <label>Abreise</label>
+            <input type="date">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label>Erwachsene</label>
+            <input type="number" value="2" min="1" max="4">
+          </div>
+          <div>
+            <label>Kinder</label>
+            <input type="number" value="0" min="0" max="3">
+          </div>
+        </div>
+        <label>E-Mail</label>
+        <input type="email" placeholder="ihre@email.de">
+        <label>Nachricht (optional)</label>
+        <textarea placeholder="Besondere Wünsche, Fragen..."></textarea>
+        <button class="btn-submit">Unverbindlich anfragen</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>🏡 Ferienwohnung am Scharmützelsee</h3>
+        <p>Ihre gemütliche Auszeit am Wasser in Bad Saarow. Direkt buchen, persönlich betreut, liebevoll eingerichtet.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#wohnung">Die Wohnung</a></li>
+          <li><a href="#fotos">Fotos</a></li>
+          <li><a href="#preise">Preise</a></li>
+          <li><a href="#lage">Lage</a></li>
+          <li><a href="#buchen">Buchen</a></li>
         </ul>
-        <a href="#kontakt" class="btn btn-lg btn-forest" style="width: 100%;">Jetzt anfragen & buchen</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Familie Lehmann</li>
+          <li>Seestraße 14</li>
+          <li>15526 Bad Saarow</li>
+          <li style="margin-top: 8px;"><a href="tel:+4933631443322">033631 443 322</a></li>
+          <li><a href="mailto:info@fewo-scharmuetzelsee.de">info@fewo-scharmuetzelsee.de</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- BEWERTUNGEN -->
-  <section class="section section--white" id="bewertungen">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Gästestimmen</div>
-        <h2 class="section-title">Was unsere Gäste sagen</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testimonial-text">&bdquo;Wunderschöne Lage direkt am See. Die Wohnung ist liebevoll eingerichtet und hat alles, was man braucht. Die Kinder konnten den ganzen Tag am Wasser spielen. Wir kommen definitiv wieder!&ldquo;</p>
-          <p class="testimonial-author">Familie Richter &middot; Berlin &middot; August 2025</p>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testimonial-text">&bdquo;Perfekte Erholung vom Berliner Alltag. Morgens auf dem Balkon frühstücken mit Seeblick – unbezahlbar. Herr Lehmann war ein toller Gastgeber, sehr unkompliziert. Absolute Empfehlung!&ldquo;</p>
-          <p class="testimonial-author">Stefanie & Thomas B. &middot; Potsdam &middot; Juni 2025</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ANREISE -->
-  <section class="section section--bg" id="anreise">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Lage & Anreise</div>
-        <h2 class="section-title">So finden Sie uns</h2>
-        <p class="section-desc">Bad Saarow liegt nur ca. 60 km südöstlich von Berlin – ideal für einen Kurzurlaub oder längeren Aufenthalt.</p>
-      </div>
-      <div class="directions-grid">
-        <div class="directions-card fade-in">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Anreise</h3>
-          <ul class="directions-list">
-            <li class="directions-item">
-              <div class="directions-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-              <div><strong>Adresse</strong><span>Seestraße 14, 15526 Bad Saarow</span></div>
-            </li>
-            <li class="directions-item">
-              <div class="directions-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div><strong>Mit dem Auto</strong><span>Ab Berlin Mitte ca. 60 Min. über A12, kostenloser Parkplatz am Haus</span></div>
-            </li>
-            <li class="directions-item">
-              <div class="directions-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6v12"/><path d="M2 12h20"/></svg></div>
-              <div><strong>Mit der Bahn</strong><span>RE1 bis Fürstenwalde, dann Bus 435 bis Bad Saarow Therme (ca. 75 Min. ab Berlin Hbf)</span></div>
-            </li>
-          </ul>
-          <div class="map-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-            Google Maps Kartenansicht
-          </div>
-        </div>
-        <div class="directions-card fade-in">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> In der Umgebung</h3>
-          <ul class="directions-list">
-            <li class="directions-item">
-              <div class="directions-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
-              <div><strong>SaarowTherme</strong><span>5 Min. zu Fuß – Therme mit Seesauna</span></div>
-            </li>
-            <li class="directions-item">
-              <div class="directions-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg></div>
-              <div><strong>Bootsverleih</strong><span>Direkt am Hafen – Ruder-, Tret- und Segelboote</span></div>
-            </li>
-            <li class="directions-item">
-              <div class="directions-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-              <div><strong>Restaurants</strong><span>Mehrere Restaurants in 10 Min. Gehweite</span></div>
-            </li>
-            <li class="directions-item">
-              <div class="directions-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-              <div><strong>Wanderwege</strong><span>Naturpark Dahme-Heideseen direkt vor der Tür</span></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAKT -->
-  <section class="section section--white" id="kontakt">
-    <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Kontakt & Buchung</div>
-        <h2 class="section-title">Direkt anfragen</h2>
-        <p class="section-desc">Schreiben Sie uns Ihren Wunschzeitraum – wir melden uns innerhalb von 24 Stunden zurück.</p>
-      </div>
-      <div class="contact-layout">
-        <form class="contact-form fade-in" onsubmit="event.preventDefault(); alert('Dies ist eine Demo-Website. Das Formular sendet keine Daten.');">
-          <div class="form-row">
-            <div class="form-group"><label for="c-name">Name *</label><input type="text" id="c-name" placeholder="Ihr Name" required></div>
-            <div class="form-group"><label for="c-email">E-Mail *</label><input type="email" id="c-email" placeholder="Ihre E-Mail" required></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="c-checkin">Anreise</label><input type="date" id="c-checkin"></div>
-            <div class="form-group"><label for="c-checkout">Abreise</label><input type="date" id="c-checkout"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="c-guests">Personenzahl</label><input type="number" id="c-guests" min="1" max="4" placeholder="1–4 Personen"></div>
-            <div class="form-group"><label for="c-phone">Telefon</label><input type="tel" id="c-phone" placeholder="Optional"></div>
-          </div>
-          <div class="form-group"><label for="c-msg">Nachricht</label><textarea id="c-msg" placeholder="Besondere Wünsche, Fragen…"></textarea></div>
-          <button type="submit" class="btn btn-lg btn-forest btn-submit">
-            Buchungsanfrage senden
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-        </form>
-        <div class="fade-in">
-          <h3 style="font-size: 22px; margin-bottom: 20px;">Ihr Gastgeber</h3>
-          <div class="contact-info-items">
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-              <div><strong>Jörg Lehmann</strong><span>Vermieter seit 2018 &middot; 4.9★ Bewertung</span></div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
-              <div><strong>Telefon</strong><a href="tel:+4933631456789">033631 456 789</a></div>
-            </div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-              <div><strong>E-Mail</strong><a href="mailto:info@fewo-scharmuetzelsee.de">info@fewo-scharmuetzelsee.de</a></div>
-            </div>
-          </div>
-          <div style="margin-top: 28px; padding: 20px; background: var(--forest-subtle); border-radius: var(--radius); font-size: 14px; color: var(--forest-dark);">
-            <strong>💡 Direkt buchen lohnt sich:</strong> Keine Buchungsgebühren, persönlicher Kontakt, flexible Stornierung bis 14 Tage vor Anreise.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-col">
-          <div class="footer-brand-name">Ferienwohnung am Scharmützelsee</div>
-          <p class="footer-brand-desc">Gemütliche Ferienwohnung in Bad Saarow, Brandenburg. Direkt am See, familienfreundlich, Natur pur.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Informationen</h4>
-          <ul class="footer-links">
-            <li><a href="#ausstattung">Ausstattung</a></li>
-            <li><a href="#galerie">Fotos</a></li>
-            <li><a href="#verfuegbarkeit">Verfügbarkeit</a></li>
-            <li><a href="#buchen">Preise</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Vor Ort</h4>
-          <ul class="footer-links">
-            <li><a href="#anreise">Anreise</a></li>
-            <li><a href="#anreise">Umgebung</a></li>
-            <li><a href="#bewertungen">Gästestimmen</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Kontakt</h4>
-          <ul class="footer-links">
-            <li><a href="tel:+4933631456789">033631 456 789</a></li>
-            <li><a href="mailto:info@fewo-scharmuetzelsee.de">info@fewo-scharmuetzelsee.de</a></li>
-            <li>Seestraße 14</li>
-            <li>15526 Bad Saarow</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>Ferienwohnung am Scharmützelsee &middot; Bad Saarow, Brandenburg &middot; Erstellt von <a href="https://websitepolierer.de" style="color: var(--forest);">Websitepolierer.de</a></span>
-        <div class="footer-bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
-      </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Ferienwohnung am Scharmützelsee. Alle Rechte vorbehalten.</span>
+      <span>Website erstellt von <a href="https://websitepolierer.de">Websitepolierer.de</a></span>
     </div>
   </footer>
 
-  <div class="mobile-sticky-cta">
-    <a href="tel:+4933631456789">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      Direkt anrufen: 033631 456 789
-    </a>
-  </div>
-
   <script>
     (function() {
-      'use strict';
-      var nav = document.getElementById('navbar');
-      window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.pageYOffset > 60); }, { passive: true });
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') document.getElementById('mobile-menu').classList.remove('open'); });
-      document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-        a.addEventListener('click', function(e) {
-          var t = document.querySelector(this.getAttribute('href'));
-          if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' }); }
-        });
+      // Mobile toggle
+      var toggle = document.getElementById('mobileToggle');
+      var header = document.getElementById('siteHeader');
+      toggle.addEventListener('click', function() {
+        header.classList.toggle('open');
       });
+
+      // Fade-in observer
       var fadeEls = document.querySelectorAll('.fade-in');
       if ('IntersectionObserver' in window) {
         var obs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         fadeEls.forEach(function(el) { obs.observe(el); });
-      } else { fadeEls.forEach(function(el) { el.classList.add('visible'); }); }
+      } else {
+        fadeEls.forEach(function(el) { el.classList.add('is-visible'); });
+      }
     })();
   </script>
+
 </body>
 </html>

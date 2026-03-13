@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Websitepolierer — Lead Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #1a1a1a; }
+  
+  .header { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .header h1 { font-size: 20px; font-weight: 700; }
+  .header-stats { display: flex; gap: 24px; font-size: 14px; color: #666; }
+  .header-stats strong { color: #1a56db; }
+  
+  .filters { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 12px 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1px solid #e5e5e5; background: #fff; cursor: pointer; font-size: 13px; transition: all 0.15s; }
+  .filter-btn:hover { border-color: #1a56db; color: #1a56db; }
+  .filter-btn.active { background: #1a56db; color: #fff; border-color: #1a56db; }
+  
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+  
+  .lead-grid { display: flex; flex-direction: column; gap: 12px; }
+  
+  .lead-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; transition: border-color 0.15s; }
+  .lead-card:hover { border-color: #1a56db; }
+  .lead-card.approved { border-left: 4px solid #16a34a; }
+  .lead-card.rejected { border-left: 4px solid #dc2626; opacity: 0.4; }
+  .lead-card.blacklisted { display: none; }
+  
+  .lead-info h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
+  .lead-meta { display: flex; gap: 16px; font-size: 13px; color: #666; flex-wrap: wrap; margin-bottom: 8px; }
+  .lead-meta span { display: flex; align-items: center; gap: 4px; }
+  
+  .lead-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; }
+  .tag--no-web { background: #fef2f2; color: #dc2626; }
+  .tag--has-web { background: #f0fdf4; color: #16a34a; }
+  .tag--http { background: #fffbeb; color: #d97706; }
+  .tag--category { background: #eff6ff; color: #1a56db; }
+  
+  .score-badge { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 24px; border-radius: 6px; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .score--hot { background: #dc2626; color: #fff; }
+  .score--medium { background: #d97706; color: #fff; }
+  .score--low { background: #9ca3af; color: #fff; }
+  
+  .priority-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; }
+  .priority--hot { background: #fef2f2; color: #dc2626; }
+  .priority--medium { background: #fffbeb; color: #d97706; }
+  .priority--low { background: #f3f4f6; color: #6b7280; }
+  
+  .lead-actions { display: flex; gap: 8px; }
+  .btn-approve, .btn-reject { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #e5e5e5; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; background: #fff; }
+  .btn-approve:hover { background: #f0fdf4; border-color: #16a34a; }
+  .btn-reject:hover { background: #fef2f2; border-color: #dc2626; }
+  .btn-approve.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+  .btn-reject.active { background: #dc2626; color: #fff; border-color: #dc2626; }
+  
+  .lead-website { font-size: 12px; color: #999; word-break: break-all; }
+  .lead-website a { color: #1a56db; text-decoration: none; }
+  .lead-website a:hover { text-decoration: underline; }
+  
+  .disqualified-reason { font-size: 11px; color: #dc2626; margin-top: 4px; }
+  
+  .section-header { padding: 12px 0 8px; font-size: 13px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e5e5e5; margin-bottom: 8px; }
+  
+  .export-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #e5e5e5; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; z-index: 10; }
+  .export-bar .count { font-size: 14px; color: #666; }
+  .export-bar .count strong { color: #16a34a; }
+  .btn-export { padding: 10px 24px; background: #1a56db; color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+  .btn-export:hover { background: #1348b8; }
+  .btn-export:disabled { background: #ccc; cursor: not-allowed; }
+  
+  .show-blacklisted { font-size: 12px; color: #999; cursor: pointer; text-decoration: underline; background: none; border: none; margin-left: 12px; }
+  
+  .spacer { height: 80px; }
+  
+  @media (max-width: 640px) {
+    .lead-card { grid-template-columns: 1fr; }
+    .header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .container { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎯 Lead Dashboard</h1>
+  <div class="header-stats">
+    <span>Qualifiziert: <strong id="qualifiedCount">0</strong></span>
+    <span>🔥 Hot: <strong id="hotCount">0</strong></span>
+    <span>Genehmigt: <strong id="approvedCount">0</strong></span>
+    <span>Verworfen: <strong id="blacklistedCount">0</strong></span>
+  </div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-filter="qualified">Qualifiziert</button>
+  <button class="filter-btn" data-filter="hot">🔥 Hot (80+)</button>
+  <button class="filter-btn" data-filter="medium">⚡ Mittel (60-79)</button>
+  <button class="filter-btn" data-filter="low">📋 Niedrig (40-59)</button>
+  <button class="filter-btn" data-filter="approved">✅ Genehmigt</button>
+  <button class="filter-btn" data-filter="blacklisted">🚫 Verworfen</button>
+</div>
+
+<div class="container">
+  <div class="lead-grid" id="leadGrid"></div>
+  <div class="spacer"></div>
+</div>
+
+<div class="export-bar">
+  <div class="count"><strong id="approvedExportCount">0</strong> Leads genehmigt für Outreach</div>
+  <button class="btn-export" id="exportBtn" disabled>CSV exportieren</button>
+</div>
+
+<script>
+const RAW_LEADS = [{"name": "Berlin Etronix GmbH", "address": "Großbeerenstraße 2-10, 12107 Berlin", "phone": "030 221524094", "rating": 5.0, "review_count": 20, "website": "https://www.etronixberlin.com/", "category": "Elektriker", "query": "Elektriker"}, {"name": "Nexus Elektrotechnik", "address": "Breite Str. 39, 12167 Berlin", "phone": "030 98438508", "rating": 4.9, "review_count": 21, "website": "https://nexus-elektrotechnik.de/", "category": "Elektroinstallationsdienst", "query": "Elektriker"}, {"name": "Scholz Elektrotechnik GmbH", "address": "Lauenburger Str. 85, 12169 Berlin", "phone": "030 8514878", "rating": 5.0, "review_count": 10, "website": "http://www.scholz-elektro.de/", "category": "Elektriker", "query": "Elektriker"}, {"name": "Wallrath & Breitwieser Elektromeisterbetrieb", "address": "Steinstraße 24, 12169 Berlin", "phone": "030 7966211", "rating": 5.0, "review_count": 7, "website": null, "category": "Elektriker", "query": "Elektriker"}, {"name": "MW Elektrotechnik", "address": "Schützenstraße 53, 12165 Berlin", "phone": "0177 7690286", "rating": 5.0, "review_count": 3, "website": "https://www.mwe-berlin.de/", "category": "Elektriker", "query": "Elektriker"}, {"name": "SHS Elektrotechnik GmbH", "address": "Kurze Str. 3, 12167 Berlin", "phone": "030 8179532", "rating": 5.0, "review_count": 3, "website": null, "category": "Elektriker", "query": "Elektriker"}, {"name": "Gustav Kitzel GmbH & Co KG", "address": "Feuerbachstraße 4, 12163 Berlin", "phone": "030 7727000", "rating": 5.0, "review_count": 15, "website": "http://www.kitzel.de/", "category": "Elektriker", "query": "Elektriker"}, {"name": "Elektro-Schirmer", "address": "Bundesallee 79, 12161 Berlin", "phone": "0177 5209335", "rating": 4.8, "review_count": 16, "website": "http://elektro-schirmer.com/", "category": "Elektriker", "query": "Elektriker"}, {"name": "Impuls Elektro GmbH", "address": "Halskestraße 7, 12167 Berlin", "phone": "030 75448802", "rating": 5.0, "review_count": 14, "website": "http://www.impuls-elektro.de/", "category": "Elektrotechniker", "query": "Elektriker"}, {"name": "Scholz Elektroanlagen", "address": "Benzmannstraße 10, 12167 Berlin", "phone": "0172 3972792", "rating": 5.0, "review_count": 5, "website": null, "category": "Elektriker", "query": "Elektriker"}, {"name": "TEFA Service GmbH", "address": "Begasstraße 3, 12157 Berlin", "phone": "030 31192119", "rating": 4.7, "review_count": 18, "website": "http://www.tefa-service.de/", "category": "Maler", "place_id": "maps_000", "query": "Maler"}, {"name": "Malermeister Heußer", "address": "Parkstraße 61, 13187 Berlin", "phone": "030 36422977", "rating": 4.8, "review_count": 74, "website": "https://www.maler-heusser.de/", "category": "Maler", "place_id": "maps_001", "query": "Maler"}, {"name": "Colorit Malereibetrieb Berlin", "address": "Albrechtstr. 115, 12167 Berlin", "phone": "030 95611052", "rating": 5.0, "review_count": 3, "website": "http://www.colorit-maler.de/", "category": "Maler", "place_id": "maps_002", "query": "Maler"}, {"name": "Maler- und Lackierer-Innung Berlin", "address": "Wuthenowstraße 1, 12169 Berlin", "phone": "030 2232860", "rating": 4.5, "review_count": 11, "website": "https://www.malerinnung-berlin.de/", "category": "Industrie- und Handelskammer", "place_id": "maps_003", "query": "Maler"}, {"name": "Malermeister Martin Lemke", "address": "Ahornstraße 4, 12163 Berlin", "phone": "030 79741464", "rating": 5.0, "review_count": 18, "website": "http://www.malermeisterlemke.de/", "category": "Maler", "place_id": "maps_004", "query": "Maler"}, {"name": "Knospe Malereibetrieb GmbH | Maler Steglitz & Berlin", "address": "Borstellstraße 26, 12167 Berlin", "phone": "030 79308982", "rating": 4.9, "review_count": 30, "website": "https://www.knospe-malerei.de/", "category": "Maler", "place_id": "maps_005", "query": "Maler"}, {"name": "H. Rauber & A. Mahl GmbH", "address": "Sachsenwaldstraße 30, 12157 Berlin", "phone": "030 70760464", "rating": 4.9, "review_count": 14, "website": "https://rauber-mahl.de/", "category": "Maler", "place_id": "maps_006", "query": "Maler"}, {"name": "Fachverband Farbe, Gestaltung, Bautenschutz", "address": "Wuthenowstraße 1, 12169 Berlin", "phone": "030 2232860", "rating": 0.0, "review_count": 0, "website": "http://www.malerverband-bb.de/", "category": "Maler", "place_id": "maps_007", "query": "Maler"}, {"name": "Service Punkt Schuh- und Schlüsseldienst", "address": "Schloßstraße 34, 12163 Berlin", "phone": "030 439793010", "rating": 4.0, "review_count": 45, "website": "https://www.servicepunkt.net/schluesseldienst-berlin-schlossstr/", "category": "Schlüsselduplikationsdienst", "place_id": "maps_000", "query": "Schlüsseldienst"}, {"name": "Schüle Schlüsseldienst & Sicherheitstechnik", "address": "Schloßstraße 67, 12165 Berlin", "phone": "030 8330011", "rating": 4.7, "review_count": 68, "website": "https://www.schluesseldienst-schuele.de/", "category": "Schlüsseldienst", "place_id": "maps_001", "query": "Schlüsseldienst"}, {"name": "Sicherheitstechnik Theuer", "address": "Steglitzer Damm 29, 12169 Berlin", "phone": "030 79403311", "rating": 4.7, "review_count": 30, "website": "http://sicherheitstechnik-theuer.de/", "category": "Schlüsseldienst", "place_id": "maps_002", "query": "Schlüsseldienst"}, {"name": "SchuStar - Schuh- und Schlüsseldienst, Gravuren", "address": "Schloßstraße 111, 12163 Berlin", "phone": "030 24325890", "rating": 4.6, "review_count": 45, "website": null, "category": "Schuhreparatur-Geschäft", "place_id": "maps_003", "query": "Schlüsseldienst"}, {"name": "Schuhmacherei H.-J. Fischer", "address": "Albrechtstr. 10, 12165 Berlin", "phone": "030 43203642", "rating": 4.6, "review_count": 26, "website": null, "category": "Schuhreparatur-Geschäft", "place_id": "maps_004", "query": "Schlüsseldienst"}, {"name": "Schlüssel- und Schlossservice H. Schroeder e.K.", "address": "Hackerstraße 7, 12163 Berlin", "phone": "030 7930740", "rating": 4.8, "review_count": 50, "website": null, "category": "Schlüsselduplikationsdienst", "place_id": "maps_005", "query": "Schlüsseldienst"}, {"name": "Schlüssel Müller Sicherheitstechnik GmbH", "address": "Borstellstraße 44, 12167 Berlin", "phone": "030 79404833", "rating": 5.0, "review_count": 29, "website": "https://www.xn--schlsselmller-berlin-secf.de/", "category": "Schlüsseldienst", "place_id": "maps_006", "query": "Schlüsseldienst"}, {"name": "EVG Sicherungstechnik, Inh. Anita von Ganski", "address": "Hindenburgdamm 75A, 12203 Berlin", "phone": "030 8342292", "rating": 4.3, "review_count": 60, "website": "http://www.evg-sitec.de/", "category": "Schlüsseldienst", "place_id": "maps_007", "query": "Schlüsseldienst"}, {"name": "Bergmann Schlüsseldienst", "address": "Steglitzer Damm 69, 12169 Berlin", "phone": "030 221848245", "rating": 5.0, "review_count": 2, "website": null, "category": "Schlüsselnotdienst", "place_id": "maps_008", "query": "Schlüsseldienst"}, {"name": "REHBEIN Sicherheitstechnik Friedenau", "address": "Schmiljanstraße 16, 12161 Berlin", "phone": "030 85965500", "rating": 4.4, "review_count": 16, "website": "https://www.rehbein.berlin/ueber-rehbein/standorte/friedenau-schoeneberg", "category": "Sicherheitstechnikfachgeschäft", "place_id": "maps_009", "query": "Schlüsseldienst"}, {"name": "APELOS Bipedia - Physiotherapie", "address": "Clayallee 175, 14195 Berlin", "phone": "030 84716578", "rating": 5.0, "review_count": 9, "website": "https://apelos.de/standorte/praxis/bipedia", "category": "Physiotherapiezentrum", "place_id": "maps_000", "query": "Physiotherapie"}, {"name": "CRYO BOX Therapie Berlin", "address": "Nollendorfstraße 23, 10777 Berlin", "phone": "030 97004595", "rating": 5.0, "review_count": 7, "website": "https://www.cryotherapiebox-berlin.de/", "category": "Physiotherapiezentrum", "place_id": "maps_001", "query": "Physiotherapie"}, {"name": "Gutgefühl - Praxis für Physiotherapie, Schmerztherapie & Atemwegserkrankungen", "address": "Albrechtstr. 20, 12167 Berlin", "phone": "030 40009990", "rating": 4.6, "review_count": 16, "website": "http://www.praxis-gutgefuehl.de/", "category": "Physiotherapeut", "place_id": "maps_002", "query": "Physiotherapie"}, {"name": "Physio Points Steglitz ehemals Liesegang", "address": "Selerweg 3/5, 12169 Berlin", "phone": "030 7952057", "rating": 4.8, "review_count": 9, "website": "https://physiopoints.de/Steglitz/", "category": "Physiotherapiezentrum", "place_id": "maps_003", "query": "Physiotherapie"}, {"name": "Ulf Staudenmayer", "address": "Plantagenstraße 1, 12169 Berlin", "phone": "030 23524722", "rating": 4.8, "review_count": 17, "website": "https://www.physiotherapie-staudenmayer.de/", "category": "Physiotherapeut", "place_id": "maps_004", "query": "Physiotherapie"}, {"name": "Physiotherapie Krech (Inh. Matthias Krech)", "address": "Albrechtstr. 122, 12165 Berlin", "phone": "030 40745913", "rating": 4.7, "review_count": 26, "website": "http://www.physiotherapie-krech.de/", "category": "Physiotherapeut", "place_id": "maps_005", "query": "Physiotherapie"}, {"name": "Körperhandwerk Physiotherapie Marten", "address": "Klingsorstraße 14, 12167 Berlin", "phone": "030 12361483", "rating": 4.8, "review_count": 23, "website": "http://www.koerperhandwerk-physiotherapie.de/", "category": "Physiotherapeut", "place_id": "maps_006", "query": "Physiotherapie"}, {"name": "Therapie-Zentrum PhysioRea", "address": "Hubertusstraße 8, 12163 Berlin", "phone": "030 79784644", "rating": 4.9, "review_count": 16, "website": "http://www.physiorea.de/", "category": "Physiotherapeut", "place_id": "maps_007", "query": "Physiotherapie"}, {"name": "Stilbruch Friseure Berlin", "address": "Warschauer Str. 38, 10243 Berlin", "phone": "030 45088833", "rating": 4.7, "review_count": 690, "website": "https://www.friseur-lounge.de/berlin", "category": "Friseursalon", "place_id": "maps_000", "query": "Friseur"}, {"name": "Kiezschnitt Kreuzberg", "address": "Dieffenbachstraße 11, 10967 Berlin", "phone": "030 66407692", "rating": 4.8, "review_count": 175, "website": "http://www.kiezschnitt.com/", "category": "Friseursalon", "place_id": "maps_001", "query": "Friseur"}, {"name": "atelier-t. | Berlin Prenzlauer Berg | präzise Haarschnitte und Farbexperte", "address": "Schönhauser Allee 26a, 10435 Berlin", "phone": "030 81886500", "rating": 4.9, "review_count": 105, "website": "https://www.atelier-t-berlin.com/", "category": "Friseursalon", "place_id": "maps_002", "query": "Friseur"}, {"name": "Haartechno Friseur", "address": "Greifswalder Str. 46, 10405 Berlin", "phone": "030 21280451", "rating": 4.9, "review_count": 255, "website": "https://haartechno-berlin.de/", "category": "Friseursalon", "place_id": "maps_003", "query": "Friseur"}, {"name": "Friseur Gute Schnitte Salon Hair Nickel", "address": "Marienburger Str. 6, 10405 Berlin", "phone": "030 4427454", "rating": 4.9, "review_count": 313, "website": "https://www.friseur-gute-schnitte.de/", "category": "Friseursalon", "place_id": "maps_004", "query": "Friseur"}, {"name": "Mado barber shop", "address": "Schönhauser Allee 49, 10437 Berlin", "phone": "030 62965882", "rating": 4.8, "review_count": 639, "website": "http://mado-barbershop.com/", "category": "Friseursalon", "place_id": "maps_005", "query": "Friseur"}];
+
+// ========== SCORING (from SCORING.md) ==========
+const FRANCHISE_KEYWORDS = ['franchise', 'kette', ' ag ', 'filiale', 'fachverband', 'innung'];
+const DISQUALIFIED_CATEGORIES = ['friseur', 'barbershop', 'barber'];
+
+function getNicheBonus(query) {
+  const q = (query || '').toLowerCase();
+  if (q.includes('elektriker') || q.includes('maler') || q.includes('dachdecker') || q.includes('shk') || q.includes('handwerk')) return { points: 10, label: 'Handwerker' };
+  if (q.includes('physio')) return { points: 8, label: 'Physio' };
+  if (q.includes('galabau') || q.includes('garten')) return { points: 6, label: 'GaLaBau' };
+  if (q.includes('fahrschule')) return { points: 4, label: 'Fahrschule' };
+  if (q.includes('schlüssel') || q.includes('notdienst')) return { points: 5, label: 'Notdienst' };
+  if (q.includes('reinigung')) return { points: 4, label: 'Reinigung' };
+  return { points: 0, label: q };
+}
+
+function scoreLead(lead) {
+  const name = (lead.name || '').toLowerCase();
+  const cat = (lead.category || '').toLowerCase();
+  const query = (lead.query || '').toLowerCase();
+  const reviews = lead.review_count || 0;
+  const rating = lead.rating || 0;
+  const website = lead.website;
+  
+  // Disqualifiers
+  let disqualifyReason = null;
+  if (reviews < 5) disqualifyReason = `Zu wenige Bewertungen (${reviews})`;
+  if (reviews > 200) disqualifyReason = `Zu viele Bewertungen (${reviews}) — wahrscheinlich Kette`;
+  for (const kw of FRANCHISE_KEYWORDS) {
+    if (name.includes(kw)) { disqualifyReason = `Name enthält "${kw}"`; break; }
+  }
+  for (const dc of DISQUALIFIED_CATEGORIES) {
+    if (cat.includes(dc) || query.includes(dc)) { disqualifyReason = `Branche disqualifiziert: ${dc}`; break; }
+  }
+  
+  if (disqualifyReason) return { score: 0, reason: disqualifyReason, breakdown: [] };
+  
+  // Scoring
+  let score = 0;
+  let breakdown = [];
+  
+  if (reviews >= 15 && reviews <= 100) { score += 30; breakdown.push('+30 Reviews 15-100'); }
+  else if (reviews >= 5 && reviews <= 14) { score += 10; breakdown.push('+10 Reviews 5-14'); }
+  
+  if (!website || website === '') { score += 25; breakdown.push('+25 Keine Website'); }
+  else if (website.startsWith('http://')) { score += 15; breakdown.push('+15 Nur HTTP (veraltet)'); }
+  
+  if (name.includes('gmbh')) { score += 10; breakdown.push('+10 GmbH'); }
+  
+  if (rating >= 4.0) { score += 5; breakdown.push('+5 Rating ≥ 4.0'); }
+  
+  const niche = getNicheBonus(query || cat);
+  if (niche.points > 0) { score += niche.points; breakdown.push(`+${niche.points} Nische: ${niche.label}`); }
+  
+  return { score, reason: null, breakdown };
+}
+
+// Score all leads
+const LEADS = RAW_LEADS.map(lead => {
+  const { score, reason, breakdown } = scoreLead(lead);
+  return { ...lead, score, disqualifyReason: reason, scoreBreakdown: breakdown };
+}).sort((a, b) => b.score - a.score);
+
+// State
+const decisions = JSON.parse(localStorage.getItem('lead_decisions') || '{}');
+
+function getPriority(score) {
+  if (score >= 80) return 'hot';
+  if (score >= 60) return 'medium';
+  if (score >= 40) return 'low';
+  return 'none';
+}
+
+function renderLeads(filter = 'qualified') {
+  const grid = document.getElementById('leadGrid');
+  grid.innerHTML = '';
+  
+  let filtered;
+  if (filter === 'qualified') filtered = LEADS.filter(l => l.score >= 40);
+  else if (filter === 'hot') filtered = LEADS.filter(l => l.score >= 80);
+  else if (filter === 'medium') filtered = LEADS.filter(l => l.score >= 60 && l.score < 80);
+  else if (filter === 'low') filtered = LEADS.filter(l => l.score >= 40 && l.score < 60);
+  else if (filter === 'approved') filtered = LEADS.filter(l => decisions[l.name] === 'approved');
+  else if (filter === 'blacklisted') filtered = LEADS.filter(l => l.score === 0);
+  
+  if (filter !== 'blacklisted') {
+    filtered.sort((a, b) => b.score - a.score);
+  }
+  
+  if (filtered.length === 0) {
+    grid.innerHTML = '<p style="color:#999;text-align:center;padding:40px;">Keine Leads in dieser Kategorie.</p>';
+    updateStats();
+    return;
+  }
+  
+  filtered.forEach(lead => {
+    const decision = decisions[lead.name] || '';
+    const priority = getPriority(lead.score);
+    
+    const card = document.createElement('div');
+    card.className = `lead-card ${decision} ${lead.score === 0 ? '' : ''}`;
+    
+    let websiteHtml = '';
+    if (lead.website) {
+      websiteHtml = `<div class="lead-website"><a href="${lead.website}" target="_blank">${lead.website}</a></div>`;
+    }
+    
+    let statusTag = '';
+    if (!lead.website) statusTag = '<span class="tag tag--no-web">Keine Website</span>';
+    else if (lead.website.startsWith('http://')) statusTag = '<span class="tag tag--http">Nur HTTP</span>';
+    else statusTag = '<span class="tag tag--has-web">Hat Website</span>';
+    
+    let scoreClass = 'score--low';
+    if (lead.score >= 80) scoreClass = 'score--hot';
+    else if (lead.score >= 60) scoreClass = 'score--medium';
+    
+    let priorityHtml = '';
+    if (priority === 'hot') priorityHtml = '<span class="priority-label priority--hot">🔥 HOT</span>';
+    else if (priority === 'medium') priorityHtml = '<span class="priority-label priority--medium">⚡ MITTEL</span>';
+    else if (priority === 'low') priorityHtml = '<span class="priority-label priority--low">📋 NIEDRIG</span>';
+    
+    let disqualifiedHtml = '';
+    if (lead.disqualifyReason) {
+      disqualifiedHtml = `<div class="disqualified-reason">🚫 ${lead.disqualifyReason}</div>`;
+    }
+    
+    let breakdownHtml = '';
+    if (lead.scoreBreakdown && lead.scoreBreakdown.length > 0) {
+      breakdownHtml = `<div style="font-size:11px;color:#999;margin-top:4px;">${lead.scoreBreakdown.join(' · ')}</div>`;
+    }
+    
+    card.innerHTML = `
+      <div class="lead-info">
+        <h3>
+          <span class="score-badge ${scoreClass}">${lead.score}</span>
+          ${lead.name}
+          ${priorityHtml}
+        </h3>
+        <div class="lead-meta">
+          <span>⭐ ${lead.rating} (${lead.review_count})</span>
+          <span>📞 ${lead.phone || 'k.A.'}</span>
+          <span>📍 ${lead.address || 'k.A.'}</span>
+        </div>
+        <div class="lead-tags">
+          ${statusTag}
+          <span class="tag tag--category">${lead.query || lead.category || ''}</span>
+        </div>
+        ${websiteHtml}
+        ${disqualifiedHtml}
+        ${breakdownHtml}
+      </div>
+      <div class="lead-actions">
+        ${lead.score > 0 ? `
+          <button class="btn-approve ${decision === 'approved' ? 'active' : ''}" title="Outreach genehmigen" data-name="${lead.name}">✓</button>
+          <button class="btn-reject ${decision === 'rejected' ? 'active' : ''}" title="Überspringen" data-name="${lead.name}">✗</button>
+        ` : ''}
+      </div>
+    `;
+    
+    grid.appendChild(card);
+  });
+  
+  updateStats();
+}
+
+function updateStats() {
+  const qualified = LEADS.filter(l => l.score >= 40).length;
+  const hot = LEADS.filter(l => l.score >= 80).length;
+  const blacklisted = LEADS.filter(l => l.score === 0).length;
+  const approved = Object.values(decisions).filter(d => d === 'approved').length;
+  
+  document.getElementById('qualifiedCount').textContent = qualified;
+  document.getElementById('hotCount').textContent = hot;
+  document.getElementById('approvedCount').textContent = approved;
+  document.getElementById('blacklistedCount').textContent = blacklisted;
+  document.getElementById('approvedExportCount').textContent = approved;
+  document.getElementById('exportBtn').disabled = approved === 0;
+}
+
+// Event delegation
+document.getElementById('leadGrid').addEventListener('click', (e) => {
+  const btn = e.target.closest('.btn-approve, .btn-reject');
+  if (!btn) return;
+  
+  const name = btn.dataset.name;
+  const action = btn.classList.contains('btn-approve') ? 'approved' : 'rejected';
+  
+  if (decisions[name] === action) {
+    delete decisions[name];
+  } else {
+    decisions[name] = action;
+  }
+  
+  localStorage.setItem('lead_decisions', JSON.stringify(decisions));
+  renderLeads(document.querySelector('.filter-btn.active')?.dataset.filter || 'qualified');
+});
+
+// Filters
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderLeads(btn.dataset.filter);
+  });
+});
+
+// Export
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const approved = LEADS.filter(l => decisions[l.name] === 'approved');
+  const csv = 'Name,Branche,Score,Telefon,Adresse,Website,Rating,Reviews\n' + 
+    approved.map(l => 
+      `"${l.name}","${l.query || l.category}",${l.score},"${l.phone}","${l.address}","${l.website || ''}",${l.rating},${l.review_count}`
+    ).join('\n');
+  
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'approved_leads.csv';
+  a.click();
+});
+
+renderLeads();
+</script>
+</body>
+</html>
