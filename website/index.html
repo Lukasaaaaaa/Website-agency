@@ -943,12 +943,12 @@
               <input type="email" id="email" name="email" class="form__input" placeholder="ihre@email.de" required>
             </div>
             <div class="form__group">
-              <label for="phone" class="form__label">Telefon (optional)</label>
-              <input type="tel" id="phone" name="phone" class="form__input" placeholder="+49 ...">
+              <label for="phone" class="form__label">Telefon</label>
+              <input type="tel" id="phone" name="phone" class="form__input" placeholder="+49 ..." required>
             </div>
             <div class="form__group">
               <label for="branche" class="form__label">Branche</label>
-              <select id="branche" name="branche" class="form__input form__select">
+              <select id="branche" name="branche" class="form__input form__select" required>
                 <option value="">Bitte wählen...</option>
                 <option value="handwerk">Handwerk (Maler, Elektriker, etc.)</option>
                 <option value="galabau">Garten- und Landschaftsbau</option>
@@ -963,7 +963,7 @@
             </div>
             <div class="form__group">
               <label for="message" class="form__label">Nachricht</label>
-              <textarea id="message" name="message" class="form__input form__textarea" placeholder="Erzählen Sie mir kurz von Ihrem Projekt..." rows="4"></textarea>
+              <textarea id="message" name="message" class="form__input form__textarea" placeholder="Erzählen Sie mir kurz von Ihrem Projekt..." rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--full">
               Kostenlosen Entwurf anfordern
