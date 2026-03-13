@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l \"/Users/lukasgurny/Desktop/AGENcy WEBSITE €€€/website/demos/\"*.html)",
+      "Bash(curl -L -o source-serif-4-latin.woff2 \"https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-400-normal.woff2\")",
+      "Bash(curl -L -o source-serif-4-latin-600.woff2 \"https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-600-normal.woff2\")",
+      "Bash(curl -L -o source-serif-4-latin-700.woff2 \"https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-700-normal.woff2\")",
+      "Bash(curl -L -o dm-sans-latin.woff2 \"https://cdn.jsdelivr.net/fontsource/fonts/dm-sans@latest/latin-400-normal.woff2\")",
+      "Bash(curl -L -o dm-sans-latin-700.woff2 \"https://cdn.jsdelivr.net/fontsource/fonts/dm-sans@latest/latin-700-normal.woff2\")",
+      "Bash(ls -la *.woff2)"
+    ]
+  }
+}

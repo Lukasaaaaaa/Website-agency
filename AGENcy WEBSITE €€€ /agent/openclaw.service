@@ -1,0 +1,34 @@
+[Unit]
+Description=OpenClaw - Autonomer Web-Design-Sales-Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lukas
+WorkingDirectory=/home/lukas/openclaw/agent
+EnvironmentFile=/home/lukas/openclaw/agent/.env
+ExecStart=/usr/bin/python3 /home/lukas/openclaw/agent/loop.py --interval 3600
+Restart=on-failure
+RestartSec=60
+
+# Logging
+StandardOutput=append:/home/lukas/openclaw/agent/logs/service.log
+StandardError=append:/home/lukas/openclaw/agent/logs/service-error.log
+
+[Install]
+WantedBy=multi-user.target
+
+# Installation:
+#   sudo cp openclaw.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable openclaw
+#   sudo systemctl start openclaw
+#
+# Status:
+#   sudo systemctl status openclaw
+#   journalctl -u openclaw -f
+#
+# HINWEIS: Im Service-Modus funktioniert Terminal-HITL nicht.
+# Fuer HITL: loop.py --once manuell starten, oder
+# auf Webhook/Email-basiertes Approval umstellen.
