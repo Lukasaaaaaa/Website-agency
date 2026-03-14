@@ -225,7 +225,7 @@ img { max-width: 100%; display: block; }
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
 }
 
 .nav__link {
@@ -1751,6 +1751,7 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   color: var(--text-dark);
   transition: color var(--transition);
+  white-space: nowrap;
 }
 
 .nav__phone:hover {
@@ -1994,13 +1995,7 @@ img { max-width: 100%; display: block; }
    NAV EMAIL (same style as phone)
    ======================================== */
 .nav__email {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  transition: color var(--transition);
+  display: none;
 }
 
 .nav__email:hover {
