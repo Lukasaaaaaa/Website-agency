@@ -81,6 +81,20 @@ if (stickyCta) {
   });
 }
 
+// ——— WhatsApp Float (fade in after scroll) ———
+const whatsappFloat = document.getElementById('whatsappFloat');
+if (whatsappFloat) {
+  let waShown = false;
+  window.addEventListener('scroll', () => {
+    if (!waShown && window.scrollY > 300) {
+      waShown = true;
+      setTimeout(() => {
+        whatsappFloat.classList.add('whatsapp-float--visible');
+      }, 500);
+    }
+  });
+}
+
 // ——— Contact Form ———
 const contactForm = document.getElementById('contactForm');
 if (contactForm) contactForm.addEventListener('submit', async (e) => {
