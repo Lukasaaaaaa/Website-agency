@@ -474,64 +474,6 @@ img { max-width: 100%; display: block; }
 }
 
 /* ========================================
-   SOCIAL PROOF
-   ======================================== */
-.social-proof {
-  padding: 60px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.social-proof__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.social-proof__card {
-  padding: 28px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  transition: border-color var(--transition);
-}
-
-.social-proof__card:hover {
-  border-color: var(--border-hover);
-}
-
-.social-proof__stars {
-  display: flex;
-  gap: 2px;
-  color: #f59e0b;
-  margin-bottom: 14px;
-}
-
-.social-proof__text {
-  font-size: 1rem;
-  color: var(--text-body);
-  line-height: 1.7;
-  font-style: italic;
-  margin-bottom: 16px;
-}
-
-.social-proof__author {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.social-proof__name {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.social-proof__role {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* ========================================
    AGITATION (Problem section)
    ======================================== */
 .agitation {
@@ -1874,11 +1816,6 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  .social-proof__grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
   .nav__phone-text {
     display: none;
   }
