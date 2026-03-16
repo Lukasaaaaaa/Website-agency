@@ -404,10 +404,12 @@ img { max-width: 100%; display: block; }
 
 .hero__demo-frame {
   width: 100%;
-  height: 400px;
+  height: auto;
   border: none;
   pointer-events: none;
-  transform-origin: top left;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius);
 }
 
 .hero__demo-overlay {
@@ -716,12 +718,12 @@ img { max-width: 100%; display: block; }
 }
 
 .branchen__preview-frame {
-  width: 200%;
-  height: 560px;
+  width: 100%;
+  height: auto;
   border: none;
   pointer-events: none;
-  transform: scale(0.5);
-  transform-origin: top left;
+  display: block;
+  object-fit: cover;
 }
 
 .branchen__preview-overlay {
@@ -1987,7 +1989,8 @@ img { max-width: 100%; display: block; }
   }
 
   .hero__demo-frame {
-    height: 260px;
+    height: auto;
+    max-height: 260px;
   }
 }
 
