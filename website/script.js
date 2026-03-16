@@ -83,7 +83,7 @@ if (stickyCta) {
 
 // ——— Contact Form ———
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', async (e) => {
+if (contactForm) contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = contactForm.querySelector('button[type="submit"]');
   const originalText = btn.innerHTML;

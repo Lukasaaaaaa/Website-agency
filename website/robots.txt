@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://websitepolierer.de/sitemap.xml
